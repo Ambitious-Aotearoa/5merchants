@@ -1,0 +1,22 @@
+dateModified: 1727406525
+email:
+  fromEmail: jennifer@ambitious.co.nz
+  fromName: 'Five Merchants'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    24b1554e-bb4c-4639-aaa1-13d20c08f54c: 'Five Merchants' # Five Merchants
+    ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
+system:
+  edition: solo
+  live: true
+  name: 'Five Merchants'
+  schemaVersion: 5.3.0.2
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

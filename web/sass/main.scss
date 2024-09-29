@@ -1,0 +1,164 @@
+// main.scss
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&display=swap');
+@import url("https://use.typekit.net/htq1odv.css");
+
+
+// Import Bootstrap variables and mixins
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Customize Bootstrap variables (optional)
+
+
+
+$heading-font: "Poppins", sans-serif;
+$headings-font-family:$heading-font;
+$headings-font-weight:700;
+
+
+$body-font:"neue-haas-grotesk-text", sans-serif;
+$font-family-base:$body-font;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1024px,
+  lg: 1366px,
+  xl: 1600px,
+  xxl: 1920px
+);
+
+$cust-grid-breakpoints:(
+    hR:3480px,
+);
+
+$grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
+
+$container-max-widths: (
+  sm: 768px,
+  md: 1024px,
+  lg: 1366px,
+  xl: 1600px,
+  xxl: 1920px
+);
+
+$spacer: 13px;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+);
+
+$new-spacer:(
+    hR1: ($spacer * 1)*2,
+    hR2: ($spacer * 2)*2,
+    hR3: ($spacer * 3)*2,
+    hR4: ($spacer * 4)*2,
+    hR5: ($spacer * 5)*2,
+);
+$spacers:map-merge($spacers, $new-spacer);
+
+$vw-spacer:(
+    vw-sm:6vw,
+    vw-md:8vw,
+    vw-lg:12vw
+);
+
+$spacers:map-merge($spacers, $vw-spacer);
+
+$primary:#000;
+$light:#fff;
+$cust-red:#ff503c;
+$cust-tan:#CEC09F;
+$cust-teal:#4c7c7b;
+$cust-blue:#486c7a;
+$cust-blue-dark:#3c5a66;
+
+$border-trans:rgba(0, 0, 0, 0.17);
+
+@import "../../node_modules/bootstrap/scss/variables";
+
+$new-colors:(
+    "cust-red":$cust-red,
+    "cust-tan":$cust-tan,
+    "cust-teal":$cust-teal,
+    "cust-blue":$cust-blue,
+    "cust-blue-dark":$cust-blue-dark
+);
+
+$theme-colors:map-merge($theme-colors, $new-colors);
+
+
+
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Import Bootstrap components
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+body{
+    font-size: 16px;
+    h1, h2{
+        font-size: 2.5em
+    }
+    h3{
+        font-size: 2em
+    }
+
+    @include media-breakpoint-up(hR){
+        font-size: 2em;
+        h1, h2{
+            font-size: 5em
+        }
+        h3{
+            font-size: 4em
+        }
+    }
+}
+
+
+/////Padding combos
+@mixin container-one($size) {
+    width: 100%;
+    padding: $size;
+}
+
+.container-one{
+    @include container-one(1em);
+    @include media-breakpoint-up(sm){
+        @include container-one(2em);
+    }
+    @include media-breakpoint-up(hR){
+        @include container-one(4em);
+    }
+}
+
+
+//////Color combos
+@mixin color-group($bg-color, $font-color) {
+    background-color:$bg-color;
+    color:$font-color;
+    a{
+        color: $font-color;
+    }
+}
+
+.red-group{
+    @include color-group($cust-red, $light);
+}
+
+.black-group{
+    @include color-group($primary, $light);
+}
+
+.teal-group{
+    @include color-group($cust-teal, $light);
+}
+
+.blue-group{
+    @include color-group($cust-blue, $light);
+}
+
