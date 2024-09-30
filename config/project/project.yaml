@@ -1,18 +1,41 @@
-dateModified: 1727406525
+dateModified: 1727729008
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  hardDesk:
+    hasUrls: true
+    name: 'Hard Desk'
+    settings:
+      path: '@webroot/uploads/images'
+    type: craft\fs\Local
+    url: '@web/uploads/images'
 meta:
   __names__:
+    9c5edb31-d275-4b0d-88b7-a8f1395e194c: 'Button Text' # Button Text
     24b1554e-bb4c-4639-aaa1-13d20c08f54c: 'Five Merchants' # Five Merchants
+    84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
+    691a14f6-2d25-4d3c-a723-b93359a1710f: home # home
+    9449be11-5059-426e-aa04-3e9f0e656298: home # home
+    9642a918-c523-42c5-b282-682e9739bfc3: 'Button Link' # Button Link
+    046855ef-71bb-4c67-a58a-356e4bd73c27: Heading # Heading
     ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
+    c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62: 'Body text' # Body text
+    e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da: Image # Image
+    fd350744-0e46-410e-afa7-0477fa19889c: Simple # Simple
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
 system:
   edition: solo
   live: true
   name: 'Five Merchants'
+  retryDuration: null
   schemaVersion: 5.3.0.2
-  timeZone: America/Los_Angeles
+  timeZone: Pacific/Auckland
 users:
   allowPublicRegistration: false
   defaultGroup: null

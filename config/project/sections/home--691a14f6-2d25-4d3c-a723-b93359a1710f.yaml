@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 9449be11-5059-426e-aa04-3e9f0e656298 # home
+handle: home
+maxAuthors: 1
+name: home
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/home.twig
+    uriFormat: __home__
+type: single
