@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 9449be11-5059-426e-aa04-3e9f0e656298 # Home
-handle: home
+  - c128454f-a52d-4dc8-aa3e-e134fcd2c530 # Ventilation
+handle: ventilation
 maxAuthors: 1
-name: Home
+name: Ventilation
 previewTargets:
   -
     __assoc__:
@@ -22,6 +22,6 @@ siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     enabledByDefault: true
     hasUrls: true
-    template: _singles/home.twig
-    uriFormat: __home__
+    template: _singles/ventilation.twig
+    uriFormat: about/ventilation
 type: single

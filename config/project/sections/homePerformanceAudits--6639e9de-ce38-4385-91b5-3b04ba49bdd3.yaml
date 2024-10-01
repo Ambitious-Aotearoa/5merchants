@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 9449be11-5059-426e-aa04-3e9f0e656298 # Home
-handle: home
+  - aad57e69-bf90-44e2-8b57-e467ecbe68b6 # Home performance audits
+handle: homePerformanceAudits
 maxAuthors: 1
-name: Home
+name: 'Home Performance Audits'
 previewTargets:
   -
     __assoc__:
@@ -22,6 +22,6 @@ siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     enabledByDefault: true
     hasUrls: true
-    template: _singles/home.twig
-    uriFormat: __home__
+    template: _singles/home-performance-audits.twig
+    uriFormat: services/home-performance-audits
 type: single

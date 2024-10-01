@@ -7,9 +7,6 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // Customize Bootstrap variables (optional)
-
-
-
 $heading-font: "Poppins", sans-serif;
 $headings-font-family:$heading-font;
 $headings-font-weight:700;
@@ -22,7 +19,7 @@ $grid-breakpoints: (
   xs: 0,
   sm: 768px,
   md: 1024px,
-  lg: 1366px,
+  lg: 1389px,
   xl: 1600px,
   xxl: 1920px
 );
@@ -36,7 +33,7 @@ $grid-breakpoints:map-merge($grid-breakpoints, $cust-grid-breakpoints);
 $container-max-widths: (
   sm: 768px,
   md: 1024px,
-  lg: 1366px,
+  lg: 1389px,
   xl: 1600px,
   xxl: 1920px
 );
@@ -62,10 +59,11 @@ $new-spacer:(
 $spacers:map-merge($spacers, $new-spacer);
 
 $vw-spacer:(
+    vw-xx:2vw,
     vw-xs:4vw,
     vw-sm:6vw,
     vw-md:8vw,
-    vw-lg:12vw
+    vw-lg:14vw
 );
 
 $spacers:map-merge($spacers, $vw-spacer);
@@ -77,6 +75,7 @@ $cust-tan:#CEC09F;
 $cust-teal:#4c7c7b;
 $cust-blue:#486c7a;
 $cust-blue-dark:#3c5a66;
+$cust-lightGrey:#f2f2f2;
 
 $border-trans:rgba(0, 0, 0, 0.17);
 
@@ -87,7 +86,8 @@ $new-colors:(
     "cust-tan":$cust-tan,
     "cust-teal":$cust-teal,
     "cust-blue":$cust-blue,
-    "cust-blue-dark":$cust-blue-dark
+    "cust-blue-dark":$cust-blue-dark,
+    "cust-lightGrey":$cust-lightGrey
 );
 
 $theme-colors:map-merge($theme-colors, $new-colors);
@@ -103,17 +103,22 @@ $theme-colors:map-merge($theme-colors, $new-colors);
 
 body{
     font-size: 16px;
+    p strong{
+        font-weight: 500;
+        font-size:calc(1em + 1px)
+    }
+
     h1, h2{
         font-size: 1.8em
     }
     h3{
-        font-size: 1.5em;
+        font-size: 1.7em;
         &.body-font{
             font-size: 1.3em;
         }
     }
 
-    @include media-breakpoint-up(sm){
+    @include media-breakpoint-up(lg){
         h1, h2{
             font-size: 2.5em
         }
@@ -155,6 +160,33 @@ body{
     .bg-light-opacity{
         background-color:rgba(255,255,255,.3)
     }
+
+    .contained-content{
+        max-width:calc(1389px - 6em);
+        margin: 0 auto;
+        @include media-breakpoint-up(hR){
+            max-width:2400px;
+        }
+    }
+}
+
+.bg-line{
+    img{
+        background-color: $light;
+        padding-bottom: 1em;
+    }
+    position: relative;
+    &:after{
+        content:'';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: $primary;
+        bottom:0;
+        left: calc(50% - 1px);
+        z-index: -1;
+
+    }
 }
 
 
@@ -177,8 +209,23 @@ body{
     }
 }
 
+.container-two{
+    @include container-pad(2em, 0, 2em, 0);
+    @include media-breakpoint-up(sm){
+        @include container-pad(3em, 3em, 3em, 0em);
+    }
+}
 
 
+.container-three{
+    @include container-pad(2em, 0, 2em, 0);
+    @include media-breakpoint-up(sm){
+        @include container-pad(3em, 0, 3em, 3em);
+    }
+    @include media-breakpoint-up(lg){
+        @include container-pad(3em, 0, 3em, 0em);
+    }
+}
 
 
 //////Color combos
@@ -211,14 +258,17 @@ body{
 ///Custom images
 
 .img-fit-wrapper{
-    min-height: 100vw;
+    min-height: 60vw;
     position: relative;
     overflow: hidden;
-    @include media-breakpoint-up(md){
+
+    @include media-breakpoint-up(sm){
         min-height:auto;
-        &.add-height{
-            min-height: 33vw;
+        &.four-pods{
+            min-height: 50vw;
         }
+    }
+    @include media-breakpoint-up(md){
         &.four-pods{
             min-height: 25vw;
         }
@@ -242,6 +292,10 @@ body{
 
 
 .home{
+    #intro-section{
+        background-size: 50%;
+
+    }
     @include media-breakpoint-up(xl){
         .home-info{
             max-width: 60%;

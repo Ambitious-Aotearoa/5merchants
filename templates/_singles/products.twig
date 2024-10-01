@@ -1,0 +1,11 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "products" } %} 
+{% set docTitle = entry.title %} 
+{# {% set metaDesc = entry.metaDescription %}  #}
+
+{% set page = craft.entries().section('products').all() %} 
+{% block content %} 
+    {% for entry in page %} 
+            <h1>{{entry.title}}</h1>
+    {% endfor %} 
+{% endblock %}

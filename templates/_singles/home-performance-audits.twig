@@ -1,0 +1,181 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "home-performance-audits" } %} 
+{% set docTitle = entry.title %} 
+{# {% set metaDesc = entry.metaDescription %}  #}
+
+{% set page = craft.entries().section('homePerformanceAudits').all() %} 
+{% block content %} 
+    {% for entry in page %} 
+    <div class="d-flex flex-column flex-sm-row contained-content p-2 pt-0 px-md-3 px-hR-hR2 py-sm-vw-xs ">
+        <div class="col col-12 col-sm-6 col-md-5  container-two">
+            {% if entry.heading %}
+                <h1 class="mb-vw-sm">{{entry.heading}}</h1>
+            {% endif %}
+            {% if entry.bodyText %}
+                <div>{{entry.bodyText}}</div>
+            {% endif %}
+            {% if entry.buttonLink %}
+                <div class="underline-btn">
+                    <a href="{{ entry.buttonLink }}" role="button">{{ entry.buttonText }}</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col col-12 col-sm-6  col-md-5 offset-md-2 img-fit-wrapper">
+            {% set img = entry.image.one() %}
+            {% if img %}
+                <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="p-2 pb-0 px-md-3 px-hR-hR2 py-sm-vw-xs  bg-cust-lightGrey">
+        <div class="d-flex flex-column flex-sm-row  contained-content">
+            <div class="col col-12 col-sm-6 col-md-5 img-fit-wrapper">
+                {% set img = entry.image2.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                {% endif %}
+            </div>
+            <div class="col col-12 col-sm-6 offset-lg-1 container-three d-md-flex align-items-md-center">
+                {% if entry.bodyText2 %}
+                    <div class="py-lg-vw-xx">{{entry.bodyText2}}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="contained-content p-2 pb-0 px-md-3 px-lg-0 pt-sm-vw-xs ">
+        {% if entry.heading2 %}
+            <h2 class="mb-vw-xs">{{entry.heading2}}</h2>
+        {% endif %}
+        <div class="d-flex flex-row pb-2">
+            <div class="col col-9 col-md-5 pb-md-vw-sm">
+                {% if entry.bodyText3 %}
+                    <div>{{entry.bodyText3}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-2 offset-1 offset-md-0 col-md-2 px-sm-2 px-md-3 px-lg-4 px-hR-hR4 bg-line">
+                {% set img = entry.image3.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="d-flex flex-row pb-2">
+            <div class="col col-9 col-md-5 order-md-2 pb-md-vw-sm">
+                {% if entry.bodyText4 %}
+                    <div>{{entry.bodyText3}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-2 offset-1 col-md-2 order-md-1 offset-md-5 px-sm-2 px-md-3 px-lg-4 px-hR-hR4 bg-line">
+                {% set img = entry.image4.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+        <div class="d-flex flex-row pb-2">
+            <div class="col col-9 col-md-5 pb-md-vw-sm">
+                {% if entry.bodyText5 %}
+                    <div>{{entry.bodyText5}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-2 offset-1 offset-md-0 col-md-2 px-sm-2 px-md-3 px-lg-4 px-hR-hR4 bg-line">
+                {% set img = entry.image5.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="d-flex flex-row p-0">
+            <div class="col col-9 col-md-5 order-md-2 pb-md-vw-sm">
+                {% if entry.bodyText6 %}
+                    <div>{{entry.bodyText6}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-2 offset-1 col-md-2 order-md-1 offset-md-5 px-sm-2 px-md-3 px-lg-4 px-hR-hR4 bg-line">
+                {% set img = entry.image6.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+          <div class="accordion open filter-wrapper col-12 col-md-8 offset-md-1 mt-2 mt-md-0">
+            <div class="accordion-item filter-item membership">
+              <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-heading">
+                <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  I thought my organisation was a corporate member of Hāpai Public but it’s not on your list, what should I do?
+                </button>
+              </h3>
+              <div id="panelsStayOpen-collapse" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading">
+                <div class="pb-3 pb-lg-3vw">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item filter-item events-training">
+              <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">How to a register for an event?</button>
+              </h3>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="pb-3 pb-lg-3vw">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item filter-item newsletter">
+              <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">How do I sign up to the 3-weekly Newsletter?</button>
+              </h3>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="pb-3 pb-lg-3vw">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis corporis reprehenderit, officiis cum consectetur nostrum mollitia deleniti. Nisi corrupti doloribus repellendus quos, dolores vitae delectus eaque voluptatum in modi?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item filter-item payments">
+              <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                  What forms of payment do you accept for membership subscriptions and events/training?
+                </button>
+              </h3>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="pb-3 pb-lg-3vw">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                  modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.pb-3 pb-lg-3vw</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item filter-item our-role">
+              <h3 class="accordion-header py-3 py-lg-3vw" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed cust-font-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                  What’s the difference between Hāpai Public and the Public Service Commission?
+                </button>
+              </h3>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                <div class="pb-3 pb-lg-3vw">
+                  <p>
+                    The Commission leads the public sector, ensuring that the Public Service system is focused on delivering the outcomes and services that New Zealanders want, need and expect while maintaining high levels of trust and confidence. The Commission provides leadership and oversight of
+                    the Public Service, ensuring that it carries out its purpose. It is a public sector agency. Hāpai Public is a not-for-profit membership-based organisation. Our purpose is to promote a strong public sector – we do this by working alongside the public sector, providing a community
+                    of learning and practice about public service. We are independent: we sit outside the public sector.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    {% endfor %} 
+{% endblock %}

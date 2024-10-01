@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 9449be11-5059-426e-aa04-3e9f0e656298 # Home
-handle: home
+  - 2284ed3a-e66c-4af9-9f3c-4be5caaa4b7c # Windows
+handle: windows
 maxAuthors: 1
-name: Home
+name: Windows
 previewTargets:
   -
     __assoc__:
@@ -22,6 +22,6 @@ siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     enabledByDefault: true
     hasUrls: true
-    template: _singles/home.twig
-    uriFormat: __home__
+    template: _singles/windows.twig
+    uriFormat: about/windows
 type: single

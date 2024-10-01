@@ -4,18 +4,18 @@
 {# {% set metaDesc = entry.metaDescription %}  #}
 
 {% set page = craft.entries().section('home').all() %} 
+{% set bDT = craft.entries().section('blowerDoorTesting').all() %} 
+{% set hPA = craft.entries().section('homePerformanceAudits').all() %} 
+{% set ventilation = craft.entries().section('ventilation').all() %} 
+{% set windows = craft.entries().section('windows').all() %} 
+
+
 {% block content %} 
     {% for entry in page %} 
-
-            
-
-            
-
-
-    <div class="d-flex flex-column flex-md-row">
-        <div class="col col-12 col-md-4 red-group container-one">
+    <div class="d-flex flex-column flex-sm-row">
+        <div class="col col-12 col-sm-6 col-md-4 red-group container-one">
             {% if entry.heading %}
-                <h1 class="mb-vw-sm">{{entry.heading}}</h1>
+                <h1 class="mb-vw-md">{{entry.heading}}</h1>
             {% endif %}
             {% if entry.bodyText %}
                 <div>{{entry.bodyText}}</div>
@@ -26,7 +26,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col col-12 col-md-8 img-fit-wrapper">
+        <div class="col col-12 col-sm-6 col-md-8 img-fit-wrapper">
             {% set img = entry.image.one() %}
             {% if img %}
                 <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
@@ -34,58 +34,67 @@
         </div>
     </div>
 
-
-    <div class="d-flex flex-column flex-md-row">
-        <div class="col col-12 col-md-4 black-group container-one d-flex flex-column justify-content-between">
-            {% if entry.heading2 %}
-                <h2 class="mb-vw-sm">{{entry.heading2}}</h2>
-            {% endif %}
-            <div>
-                {% if entry.bodyText2 %}
-                    <div>{{entry.bodyText2}}</div>
-                {% endif %}
-
-                {% if entry.buttonLink2 %}
-                    <div class="underline-btn">
-                        <a href="{{ entry.buttonLink2 }}" role="button">{{ entry.buttonText2 }}</a>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="col col-12 col-md-4 img-fit-wrapper add-height">
+    <div class="d-flex flex-column flex-sm-row flex-sm-wrap">
+        <div class="col col-12 col-sm-6 img-fit-wrapper add-height  d-md-none">
             {% set img2 = entry.image2.one() %}
-            {% if img %}
-                <img src="{{img2.getUrl}}" alt="{{img2.alt}}" class="img-fit">
+                {% if img %}
+                    <img src="{{img2.getUrl}}" alt="{{img2.alt}}" class="img-fit">
             {% endif %}
         </div>
+        <div class="col col-12 col-sm-6 col-md-12">
+            <div class="d-flex flex-column flex-sm-row flex-sm-wrap">
+                <div class="col col-12  col-md-4 black-group container-one d-flex flex-column justify-content-between">
+                    {% if entry.heading2 %}
+                        <h2 class="mb-vw-lg">{{entry.heading2}}</h2>
+                    {% endif %}
+                    <div>
+                        {% if entry.bodyText2 %}
+                            <div>{{entry.bodyText2}}</div>
+                        {% endif %}
 
-        <div class="col col-12 col-md-4 bg-cust-tan container-one d-flex flex-column justify-content-between">
-            {% if entry.heading3 %}
-                <h2 class="mb-vw-sm">{{entry.heading3}}</h2>
-            {% endif %}
-
-            <div>
-                {% if entry.bodyText3 %}
-                    <div>{{entry.bodyText3}}</div>
-                {% endif %}
-
-                {% if entry.buttonLink3 %}
-                    <div class="underline-btn">
-                        <a href="{{ entry.buttonLink3 }}" role="button">{{ entry.buttonText3 }}</a>
+                        {% if entry.buttonLink2 %}
+                            <div class="underline-btn">
+                                <a href="{{ entry.buttonLink2 }}" role="button">{{ entry.buttonText2 }}</a>
+                            </div>
+                        {% endif %}
                     </div>
-                {% endif %}
+                </div>
+
+                <div class="col col-12 col-md-4 img-fit-wrapper add-height d-none d-md-block">
+                {% set img2 = entry.image2.one() %}
+                    {% if img %}
+                        <img src="{{img2.getUrl}}" alt="{{img2.alt}}" class="img-fit">
+                    {% endif %}
+                </div>
+
+                <div class="col col-12 col-md-4 bg-cust-tan container-one d-flex flex-column justify-content-between">
+                    {% if entry.heading3 %}
+                         <h2 class="mb-vw-lg">{{entry.heading3}}</h2>
+                    {% endif %}
+
+                    <div>
+                        {% if entry.bodyText3 %}
+                            <div>{{entry.bodyText3}}</div>
+                        {% endif %}
+
+                        {% if entry.buttonLink3 %}
+                            <div class="underline-btn">
+                                <a href="{{ entry.buttonLink3 }}" role="button">{{ entry.buttonText3 }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="d-flex flex-column flex-md-row py-md-vw-xs">
-        <div class="col col-12 col-md-4 container-one">
+    <div class="d-flex flex-column flex-md-row py-sm-vw-xs" id="info">
+        <div class="col col-12 col-md-4 container-one d-sm-flex flex-row flex-sm-row flex-md-column">
             {% if entry.heading4 %}
-                <h3 class="text-cust-blue mb-2 mb-hR-hR2">{{entry.heading4}}</h3>
+                <h3 class="text-cust-blue mb-2 mb-hR-hR2 col-sm-4 col-md-12">{{entry.heading4}}</h3>
             {% endif %}   
             {% if entry.bodyText4 %}
-                <div class="col">{{entry.bodyText4}}</div>
+                <div class="col col-sm-7 offset-sm-1 col-md-12 offset-md-0">{{entry.bodyText4}}</div>
             {% endif %}
         </div>
         <div class="col col-12 col-md-8 img-fit-wrapper">
@@ -654,31 +663,75 @@
             {% endif %} 
         </div> #}
 
-    <div class="black-group d-flex flex-column flex-md-row flex-md-wrap ">
+    <div class="black-group d-flex flex-column flex-md-row flex-md-wrap" id="services">
         <div class="col col-12 p-2 p-lg-3 p-hR-hR3">
              {% if entry.heading6 %}
                 <h3>{{entry.heading6}}</h3>
             {% endif %} 
         </div>
-        <div class="col-12 d-flex flex-column flex-md-row flex-md-wrap px-md-1 px-lg-2 px-hR-hR2">
-            <a class="col col-12 col-md-6 col-lg-3 p-2 pt-md-0 pb-md-3 px-md-1 pb-hR-hR3 px-hR-hR1" href="/" role="button">
-                <div class="">
-                    <div class="img-fit-wrapper four-pods">
-                        <img src="uploads/images/eHaus-central-lakes.webp" alt="placeholder" class="img-fit">
+
+        <div class="col-12 d-flex flex-column flex-sm-row flex-sm-wrap px-sm-1 px-lg-2 px-hR-hR2">
+            {% for entry in hPA %} 
+                <a class="col col-12 col-sm-6 col-md-3 p-2 pt-sm-0 pb-sm-3 px-sm-1 pb-hR-hR3 px-hR-hR1" href="{{entry.url}}" role="button">
+                    <div class="">
+                        {% set img = entry.image.one() %}
+                        {% if img %}
+                            <div class="img-fit-wrapper four-pods">
+                                <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                            </div>
+                        {% endif %}
+
+                        {% if entry.title %}
+                        <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">{{entry.title}}</h3>
+                        {% endif %}
+                        <p>5Merchants</p>
                     </div>
-                    <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">Title</h3>
-                    <p>5Merchants</p>
-                </div>
-            </a>
-            <a class="col col-12 col-md-6 col-lg-3 p-2 pt-md-0 pb-md-3 px-md-1 pb-hR-hR3 px-hR-hR1" href="/" role="button">
-                <div class="">
-                    <div class="img-fit-wrapper four-pods">
-                        <img src="uploads/images/eHaus-central-lakes.webp" alt="placeholder" class="img-fit">
+                </a>
+            {% endfor %} 
+            {% for entry in bDT %} 
+                <a class="col col-12 col-sm-6 col-md-3 p-2 pt-sm-0 pb-sm-3 px-sm-1 pb-hR-hR3 px-hR-hR1" href="{{entry.url}}" role="button">
+                    <div class="">
+                        {% set img = entry.image.one() %}
+                        {% if img %}
+                            <div class="img-fit-wrapper four-pods">
+                                <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                            </div>
+                        {% endif %}
+                         <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">{{entry.title}}</h3>
+                        <p>5Merchants</p>
                     </div>
-                    <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">Title</h3>
-                    <p>5Merchants</p>
-                </div>
-            </a>
+                </a>
+            {% endfor %} 
+            {% for entry in windows %} 
+                <a class="col col-12 col-sm-6 col-md-3 p-2 pt-sm-0 pb-sm-3 px-sm-1 pb-hR-hR3 px-hR-hR1" href="{{entry.url}}" role="button">
+                    <div class="">
+                        {% set img = entry.image.one() %}
+                        {% if img %}
+                        <div class="img-fit-wrapper four-pods">
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                        </div>
+                        {% endif %}
+                         {% if entry.title %}
+                            <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">{{entry.title}} Design</h3>
+                         {% endif %}
+                        <p>5Merchants</p>
+                    </div>
+                </a>
+            {% endfor %} 
+            {% for entry in ventilation %} 
+                <a class="col col-12 col-sm-6 col-md-3 p-2 pt-sm-0 pb-sm-3 px-sm-1 pb-hR-hR3 px-hR-hR1" href="{{entry.url}}" role="button">
+                    <div class="">
+                        {% set img = entry.image.one() %}
+                        {% if img %}
+                        <div class="img-fit-wrapper four-pods">
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                        </div>
+                        {% endif %}
+                         <h3 class="body-font mt-1 mt-lg-2 mt-hR-hR2">{{entry.title}} Design</h3>
+                        <p>5Merchants</p>
+                    </div>
+                </a>
+            {% endfor %} 
         </div>
     </div>
 

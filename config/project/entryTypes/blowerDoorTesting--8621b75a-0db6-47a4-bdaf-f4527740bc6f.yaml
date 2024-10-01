@@ -1,0 +1,131 @@
+color: null
+fieldLayouts:
+  bcf0163e-70ec-46c6-a6e5-049db6f5071e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-09-30T21:24:41+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 61f50d08-2314-49c4-938d-cc70fdae90c0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-30T22:26:25+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b253acf-eb31-4ecc-ac5a-d461b87a006d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-30T22:08:23+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7456a8b5-28b1-40c7-a020-5e59a4cf94ef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-30T22:08:23+00:00'
+            elementCondition: null
+            fieldUid: 9c5edb31-d275-4b0d-88b7-a8f1395e194c # Button Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6acd4856-db46-4cf3-add2-9829143ed56e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-30T22:08:23+00:00'
+            elementCondition: null
+            fieldUid: 9642a918-c523-42c5-b282-682e9739bfc3 # Button Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 381033ed-f7af-4579-8e52-f850e269f4ad
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-09-30T22:08:23+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a82d075d-23d8-4521-bdcf-880ac08e62c4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ee27f8c1-fbdb-4ae5-9984-9a77279e367a
+        userCondition: null
+handle: blowerDoorTesting
+hasTitleField: true
+icon: ''
+name: 'Blower door testing'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

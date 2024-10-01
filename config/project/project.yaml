@@ -1,4 +1,4 @@
-dateModified: 1727729008
+dateModified: 1727749936
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -13,22 +13,36 @@ fs:
     url: '@web/uploads/images'
 meta:
   __names__:
+    4d60f25b-0a29-413f-99b1-0354ac86a120: Products # Products
+    8ac5a722-9d84-4062-bf17-f6a9d545fae4: Windows # Windows
+    8eb06e79-6854-43c5-b1cc-c57a7f265e37: 'Blower Door Testing' # Blower Door Testing
     9c5edb31-d275-4b0d-88b7-a8f1395e194c: 'Button Text' # Button Text
     24b1554e-bb4c-4639-aaa1-13d20c08f54c: 'Five Merchants' # Five Merchants
     84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
-    691a14f6-2d25-4d3c-a723-b93359a1710f: home # home
-    9449be11-5059-426e-aa04-3e9f0e656298: home # home
+    99fdf10d-97f6-495f-98fc-7cfb03613085: Products # Products
+    691a14f6-2d25-4d3c-a723-b93359a1710f: Home # Home
+    2284ed3a-e66c-4af9-9f3c-4be5caaa4b7c: Windows # Windows
+    6639e9de-ce38-4385-91b5-3b04ba49bdd3: 'Home Performance Audits' # Home Performance Audits
+    8621b75a-0db6-47a4-bdaf-f4527740bc6f: 'Blower door testing' # Blower door testing
+    9449be11-5059-426e-aa04-3e9f0e656298: Home # Home
     9642a918-c523-42c5-b282-682e9739bfc3: 'Button Link' # Button Link
     046855ef-71bb-4c67-a58a-356e4bd73c27: Heading # Heading
+    aad57e69-bf90-44e2-8b57-e467ecbe68b6: 'Home performance audits' # Home performance audits
     ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
     c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62: 'Body text' # Body text
+    c128454f-a52d-4dc8-aa3e-e134fcd2c530: Ventilation # Ventilation
     e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da: Image # Image
+    f1f63221-8baf-45cd-b2f7-16f13e668ec5: Ventilation # Ventilation
     fd350744-0e46-410e-afa7-0477fa19889c: Simple # Simple
 plugins:
   ckeditor:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  copy:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true

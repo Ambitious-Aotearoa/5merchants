@@ -1,0 +1,9 @@
+app: 5merchants
+ssh_url: 5merchants@deploy.eu2.frbit.com
+git_remote: 5merchants/master
+before:
+    code/up: {  }
+after:
+    code/down:
+        - 'php craft migrate/all'
+        - 'php craft project-config/apply'

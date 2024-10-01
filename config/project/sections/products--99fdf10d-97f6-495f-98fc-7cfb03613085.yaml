@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 9449be11-5059-426e-aa04-3e9f0e656298 # Home
-handle: home
+  - 4d60f25b-0a29-413f-99b1-0354ac86a120 # Products
+handle: products
 maxAuthors: 1
-name: Home
+name: Products
 previewTargets:
   -
     __assoc__:
@@ -22,6 +22,6 @@ siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     enabledByDefault: true
     hasUrls: true
-    template: _singles/home.twig
-    uriFormat: __home__
+    template: _singles/products.twig
+    uriFormat: products
 type: single
