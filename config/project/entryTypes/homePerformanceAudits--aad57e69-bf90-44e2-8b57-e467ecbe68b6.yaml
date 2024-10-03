@@ -306,6 +306,82 @@ fieldLayouts:
         name: Content
         uid: 100d26c4-2a04-4eb4-a5c4-f59a5aecd5df
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-10-03T21:31:16+00:00'
+            elementCondition: null
+            fieldUid: 590e462c-d8f1-494d-a963-8c4e4a68e089 # Cost Matrix
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1506c789-6bd1-46a4-8454-ac2fc3dffe81
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-01T20:52:27+00:00'
+            elementCondition: null
+            fieldUid: 3291a89c-2f88-49a3-a831-8282d1f1fab3 # FAQ Accordion
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c0d0cdd-68c8-4f39-81bf-7531b50e4348
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-03T19:47:38+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 472e8f03-2923-4397-8ea5-25e4da3d01dc
+            userCondition: null
+          -
+            dateAdded: '2024-10-03T19:47:38+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: heading3
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f06c694-ded2-42e5-8f56-9746f7db6855
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-03T19:47:38+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: bodyText7
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea8cfde2-a337-468b-8bf1-cd3e234887cf
+            userCondition: null
+            warning: null
+            width: 100
+        name: Accordion
+        uid: 01675b70-a2b8-4578-b334-a028635d39df
+        userCondition: null
 handle: homePerformanceAudits
 hasTitleField: true
 icon: ''

@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: faqAccordion
+instructions: null
+name: 'FAQ Accordion'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - df64e06f-db04-444c-80a3-516feb4328a6 # Accordion Content
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

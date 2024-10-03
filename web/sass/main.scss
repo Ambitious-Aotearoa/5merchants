@@ -79,7 +79,22 @@ $cust-lightGrey:#f2f2f2;
 
 $border-trans:rgba(0, 0, 0, 0.17);
 
+
+$accordion-border-radius: 0;
+$accordion-icon-color: $primary;
+$accordion-icon-active-color:$primary;
+$accordion-button-active-bg: $light;
+$accordion-border-color:$primary;
+$accordion-border-width:0;
+$accordion-padding-x:0;
+$accordion-padding-y:0;
+$accordion-button-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M-0.00390625 10H10.4989V20.5028'/><path d='M21 10L10.4972 10L10.4972 -0.502773'/></svg>");
+$accordion-button-active-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='#{$accordion-icon-color}' fill='none'><path d='M3.07422 2.5752L10.5008 10.0018L3.07422 17.4284'/><path d='M17.9258 17.4268L10.4992 10.0002L17.9258 2.5736'/></svg>");
+
+
 @import "../../node_modules/bootstrap/scss/variables";
+////Buttons
+
 
 $new-colors:(
     "cust-red":$cust-red,
@@ -95,7 +110,7 @@ $theme-colors:map-merge($theme-colors, $new-colors);
 
 
 @import "../../node_modules/bootstrap/scss/mixins";
-
+@import "../../node_modules/bootstrap/scss/accordion";
 // Import Bootstrap components
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -161,11 +176,36 @@ body{
         background-color:rgba(255,255,255,.3)
     }
 
-    .contained-content{
-        max-width:calc(1389px - 6em);
-        margin: 0 auto;
-        @include media-breakpoint-up(hR){
-            max-width:2400px;
+    .conatined-content{
+        .d-flex{
+            max-width:calc(1389px - 6em);
+            margin: 0 auto;
+            @include media-breakpoint-up(hR){
+                max-width:2400px;
+            }
+        }
+    }
+    .accordion{
+        .accordion-item{
+            border-bottom-width:1px;
+        }
+        .accordion-header{
+            font-size:1.2em;
+            font-family: $body-font;
+            font-weight: 500;
+        }
+        .accordion-button{
+            font-size: 1.2em;
+            &:focus{
+                box-shadow: none;
+            }
+            &::after{
+                @include media-breakpoint-up(hR){
+                    width: 40px;
+                    height:40px;
+                    background-size: 40px;
+                }
+            }
         }
     }
 }
@@ -228,6 +268,8 @@ body{
 }
 
 
+
+
 //////Color combos
 @mixin color-group($bg-color, $font-color) {
     background-color:$bg-color;
@@ -269,6 +311,7 @@ body{
         }
     }
     @include media-breakpoint-up(md){
+        min-height:30vw;
         &.four-pods{
             min-height: 25vw;
         }

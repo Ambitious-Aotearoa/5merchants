@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: costMatrix
+instructions: null
+name: 'Cost Matrix'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 836b8015-5dc9-42fc-9b97-2cf2629c8a7c # Cost Section
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
