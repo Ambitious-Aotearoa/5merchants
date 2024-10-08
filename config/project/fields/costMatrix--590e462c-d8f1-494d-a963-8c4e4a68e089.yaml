@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: costMatrix
 instructions: null
-name: 'Cost Matrix'
+name: 'Cost Comparison'
 searchable: false
 settings:
   createButtonLabel: null

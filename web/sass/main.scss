@@ -69,6 +69,7 @@ $vw-spacer:(
 $spacers:map-merge($spacers, $vw-spacer);
 
 $primary:#000;
+$success: #486c7a;
 $light:#fff;
 $cust-red:#ff503c;
 $cust-tan:#CEC09F;
@@ -76,6 +77,7 @@ $cust-teal:#4c7c7b;
 $cust-blue:#486c7a;
 $cust-blue-dark:#3c5a66;
 $cust-lightGrey:#f2f2f2;
+$cust-darkGrey:#c7c8ca;
 
 $border-trans:rgba(0, 0, 0, 0.17);
 
@@ -102,7 +104,8 @@ $new-colors:(
     "cust-teal":$cust-teal,
     "cust-blue":$cust-blue,
     "cust-blue-dark":$cust-blue-dark,
-    "cust-lightGrey":$cust-lightGrey
+    "cust-lightGrey":$cust-lightGrey,
+    "cust-darkGrey":$cust-darkGrey
 );
 
 $theme-colors:map-merge($theme-colors, $new-colors);
@@ -121,6 +124,9 @@ body{
     p strong{
         font-weight: 500;
         font-size:calc(1em + 1px)
+    }
+    .sm-p p{
+        font-size:.8em
     }
 
     h1, h2{
@@ -158,17 +164,39 @@ body{
     }
     a{
         text-decoration: none;
+        i{
+            font-size:1.5em;
+            margin-left:.5em
+        }
     }
+
+    .btn{
+        border-radius: 0;
+        padding: .8em 2em 1em ;
+        border-width: 0;
+        font-size: 1em;
+        display: flex;
+        
+    }
+
 
     .underline-btn{
         display: flex;
         padding-bottom: .3em;
+  
         a{
             text-decoration: none;
             border-bottom: 2px solid;
             padding-bottom: .5em;
             font-family: $heading-font;
             font-weight: 400;
+            display: flex;;
+
+        }
+        @include media-breakpoint-down(sm){
+           a{
+            width: 100%;
+           }
         }
     }
 
@@ -177,7 +205,7 @@ body{
     }
 
     .conatined-content{
-        .d-flex{
+        .contain{
             max-width:calc(1389px - 6em);
             margin: 0 auto;
             @include media-breakpoint-up(hR){
@@ -187,7 +215,7 @@ body{
     }
     .accordion{
         .accordion-item{
-            border-bottom-width:1px;
+            border-bottom-width:2px;
         }
         .accordion-header{
             font-size:1.2em;
@@ -241,6 +269,11 @@ body{
     }
 }
 
+@mixin container-pad-sides($size-r, $size-l ) {
+    padding-left: $size-l;
+    padding-right: $size-r;
+}
+
 
 .container-one{
     @include container-pad(2em, 2em, 2em, 2em);
@@ -249,23 +282,55 @@ body{
     }
 }
 
-.container-two{
-    @include container-pad(2em, 0, 2em, 0);
-    @include media-breakpoint-up(sm){
-        @include container-pad(3em, 3em, 3em, 0em);
+
+.three-col-padding{
+    .col-12{
+        @include media-breakpoint-up(sm){
+            @include container-pad-sides(2em,0);
+            &:nth-of-type(2n){
+                @include container-pad-sides(0, 2em);
+            }
+        }
+        @include media-breakpoint-up(md){
+            @include container-pad-sides(2em,0);
+            &:nth-of-type(2){
+                @include container-pad-sides(1em,1em);
+            }
+            &:nth-of-type(3){
+                @include container-pad-sides(0, 2em);
+            }
+            &:nth-of-type(4){
+                @include container-pad-sides(2em,0);
+            }
+            &:nth-of-type(5){
+                @include container-pad-sides(1em,1em);
+            }
+            &:nth-of-type(6){
+                @include container-pad-sides(0,2em);
+            }
+        }
+        @include media-breakpoint-up(lg){
+            @include container-pad-sides(4em,0);
+            &:nth-of-type(2){
+                @include container-pad-sides(2em,2em);
+            }
+            &:nth-of-type(3){
+                @include container-pad-sides(0, 4em);
+            }
+            &:nth-of-type(4){
+                @include container-pad-sides(4em,0);
+            }
+            &:nth-of-type(5){
+                @include container-pad-sides(2em,2em);
+            }
+            &:nth-of-type(6){
+                @include container-pad-sides(0,4em);
+            }
+        }
     }
 }
 
 
-.container-three{
-    @include container-pad(2em, 0, 2em, 0);
-    @include media-breakpoint-up(sm){
-        @include container-pad(3em, 0, 3em, 3em);
-    }
-    @include media-breakpoint-up(lg){
-        @include container-pad(3em, 0, 3em, 0em);
-    }
-}
 
 
 
@@ -294,6 +359,9 @@ body{
 
 .blue-group{
     @include color-group($cust-blue, $light);
+    .btn-light{
+        color:$cust-blue;
+    }
 }
 
 

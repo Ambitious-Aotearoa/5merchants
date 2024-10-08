@@ -6,6 +6,174 @@
 {% set page = craft.entries().section('blowerDoorTesting').all() %} 
 {% block content %} 
     {% for entry in page %} 
-            <h1>{{entry.title}}</h1>
+    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+        <div class="contain d-flex flex-column flex-sm-row">
+
+            <div class="col col-12 col-sm-6 col-lg-6 col-mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
+                {% if entry.heading %}
+                    <h1 class="mb-2 mb-md-vw-sm mb-xl-vw-xx">{{entry.heading}}</h1>
+                {% endif %}
+                {% if entry.bodyText %}
+                    <div>{{entry.bodyText}}</div>
+                {% endif %}
+
+                {% if entry.buttonLink %}
+                    <div class="underline-btn mt-2 mt-md-vw-sm mt-lg-vw-xx">
+                        <a href="{{ entry.buttonLink }}" role="button">{{ entry.buttonText }} <i class='bx bx-down-arrow-alt'></i></a>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col col-12 col-sm-6  col-lg-5 offset-lg-1  img-fit-wrapper">
+                {% set img = entry.image.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+        <div class="contain d-flex flex-column">
+            {% if entry.heading2 %}
+                <h2 class="mb-vw-xs">{{entry.heading2}}</h2>
+            {% endif %}
+
+            <div class="d-flex flex-column flex-sm-row flex-sm-wrap pb-2 pb-md-vw-xx">
+
+                <div class="col col-12 col-sm-6 col-md-4 d-flex flex-sm-row  align-items-center ">
+                    <div class="col col-4 col-sm-3 p-1 p-hR-hR1">
+                        {% set img = entry.image2.one() %}
+                        {% if img %}
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                    <div class="col col-8 col-sm-9">
+                        {% if entry.bodyText2 %}
+                            <div>{{entry.bodyText2}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-6 col-md-4 d-flex flex-sm-row align-items-center flex-wrap">
+                    <div class="col col-4 col-sm-3 p-1 p-hR-hR1">
+                        {% set img = entry.image3.one() %}
+                        {% if img %}
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                    <div class="col col-8 col-sm-9">
+                        {% if entry.bodyText3 %}
+                            <div>{{entry.bodyText3}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col col-12 col-sm-6 col-md-4 d-flex flex-sm-row align-items-center flex-wrap">
+                    <div class="col col-4 col-sm-3 p-1 p-hR-hR1">
+                        {% set img = entry.image4.one() %}
+                        {% if img %}
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                    <div class="col col-8 col-sm-9">
+                        {% if entry.bodyText4 %}
+                            <div>{{entry.bodyText4}}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            {% if entry.buttonText2 %}
+                <div class="underline-btn mt-2 mt-md-vw-sm mt-lg-vw-xx">
+                    <a href="#booking-form" role="button">{{ entry.buttonText2 }} <i class='bx bx-down-arrow-alt'></i></a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-sm bg-cust-darkGrey">
+        <div class="contain d-flex mb-2 mb-hR-hR2">
+            {% if entry.heading4 %}
+                <h2 class="mb-vw-xs">{{entry.heading4}}</h2>
+            {% endif %}
+        </div>
+        <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap three-col-padding">
+            {% for matrix in entry.costMatrix.all() %}
+                <div class="col-12 col-sm-6 col-md-4 d-sm-flex flex-column justify-content-between pb-3 pb-md-vw-sm">
+                    {% if matrix.heading %}
+                    <h3 class="fw-bold body-font mb-2 mb-hR-hR2">{{matrix.heading}}</h3>
+                    {% endif %}
+                    {% if matrix.bodyText %}
+                        {{matrix.bodyText}}
+                    {% endif %}
+                   <div class="border-top border-primary border-2 pt-1 mt-2 pt-hR-hR-1 mt-hR-hR2"> 
+                    {% if matrix.bodyText2 %}
+                        {{matrix.bodyText2}} 
+                     {% endif %}
+                   </div>
+                </div>
+            {% endfor %}
+        </div> 
+
+        <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap">
+            <div class="col-12 col-md-4 order-2 order-md-1">
+                {% if  entry.buttonText2 %}
+                   <div class="d-flex flex-row">
+                        <a href="#booking-form" role="button" class="btn btn-success">{{ entry.buttonText2 }} <i class='bx bx-down-arrow-alt'></i></a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="sm-p col-12 col-md-8 ps-md-1 ps-lg-2 order-1 order-md-2"> 
+                {% if entry.bodyText6 %}
+                {{entry.bodyText6}}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-sm ">
+        <div class="contain d-flex flex-column flex-sm-row">
+            <div class="col col-sm-6 pe-sm-1 pe-lg-vw-xx">
+                <div>
+                    {% set img = entry.image5.one() %}
+                    {% if img %}
+                        <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                    {% endif %}
+                </div>
+                {% if entry.bodyText7 %}
+                    <div class="py-2 py-sm-vw-xx">{{entry.bodyText7}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-sm-6 ps-sm-1 ps-lg-vw-xx mt-sm-2 mt-md-vw-xs">
+                <div>
+                    {% set img = entry.image6.one() %}
+                    {% if img %}
+                        <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs" id="booking-form">
+        <div class="contain d-flex flex-column flex-sm-row">
+
+            <div class="col col-12 col-sm-6  mb-2 mb-sm-0 pe-sm-2  pe-md-3">
+                {% if entry.heading3 %}
+                    <h2 class="mb-2 mb-hR-hR2">{{entry.heading3}}</h2>
+                {% endif %}
+                {% if entry.bodyText5 %}
+                    <div>{{entry.bodyText5}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-12 col-sm-6  bg-primary">
+            <h2> form placeholder</h2>
+            </div>
+        </div>
+    </div>
     {% endfor %} 
 {% endblock %}
