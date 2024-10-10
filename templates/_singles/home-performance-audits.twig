@@ -7,10 +7,10 @@
 {% block content %} 
     {% for entry in page %} 
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+    <div class="conatined-content  py-2 py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
 
-            <div class="col col-12 col-sm-6 col-lg-6 col-mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
+            <div class="col col-12 col-sm-6 col-lg-6 mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
                 {% if entry.heading %}
                     <h1 class="mb-2 mb-md-vw-sm mb-xl-vw-xx">{{entry.heading}}</h1>
                 {% endif %}
@@ -34,9 +34,8 @@
         </div>
     </div>
 
-    <div class="conatined-content p-1 px-sm-2 px-md-3 py-3  py-md-vw-xs  bg-cust-lightGrey">
+    <div class="conatined-content  py-2  py-md-vw-xs  bg-cust-lightGrey">
         <div class="contain d-flex flex-column flex-sm-row">
-
             <div class="col col-12 col-sm-6 col-md-5 img-fit-wrapper mb-2 mb-sm-0">
                 {% set img = entry.image2.one() %}
                 {% if img %}
@@ -44,17 +43,19 @@
                 {% endif %}
             </div>
 
-            <div class="col col-12 col-sm-6 col-lg-7 d-md-flex align-items-md-center p-sm-2 pe-sm-0 p-md-3 p-hR-hR3 pe-md-0 pe-hR-0">
+            <div class="
+            col col-12 col-sm-6 col-md-7 
+            d-md-flex align-items-md-center 
+            px-sm-2 px-md-3 pe-sm-0 ps-sm-vw-sm py-sm-vw-xs">
                 {% if entry.bodyText2 %}
-                    <div class="py-lg-vw-xx">{{entry.bodyText2}}</div>
+                    <div>{{entry.bodyText2}}</div>
                 {% endif %}
             </div>
-
         </div>
     </div>
 
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 pt-3 pt-md-vw-xs">
+    <div class="conatined-content  pt-2 pt-md-vw-xs">
         <div class="contain d-flex flex-column">
             {% if entry.heading2 %}
                 <h2 class="mb-vw-xs">{{entry.heading2}}</h2>
@@ -117,7 +118,7 @@
     </div>
 
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-sm blue-group">
+    <div class="conatined-content  py-2 py-md-vw-xs blue-group">
         <div class="contain d-flex mb-2 mb-hR-hR2">
             {% if entry.heading4 %}
                 <h2 class="mb-vw-xs">{{entry.heading4}}</h2>
@@ -141,14 +142,12 @@
             {% endfor %}
         </div> 
         <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap">
-            <div class="col-12 col-md-4 order-2 order-md-1">
+            <div class="col-12 col-sm-6 col-md-4">
                 {% if  entry.buttonText2 %}
-                   <div class="">
                         <a href="#booking-form" role="button" class="btn btn-light">{{ entry.buttonText2 }}</a>
-                    </div>
                 {% endif %}
             </div>
-            <div class="sm-p col-12 col-md-8 ps-md-1 ps-lg-2 order-1 order-md-2"> 
+            <div class="sm-p col-12 col-md-8 ps-md-1 ps-lg-2 mt-2 mt-md-0"> 
                 {% if entry.bodyText8 %}
                 {{entry.bodyText8}}
                 {% endif %}
@@ -157,7 +156,7 @@
     </div>
 
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+    <div class="conatined-content  py-md-vw-xs">
         <div class="contain accordion open d-flex flex-column pb-2 pb-hR-hR2">
             {% for matrix in entry.faqAccordion.all() %}
                 {% if matrix.bodyText %}
@@ -180,10 +179,10 @@
     <div class="p-vw-md bg-primary"></div>
 
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs" id="booking-form">
-        <div class="contain d-flex flex-column flex-sm-row">
+    <div class="conatined-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
+        <div class="contain d-flex flex-column flex-md-row">
 
-            <div class="col col-12 col-sm-6  mb-2 mb-sm-0 pe-sm-2  pe-md-3">
+            <div class="col col-12 col-md-6 col-lg-5  mb-2 mb-sm-0 pe-sm-2  pe-md-3">
                 {% if entry.heading3 %}
                     <h2 class="mb-2 mb-hR-hR2">{{entry.heading3}}</h2>
                 {% endif %}
@@ -191,8 +190,8 @@
                     <div>{{entry.bodyText7}}</div>
                 {% endif %}
             </div>
-            <div class="col col-12 col-sm-6  bg-primary">
-            <h2> form placeholder</h2>
+            <div class="col col-12 col-md-6 offset-lg-1  mt-2 mt-md-0 bg-primary">
+                <h2> form placeholder</h2>
             </div>
         </div>
     </div>

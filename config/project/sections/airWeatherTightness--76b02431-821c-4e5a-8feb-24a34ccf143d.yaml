@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - a04b1e42-d074-4541-911e-7a8e8d764cbd # Air Weather Tightness
+handle: airWeatherTightness
+maxAuthors: 1
+name: 'Air Weather Tightness'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/air-weather-tightness.twig
+    uriFormat: about/air-weather-tightness
+type: single

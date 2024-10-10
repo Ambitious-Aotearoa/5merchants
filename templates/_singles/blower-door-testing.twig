@@ -6,10 +6,10 @@
 {% set page = craft.entries().section('blowerDoorTesting').all() %} 
 {% block content %} 
     {% for entry in page %} 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+    <div class="conatined-content py-2 py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
 
-            <div class="col col-12 col-sm-6 col-lg-6 col-mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
+            <div class="col col-12 col-sm-6 col-lg-6 mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
                 {% if entry.heading %}
                     <h1 class="mb-2 mb-md-vw-sm mb-xl-vw-xx">{{entry.heading}}</h1>
                 {% endif %}
@@ -24,7 +24,7 @@
                 {% endif %}
             </div>
 
-            <div class="col col-12 col-sm-6  col-lg-5 offset-lg-1  img-fit-wrapper">
+              <div class="col col-12 col-sm-6  col-lg-5 offset-lg-1  img-fit-wrapper">
                 {% set img = entry.image.one() %}
                 {% if img %}
                     <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs">
+    <div class="conatined-content  py-2 py-md-vw-xs">
         <div class="contain d-flex flex-column">
             {% if entry.heading2 %}
                 <h2 class="mb-vw-xs">{{entry.heading2}}</h2>
@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-sm bg-cust-darkGrey">
+    <div class="conatined-content  py-2 py-md-vw-xs bg-cust-darkGrey">
         <div class="contain d-flex mb-2 mb-hR-hR2">
             {% if entry.heading4 %}
                 <h2 class="mb-vw-xs">{{entry.heading4}}</h2>
@@ -117,22 +117,20 @@
         </div> 
 
         <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap">
-            <div class="col-12 col-md-4 order-2 order-md-1">
+            <div class="col-12 col-sm-6 col-md-4">
                 {% if  entry.buttonText2 %}
-                   <div class="d-flex flex-row">
-                        <a href="#booking-form" role="button" class="btn btn-success">{{ entry.buttonText2 }} <i class='bx bx-down-arrow-alt'></i></a>
-                    </div>
+                        <a href="#booking-form" role="button" class="btn btn-success">{{ entry.buttonText2 }}</a>
                 {% endif %}
             </div>
-            <div class="sm-p col-12 col-md-8 ps-md-1 ps-lg-2 order-1 order-md-2"> 
+            <div class="sm-p col-12 col-md-8 ps-md-1 ps-lg-2 mt-2 mt-md-0"> 
                 {% if entry.bodyText6 %}
                 {{entry.bodyText6}}
                 {% endif %}
             </div>
-        </div>
+        </div> 
     </div>
 
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-sm ">
+    <div class="conatined-content  py-2 py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-sm-6 pe-sm-1 pe-lg-vw-xx">
                 <div>
@@ -156,13 +154,10 @@
         </div>
     </div>
 
+    <div class="conatined-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
+        <div class="contain d-flex flex-column flex-md-row">
 
-
-
-    <div class="conatined-content px-1 px-sm-2 px-md-3 py-3 py-md-vw-xs" id="booking-form">
-        <div class="contain d-flex flex-column flex-sm-row">
-
-            <div class="col col-12 col-sm-6  mb-2 mb-sm-0 pe-sm-2  pe-md-3">
+            <div class="col col-12 col-md-6 col-lg-5  mb-2 mb-sm-0 pe-sm-2  pe-md-3">
                 {% if entry.heading3 %}
                     <h2 class="mb-2 mb-hR-hR2">{{entry.heading3}}</h2>
                 {% endif %}
@@ -170,8 +165,8 @@
                     <div>{{entry.bodyText5}}</div>
                 {% endif %}
             </div>
-            <div class="col col-12 col-sm-6  bg-primary">
-            <h2> form placeholder</h2>
+            <div class="col col-12 col-md-6 offset-lg-1  mt-2 mt-md-0 bg-primary">
+                <h2> form placeholder</h2>
             </div>
         </div>
     </div>

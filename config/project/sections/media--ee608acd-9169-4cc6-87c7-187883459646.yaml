@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - dfc0fc09-36d4-4961-b69d-e21ddde95aaa # Media
+handle: media
+maxAuthors: 1
+name: Media
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/media.twig
+    uriFormat: resources/media
+type: single

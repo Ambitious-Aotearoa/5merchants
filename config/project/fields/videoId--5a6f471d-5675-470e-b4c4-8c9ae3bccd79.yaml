@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: videoId
+instructions: 'If URL is https://www.youtube.com/watch?v=_UkupxQdl_s just add the content after the = eg _UkupxQdl_s'
+name: 'Video Id'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -18,6 +18,23 @@ settings:
               - allowAnchors
               - '1'
       -
+        - asset
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowedKinds
+              -
+                - pdf
+            -
+              - showUnpermittedVolumes
+              - ''
+            -
+              - showUnpermittedFiles
+              - ''
+      -
         - entry
         -
           __assoc__:
@@ -26,6 +43,7 @@ settings:
               - '*'
   types:
     - url
+    - asset
     - entry
 translationKeyFormat: null
 translationMethod: none

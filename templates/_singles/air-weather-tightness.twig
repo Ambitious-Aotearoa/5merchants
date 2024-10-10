@@ -1,0 +1,92 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "air-weather-tightness" } %} 
+{% set docTitle = entry.title %} 
+{# {% set metaDesc = entry.metaDescription %}  #}
+
+{% set page = craft.entries().section('airWeatherTightness').all() %} 
+{% block content %} 
+    {% for entry in page %}     
+    <div class="conatined-content py-2 py-sm-vw-sm  black-group">
+        <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
+
+            <div class="col col-12 col-sm-3 col-lg-4 d-flex flex-row justify-content-center align-items-center">
+                {% set img = entry.image.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid sm-img">
+                {% endif %}
+            </div>
+            <div class="col col-12 col-sm-8 col-lg-6 offset-sm-1 offset-lg-2">
+                <h1 class="text-cust-gold mb-2">{{entry.title}}</h1>
+                {% if entry.bodyText %}
+                    {{entry.bodyText}}
+                {% endif %}
+                {% if entry.buttonText %}
+                    <div class="underline-btn mt-2 mt-md-vw-sm mt-lg-vw-xx">
+                        <a href="{{ entry.buttonLink }}" role="button">{{ entry.buttonText }} <i class='bx bx-down-arrow-alt'></i></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs">
+        <div class="contain d-flex flex-column flex-sm-row">
+            <div class="col col-12 5 col-md-7 py-sm-vw-xs">
+                {% if entry.heading %}
+                    <h2 class="text-cust-teal mb-2 mb-hR-hR2 ">{{entry.heading}}</h2>
+                {% endif %}
+                {% if entry.bodyText2 %}
+                    <div>{{entry.bodyText2}}</div>
+                {% endif %}
+                {% if entry.buttonText2 %}
+                    <div class="underline-btn my-2 mb-sm-0 mt-md-vw-sm mt-lg-vw-xx">
+                        <a href="{{entry.buttonLink2}}" role="button" target="_blank">{{ entry.buttonText2 }} <i class='bx bx-down-arrow-alt'></i></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs">
+        <div class="contain d-flex flex-column flex-sm-row">
+            <div class="col col-12 col-sm-5 col-md-6 col-lg-7 py-sm-vw-xs">
+                <div class="d-flex flex-column flex-md-row">
+                    <div class="mb-1 mb-hR-hR1 pe-md-1 col-sm-6">
+                        {% set img = entry.image2.one() %}
+                        {% if img %}
+                            <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                        {% endif %}
+                    </div>
+                </div>
+                {% if entry.bodyText3 %}
+                    <div>{{entry.bodyText3}}</div>
+                {% endif %}
+                {% if entry.buttonText3 %}
+                    <div class="underline-btn my-2 mb-sm-0 mt-md-vw-sm mt-lg-vw-xx">
+                        <a href="{{entry.buttonLink3}}" role="button">{{ entry.buttonText3 }} <i class='bx bx-down-arrow-alt'></i></a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col col-12 col-sm-6 col-md-5 offset-sm-1 col-lg-4 img-fit-wrapper">
+                {% set img = entry.image3.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fit">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs black-group ">
+        <div class="contain d-flex flex-column flex-sm-row">
+                {% if entry.heading2 %}
+                    <h2>{{entry.heading2}}</h2>
+                {% endif %}
+        </div>
+    </div>
+
+
+    {% endfor %} 
+{% endblock %}
+

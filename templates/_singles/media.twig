@@ -1,0 +1,63 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "media" } %} 
+{% set docTitle = entry.title %} 
+{# {% set metaDesc = entry.metaDescription %}  #}
+
+{% set page = craft.entries().section('media').all() %} 
+{% block content %} 
+    {% for entry in page %} 
+
+
+    <div class="conatined-content py-2 py-md-vw-xs black-group" id="mouse-nav">
+        <div class="contain d-flex flex-column flex-wrap align-items-center justify-content-sm-center">
+            <h1>{{entry.title}}</h1>
+            {% if entry.bodyText4 %}
+                <div class="py-3 py-hR-hR3 col-sm-6 col-lg-5 text-center">{{entry.bodyText4}}</div>
+            {% endif %}
+         {% include '_partials/mouse.twig' %} 
+        </div>
+    </div>
+
+    <div class="conatined-content  py-2 py-md-vw-xs">
+        <div class="contain d-flex flex-column flex-sm-row flex-wrap">
+            <div class="col col-12">
+                {% if entry.heading3 %}
+                    <h2 class="pb-2 pb-hR-hR2">{{entry.heading3}}</h2>
+                {% endif %}
+                {% if entry.bodyText3 %}
+                    <div class="pb-4 pb-hR-hR4">{{entry.bodyText3}}</div>
+                {% endif %}
+            </div>
+
+
+            <div class="col col-sm-6 pe-sm-1 pe-lg-vw-xx">
+                {% if entry.videoId %}
+                    <div>
+                        <iframe class="video" src="https://www.youtube.com/embed/{{ entry.videoId }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                {% endif %}
+                {% if entry.heading %}
+                    <h3 class="py-2 py-hR-hR2">{{entry.heading}}</h3>
+                {% endif %}
+                {% if entry.bodyText %}
+                    <div>{{entry.bodyText}}</div>
+                {% endif %}
+            </div>
+            <div class="col col-sm-6 ps-sm-1 ps-lg-vw-xx">
+                {% if entry.videoId2 %}
+                    <div>
+                        <iframe class="video" src="https://www.youtube.com/embed/{{ entry.videoId2 }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                {% endif %}
+                {% if entry.heading %}
+                    <h3 class="py-2 py-hR-hR2">{{entry.heading2}}</h3>
+                {% endif %}
+                {% if entry.bodyText %}
+                    <div>{{entry.bodyText2}}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %} 
+{% endblock %}
+

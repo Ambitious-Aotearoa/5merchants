@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: productMatrix
+instructions: null
+name: 'Product Matrix'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 24eb1896-db2f-464e-856b-a505a6f4629f # Product Group
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
