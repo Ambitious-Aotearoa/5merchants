@@ -297,6 +297,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-10-10T03:49:17+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: image8
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a47990fe-93f0-4386-9cac-cae5cefd7f4d
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-10-10T02:50:49+00:00'
             elementCondition: null
             fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text

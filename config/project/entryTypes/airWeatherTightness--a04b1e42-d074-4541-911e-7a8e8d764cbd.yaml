@@ -210,22 +210,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-10-10T03:17:39+00:00'
-            elementCondition: null
-            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
-            handle: image3
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ff2a4cbd-ae9c-4b2c-bc22-53fca931fcbe
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-10-10T03:20:34+00:00'
             elementCondition: null
             fieldUid: 9c5edb31-d275-4b0d-88b7-a8f1395e194c # Button Text
@@ -254,6 +238,22 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 393320ea-67bd-4f7a-a380-dcef12cb8d89
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-10T03:17:39+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: image3
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff2a4cbd-ae9c-4b2c-bc22-53fca931fcbe
             userCondition: null
             warning: null
             width: 100
