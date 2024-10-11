@@ -1,4 +1,4 @@
-dateModified: 1728532157
+dateModified: 1728590857
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -15,6 +15,7 @@ meta:
   __names__:
     4d60f25b-0a29-413f-99b1-0354ac86a120: Products # Products
     5a6f471d-5675-470e-b4c4-8c9ae3bccd79: 'Video Id' # Video Id
+    6f1a7342-9f78-4116-82e8-9e404f749716: Dummy # Dummy
     8ac5a722-9d84-4062-bf17-f6a9d545fae4: Windows # Windows
     8eb06e79-6854-43c5-b1cc-c57a7f265e37: 'Blower Door Testing' # Blower Door Testing
     9c5edb31-d275-4b0d-88b7-a8f1395e194c: 'Button Text' # Button Text
@@ -24,7 +25,9 @@ meta:
     76b02431-821c-4e5a-8feb-24a34ccf143d: 'Air Weather Tightness' # Air Weather Tightness
     84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
     99fdf10d-97f6-495f-98fc-7cfb03613085: Products # Products
+    442c5688-214f-44ff-a60c-3451162e131f: New # New
     590e462c-d8f1-494d-a963-8c4e4a68e089: 'Cost Comparison' # Cost Comparison
+    641b9b6a-a658-4713-a7d7-250782459f99: 'Tapes and Membranes' # Tapes and Membranes
     691a14f6-2d25-4d3c-a723-b93359a1710f: Home # Home
     836b8015-5dc9-42fc-9b97-2cf2629c8a7c: 'Cost Section' # Cost Section
     2284ed3a-e66c-4af9-9f3c-4be5caaa4b7c: Windows # Windows
@@ -39,6 +42,7 @@ meta:
     ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
     c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62: 'Body text' # Body text
     c128454f-a52d-4dc8-aa3e-e134fcd2c530: Ventilation # Ventilation
+    dd740063-6fd9-4f30-b8fa-612a1fa57572: Primary # Primary
     df64e06f-db04-444c-80a3-516feb4328a6: 'Accordion Content' # Accordion Content
     dfc0fc09-36d4-4961-b69d-e21ddde95aaa: Media # Media
     e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da: Image # Image
@@ -51,6 +55,26 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  commerce:
+    edition: pro
+    enabled: true
+    licenseKey: 2XC8BYFPLI7MI5Y4G4QELF0T
+    schemaVersion: 5.1.0.3
+    settings:
+      activeCartDuration: 3600
+      cartVariable: cart
+      defaultView: commerce/orders
+      dimensionUnits: mm
+      gatewayPostRedirectTemplate: ''
+      loadCartRedirectUrl: null
+      paymentCurrency: null
+      pdfAllowRemoteImages: false
+      purgeInactiveCarts: true
+      purgeInactiveCartsDuration: 7776000
+      updateBillingDetailsUrl: ''
+      updateCartSearchIndexes: true
+      validateCartCustomFieldsOnSubmission: false
+      weightUnits: kg
   copy:
     edition: standard
     enabled: true

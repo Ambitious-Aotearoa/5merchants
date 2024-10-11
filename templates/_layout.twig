@@ -12,7 +12,9 @@
 
   </head>
   <body {{ attr(bodyAttributes ?? {}) }}>
-   {% include '_partials/nav.twig' %}
+        {% include '_partials/store_nav.twig' %}
+        {% include '_partials/nav.twig' %}
+        {% include '_partials/store_cart_summary.twig' %}
     <main>
       {% block content %}
 

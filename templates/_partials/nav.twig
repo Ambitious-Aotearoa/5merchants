@@ -1,54 +1,66 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    {# <a class="navbar-brand" href="#">Navbar</a> #}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid p-1">
+
+    <a class="navbar-brand" href="{{siteUrl}}">{% include '_partials/logo.twig' %}</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
-        </li>
+      <ul class="navbar-nav justify-content-lg-between w-100">
+        <div class="d-lg-flex flex-lg-row">
+            <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+            </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="resources" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Resources
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="resources">
-            <li><a class="dropdown-item" href="/resources/media">Media</a></li>
-          </ul>
-        </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resources" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Resources
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="resources">
+                <li><a class="dropdown-item" href="/resources/media">Media</a></li>
+            </ul>
+            </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="services">
-          
-            <li><a class="dropdown-item" href="/services/home-performance-audits">Home performance audits</a></li>
-            <li><a class="dropdown-item" href="/services/blower-door-testing">Blower door testing</a></li>
-          </ul>
-        </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="services">
+            
+                <li><a class="dropdown-item" href="/services/home-performance-audits">Home performance audits</a></li>
+                <li><a class="dropdown-item" href="/services/blower-door-testing">Blower door testing</a></li>
+            </ul>
+            </li>
+        </div>
 
+        <div class="d-lg-flex flex-lg-row">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="about">
+                <li><a class="dropdown-item" href="/about/air-weather-tightness">Air weather tightness</a></li>
+                <li><a class="dropdown-item" href="/about/windows">Windows</a></li>
+                <li><a class="dropdown-item" href="/about/ventilation">Ventilation</a></li>
+            </ul>
+            </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="about">
-            <li><a class="dropdown-item" href="/about/air-weather-tightness">Air weather tightness</a></li>
-            <li><a class="dropdown-item" href="/about/windows">Windows</a></li>
-            <li><a class="dropdown-item" href="/about/ventilation">Ventilation</a></li>
-          </ul>
-        </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">News/Events</a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">News/Events</a>
-        </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/shop">Shop</a>
+            </li>
+        </div>
       </ul>
     </div>
   </div>

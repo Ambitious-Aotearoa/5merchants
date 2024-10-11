@@ -18392,14 +18392,6 @@ body .sm-img {
   }
 }
 
-#mouse {
-  width: 30px;
-  fill: #E3C7A1;
-}
-#mouse:hover {
-  opacity: 0.5;
-}
-
 .video {
   aspect-ratio: 16/9;
   width: 100%;
@@ -18590,6 +18582,46 @@ body .sm-img {
     max-width: 60%;
     margin: 0 auto;
   }
+}
+
+.icon-cart {
+  fill: #fff;
+}
+
+.store-nav li {
+  padding: 0 1em;
+}
+.store-nav li a {
+  font-size: 14px;
+}
+
+#cartSummary.fade .modal-dialog {
+  transform: translateX(200%);
+  transition: transform 0.5s ease-out;
+}
+#cartSummary.fade.show .modal-dialog {
+  transform: translateX(100%);
+}
+#cartSummary .modal-dialog {
+  transition: transform 0.5s ease-out;
+  max-width: 50%;
+  right: 0;
+}
+
+nav .container-fluid, nav .container-sm, nav .container-md, nav .container-lg, nav .container-xl, nav .container-xxl {
+  position: relative;
+}
+nav .navbar-brand {
+  position: absolute;
+}
+nav .navbar-brand .main-logo {
+  max-width: 300px;
+}
+nav .navbar-brand .main-logo .text-color {
+  fill: #4c7c7b;
+}
+nav .navbar-brand .main-logo .shape-color {
+  fill: #ff503c;
 }
 
 /*# sourceMappingURL=main.css.map */
