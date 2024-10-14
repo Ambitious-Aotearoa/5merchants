@@ -1,11 +1,11 @@
 $(document).ready(function() {
-    var $navbar = $('.sticky-top');
-    var stickyOffset = $navbar.offset().top; 
+    var $navbar = $('#storeNav');
+    var stickyOffset = $navbar.offset().bottom; 
   
   
     function checkSticky() {
       var scrollPos = $(window).scrollTop(); 
-      
+
       if (scrollPos >= stickyOffset) {
         $navbar.removeClass('sticky-start'); 
         console.log('removed')
