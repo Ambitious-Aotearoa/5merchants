@@ -441,18 +441,7 @@ body{
 }
 
 
-.home{
-    #intro-section{
-        background-size: 50%;
 
-    }
-    @include media-breakpoint-up(xl){
-        .home-info{
-            max-width: 60%;
-            margin: 0 auto;
-        }
-    }
-}
 
 
 /////////////Store navigation
@@ -485,18 +474,27 @@ body{
 }
   
 ////////////main nav
+.no-scroll {
+    touch-action: none;
+    overflow: hidden;
+    width: 100%;
+}
 
-
-
-nav{
+.navbar{
+    background-color:#fff;
+    transition: background-color .2s ease-in;
     .container-fluid{
         position:relative
     }
     .navbar-brand{
-        position: absolute;
+        margin-right:0;
+        position:relative;
+
         .main-logo{
-            max-width: 300px;
+            width: 100%;
+            max-width: 280px;
             .text-color{
+                transition: fill .2s ease-in;
                 fill:$cust-teal
             }
             .shape-color{
@@ -504,4 +502,194 @@ nav{
             }
         }
     }
+
+    .navbar-toggler{
+        border-width:0;
+        &:focus{
+            box-shadow: none;
+        }
+    }
+  
+    #burger{
+        width: 20px;
+        height: 15px;
+        line{
+            stroke:$primary;
+            transition: all 0.3s ease-in-out;
+        }
+        .hide-me {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .line-top,
+        .line-bottom {
+            transform-origin: 50% 50%;
+        }
+
+        &.cross{
+            .hide-me {
+                opacity: 0;
+              }
+              .line-top {
+                transform: rotate(45deg) translateY(7px);
+              }
+              .line-bottom {
+                transform: rotate(-45deg) translateY(-7px);
+              }
+        }
+    }
+
+    .collapsing {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: height .5s ease;
+    }
+
+    .dropdown-menu{
+        background-color: transparent;
+        border-width: 0;
+    }
+
+
+    @include media-breakpoint-down(md){
+        .navbar-collapse{
+            transition: all .1s ease;
+            flex-direction: column;
+            justify-content: center;
+            ul{
+                opacity:0;
+                text-align: center;
+            }
+        }
+
+        .navbar-collapse.show{
+            display: flex;
+            height:calc(100vh - 160px);
+            overflow: scroll;
+            padding-bottom: 40px;
+            ul{
+                opacity:1;
+                transition: all .3s ease;
+            }
+        }
+
+        .nav-link{
+            font-size:1.2em;
+        }
+    }
+
+    @include media-breakpoint-down(sm){
+        .navbar-collapse{
+            justify-content: flex-start;
+        }
+    }
+
+    @include media-breakpoint-up(md){
+        .navbar-brand{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    .home.nav-color,
+    .nav-color{
+        .black-group.store-nav,
+        .navbar,
+        .navbar.sticky-start{
+            background-color:$cust-tan;
+            .navbar-brand{
+                .main-logo{
+                    .text-color{
+                        fill:$success
+                    }
+                }
+            }
+            .icon-cart,
+            #burger line{
+                fill:$primary;
+            }
+            a{
+                color:$primary
+            }
+        }
+    }
+}
+
+//////////////Footer///////////////
+
+footer{
+    .main-logo{
+        width: 100%;
+        max-width: 280px;
+        .text-color{
+            fill:$cust-tan;
+        }
+        .shape-color{
+            fill:$cust-red
+        }
+    }
+    hr{
+        border-color:$cust-blue-dark;
+        opacity:100%
+    }
+    ul a{
+        transition: opacity .2s ease-in;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    .socials{
+        margin-top:1em;
+        svg{
+            width: 2em;
+        }
+    }
+}
+
+//////////////Pages///////////////
+.home{
+    .navbar.sticky-start{
+        background-color: #000;
+        a{
+            color:#fff;
+        }
+        .navbar-brand{
+            .main-logo{
+                .text-color{
+                    fill:$cust-gold
+                }
+            }
+        }
+        #burger line{
+            stroke:$light;
+        }
+    }
+
+    &.nav-color{
+        a{
+            color:$primary;
+        }
+        .navbar.sticky-start{
+            #burger line{
+                stroke:$primary;
+            }
+        }
+    }
+
+    #intro-section{
+        background-size: 50%;
+
+    }
+    @include media-breakpoint-up(xl){
+        .home-info{
+            max-width: 60%;
+            margin: 0 auto;
+        }
+    }
+
 }

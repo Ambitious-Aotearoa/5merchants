@@ -1,4 +1,4 @@
-dateModified: 1728590857
+dateModified: 1728874589
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -25,7 +25,9 @@ meta:
     76b02431-821c-4e5a-8feb-24a34ccf143d: 'Air Weather Tightness' # Air Weather Tightness
     84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
     99fdf10d-97f6-495f-98fc-7cfb03613085: Products # Products
+    0270a788-112b-42a1-b46e-f57670144c94: Footer # Footer
     442c5688-214f-44ff-a60c-3451162e131f: New # New
+    551c2e50-7554-49f0-a36d-28193755ebb3: 'Page List' # Page List
     590e462c-d8f1-494d-a963-8c4e4a68e089: 'Cost Comparison' # Cost Comparison
     641b9b6a-a658-4713-a7d7-250782459f99: 'Tapes and Membranes' # Tapes and Membranes
     691a14f6-2d25-4d3c-a723-b93359a1710f: Home # Home
