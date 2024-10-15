@@ -1,0 +1,131 @@
+color: null
+fieldLayouts:
+  1426af9c-4978-4d5c-a4e3-b74578df8f75:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-10-14T22:42:27+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9bb43300-9e4d-4752-aad3-814639da9c2d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-14T23:45:54+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 29c21e2c-b874-43eb-9a98-319a20355d05
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-14T22:45:48+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 766667b6-d7a8-41ae-840d-a75633e7566a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-14T22:45:48+00:00'
+            elementCondition: null
+            fieldUid: 9c5edb31-d275-4b0d-88b7-a8f1395e194c # Button Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 803456d7-63cd-419e-a945-0f360812ec1b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-14T22:45:48+00:00'
+            elementCondition: null
+            fieldUid: 9642a918-c523-42c5-b282-682e9739bfc3 # Button Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c0cea6f-c946-4ec2-8aa2-f5bda50f4e15
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-14T22:45:48+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: bodyText2
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab314a31-318e-4918-a645-9b87abe8b0c6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 15e1b325-a41c-4514-8879-6a7966991d40
+        userCondition: null
+handle: applicationForCredit
+hasTitleField: false
+icon: ''
+name: 'Application for Credit'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Application for Credit'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

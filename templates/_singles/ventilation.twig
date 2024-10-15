@@ -6,7 +6,7 @@
 {% set page = craft.entries().section('ventilation').all() %} 
 {% block content %} 
     {% for entry in page %}     
-    <div class="conatined-content py-2 py-sm-vw-sm  teal-group">
+    <div class="conatined-content py-2 py-sm-vw-sm bg-cust-darkGrey">
         <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
 
             <div class="col col-12 col-sm-3 col-lg-4 d-flex flex-row justify-content-center align-items-center">
@@ -16,7 +16,7 @@
                 {% endif %}
             </div>
             <div class="col col-12 col-sm-8 col-lg-6 offset-sm-1 offset-lg-2">
-                <h1 class="text-cust-gold mb-2">{{entry.title}}</h1>
+                 {% if entry.heading4 %}<h1 class="text-cust-teal mb-2">{{entry.heading4}}</h1>{% endif %}
                 {% if entry.bodyText %}
                     {{entry.bodyText}}
                 {% endif %}

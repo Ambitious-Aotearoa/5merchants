@@ -36,6 +36,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-10-14T22:05:43+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: heading3
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a97cef44-327c-4730-ba86-fb31f73b0255
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-10-10T03:17:39+00:00'
             elementCondition: null
             fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
@@ -284,13 +300,13 @@ fieldLayouts:
         uid: 5393fa5f-39a9-4044-8b1f-991d4e4df039
         userCondition: null
 handle: airWeatherTightness
-hasTitleField: true
+hasTitleField: false
 icon: ''
 name: 'Air Weather Tightness'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: 'Air Weather Tightness'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

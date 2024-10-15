@@ -36,6 +36,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-10-14T22:09:29+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: heading4
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5329f6e6-d449-4999-954c-8b538b49a6d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-09-30T22:28:14+00:00'
             elementCondition: null
             fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
@@ -371,13 +387,13 @@ fieldLayouts:
         uid: 0683102c-9a39-4244-b842-0c9966a7b619
         userCondition: null
 handle: ventilation
-hasTitleField: true
+hasTitleField: false
 icon: ''
 name: Ventilation
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: Ventilation
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

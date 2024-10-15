@@ -5,6 +5,11 @@ headingLevels:
   - 5
   - 6
 name: Simple
+options:
+  alignment:
+    options:
+      - left
+      - right
 toolbar:
   - heading
   - '|'
@@ -12,3 +17,8 @@ toolbar:
   - italic
   - link
   - bulletedList
+  - numberedList
+  - sourceEditing
+  - alignment
+  - insertTable
+  - insertImage

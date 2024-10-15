@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - ada6ba17-6d3e-4acd-9b09-85f766f7c5d9 # Our Principles
+handle: ourPrinciples
+maxAuthors: 1
+name: 'Our Principles'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/our-principles.twig
+    uriFormat: about/our-principles
+type: single

@@ -10,11 +10,10 @@
 
     <div class="conatined-content py-2 py-md-vw-xs black-group" id="mouse-nav">
         <div class="contain d-flex flex-column flex-wrap align-items-center justify-content-sm-center">
-            <h1>{{entry.title}}</h1>
+             {% if entry.heading4 %}<h1 class="text-cust-tan">{{entry.heading4}}</h1>{% endif %}
             {% if entry.bodyText4 %}
                 <div class="py-3 py-hR-hR3 col-sm-6 col-lg-5 text-center">{{entry.bodyText4}}</div>
             {% endif %}
-         {% include '_partials/mouse.twig' %} 
         </div>
     </div>
 

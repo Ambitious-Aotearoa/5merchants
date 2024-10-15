@@ -1,4 +1,4 @@
-dateModified: 1728874589
+dateModified: 1728961648
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -13,9 +13,13 @@ fs:
     url: '@web/uploads/images'
 meta:
   __names__:
+    3f163a6d-baac-4678-b90a-eed6e1dd9196: 'Application for Credit' # Application for Credit
     4d60f25b-0a29-413f-99b1-0354ac86a120: Products # Products
     5a6f471d-5675-470e-b4c4-8c9ae3bccd79: 'Video Id' # Video Id
+    5e03ba35-e5e0-4af9-869a-529f1dd63cb1: 'Shipping Information' # Shipping Information
     6f1a7342-9f78-4116-82e8-9e404f749716: Dummy # Dummy
+    7a7c573a-b52f-4ed2-85bd-b325a11d47e1: 'Terms and Conditions' # Terms and Conditions
+    07f07bfe-ffce-48e8-af25-49716fb13bae: 'Privacy Policy' # Privacy Policy
     8ac5a722-9d84-4062-bf17-f6a9d545fae4: Windows # Windows
     8eb06e79-6854-43c5-b1cc-c57a7f265e37: 'Blower Door Testing' # Blower Door Testing
     9c5edb31-d275-4b0d-88b7-a8f1395e194c: 'Button Text' # Button Text
@@ -24,9 +28,12 @@ meta:
     24eb1896-db2f-464e-856b-a505a6f4629f: 'Product Group' # Product Group
     76b02431-821c-4e5a-8feb-24a34ccf143d: 'Air Weather Tightness' # Air Weather Tightness
     84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
+    097a2774-1050-4f30-9159-c2a4dc2522bf: News # News
     99fdf10d-97f6-495f-98fc-7cfb03613085: Products # Products
     0270a788-112b-42a1-b46e-f57670144c94: Footer # Footer
+    386e30cf-7b5a-4536-aacc-b88d9a4a30f3: 'Shipping Information' # Shipping Information
     442c5688-214f-44ff-a60c-3451162e131f: New # New
+    495d481a-b157-408f-8f5a-18a8150e3b96: 'News Entry' # News Entry
     551c2e50-7554-49f0-a36d-28193755ebb3: 'Page List' # Page List
     590e462c-d8f1-494d-a963-8c4e4a68e089: 'Cost Comparison' # Cost Comparison
     641b9b6a-a658-4713-a7d7-250782459f99: 'Tapes and Membranes' # Tapes and Membranes
@@ -35,21 +42,30 @@ meta:
     2284ed3a-e66c-4af9-9f3c-4be5caaa4b7c: Windows # Windows
     3291a89c-2f88-49a3-a831-8282d1f1fab3: 'FAQ Accordion' # FAQ Accordion
     6639e9de-ce38-4385-91b5-3b04ba49bdd3: 'Home Performance Audits' # Home Performance Audits
+    6726ca81-57af-48b8-aaef-d20e51931e67: 'Application for Credit' # Application for Credit
     8621b75a-0db6-47a4-bdaf-f4527740bc6f: 'Blower door testing' # Blower door testing
     9449be11-5059-426e-aa04-3e9f0e656298: Home # Home
     9642a918-c523-42c5-b282-682e9739bfc3: 'Button Link' # Button Link
     046855ef-71bb-4c67-a58a-356e4bd73c27: Heading # Heading
+    86300a96-00cf-4071-98b4-b26b23171ebb: Contact # Contact
     a04b1e42-d074-4541-911e-7a8e8d764cbd: 'Air Weather Tightness' # Air Weather Tightness
+    a983987f-3900-4cd1-a0af-c28243d17326: Contact # Contact
     aad57e69-bf90-44e2-8b57-e467ecbe68b6: 'Home performance audits' # Home performance audits
     ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
+    ada6ba17-6d3e-4acd-9b09-85f766f7c5d9: 'Our Principles' # Our Principles
+    c2aab953-b05e-4e4a-b684-26f43bc55c9e: News # News
     c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62: 'Body text' # Body text
     c128454f-a52d-4dc8-aa3e-e134fcd2c530: Ventilation # Ventilation
+    d91c5e6a-22b4-4624-9042-0dd7947b6434: 'Conditions Template' # Conditions Template
     dd740063-6fd9-4f30-b8fa-612a1fa57572: Primary # Primary
     df64e06f-db04-444c-80a3-516feb4328a6: 'Accordion Content' # Accordion Content
     dfc0fc09-36d4-4961-b69d-e21ddde95aaa: Media # Media
     e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da: Image # Image
+    e14df842-2c5b-4b75-9787-9fd3fc363a95: 'Our Principles' # Our Principles
+    e28bc234-8a06-42bf-aed4-a5466d27951a: 'News Entry' # News Entry
     ee608acd-9169-4cc6-87c7-187883459646: Media # Media
     f1f63221-8baf-45cd-b2f7-16f13e668ec5: Ventilation # Ventilation
+    fc5c2bca-dba7-4b21-853d-81aef8781415: 'Returns Policy' # Returns Policy
     fd47973c-b60e-4942-9426-ac73679b5b2b: Images # Images
     fd350744-0e46-410e-afa7-0477fa19889c: Simple # Simple
 plugins:

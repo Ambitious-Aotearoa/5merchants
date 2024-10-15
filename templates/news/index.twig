@@ -1,0 +1,25 @@
+{% extends '_layout' %}
+{% set bodyAttributes ={ class: "news-page" } %} 
+{% set docTitle = entry.title %} 
+
+{% set page = craft.entries().section('newsEntry')%}
+
+
+ {% block content %} 
+ <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs ">
+    <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap">
+        {% for entry in page %}               
+            <a href="{{entry.url}}" class="col col-12 col-sm-6 news-intro">
+                <h2 class="">{{entry.title}}</h2>
+                <div>
+                     {{ entry.bodyText|striptags|split('.')|first }}...
+                </div>
+
+                <div class="underline-btn mt-2 mt-hR-hR2">
+                    <p>Read more</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

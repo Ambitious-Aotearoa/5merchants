@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 6726ca81-57af-48b8-aaef-d20e51931e67 # Application for Credit
+handle: applicationForCredit
+maxAuthors: 1
+name: 'Application for Credit'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/application-for-credit.twig
+    uriFormat: application-for-credit
+type: single

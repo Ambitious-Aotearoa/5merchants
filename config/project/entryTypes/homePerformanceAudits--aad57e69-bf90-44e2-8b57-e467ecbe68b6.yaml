@@ -6,12 +6,21 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-10-07T21:20:47+00:00'
+            dateAdded: '2024-09-30T22:26:34+00:00'
             elementCondition: null
-            heading: 'First section'
-            type: craft\fieldlayoutelements\Heading
-            uid: 92b94907-1c8f-4eb7-aff1-3b8dc007f9f9
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1217df6b-1a39-4ca9-8f08-849f5e4e6d82
             userCondition: null
+            warning: null
+            width: 100
           -
             autocapitalize: true
             autocomplete: false
@@ -39,22 +48,6 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: ec846d84-199b-44a7-91c0-33feace644ea
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-09-30T22:26:34+00:00'
-            elementCondition: null
-            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 1217df6b-1a39-4ca9-8f08-849f5e4e6d82
             userCondition: null
             warning: null
             width: 100
@@ -449,13 +442,13 @@ fieldLayouts:
         uid: 100d26c4-2a04-4eb4-a5c4-f59a5aecd5df
         userCondition: null
 handle: homePerformanceAudits
-hasTitleField: true
+hasTitleField: false
 icon: ''
 name: 'Home performance audits'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: 'Home Performance Audits'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

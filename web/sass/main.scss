@@ -127,6 +127,7 @@ $theme-colors:map-merge($theme-colors, $new-colors);
 
 
 body{
+    overflow-x: hidden;
     font-size: 16px;
     p{
         text-wrap:pretty;
@@ -139,8 +140,11 @@ body{
         font-size:.8em
     }
 
-    h1, h2{
-        font-size: 1.8em
+    h1{
+        font-size: 2em
+    }
+    h2{
+        font-size: 1.6em
     }
     h3{
         font-size: 1.3em;
@@ -153,12 +157,39 @@ body{
         text-wrap:balance
     }
 
+    &.news-page,
+    &.news-entry,
+    &.basics-pages{
+        h1,h2,h3{
+            font-family:$body-font;
+            font-weight:400;
+        }
+        h2{
+            margin:1em 0;
+        }
+        ul.blog-list,
+        ul.side-nav{
+            li{
+                line-height:2em
+            }
+        }
+        ul.blog-list {
+            border-top:1px solid $cust-darkGrey;
+            li{
+                border-bottom:1px solid $cust-darkGrey;
+            }
+        }
+    }
+
     @include media-breakpoint-up(lg){
-        h1, h2{
+        h1{
             font-size: 2.5em
         }
+        h2{
+            font-size: 2em
+        }
         h3{
-            font-size: 1.5em
+            font-size: 1.3em
         }
     }
 
@@ -201,7 +232,7 @@ body{
     .underline-btn{
         display: flex;
         padding-bottom: .3em;
-  
+        p,
         a{
             text-decoration: none;
             border-bottom: 2px solid;
@@ -211,11 +242,6 @@ body{
             display: flex;;
 
         }
-        // @include media-breakpoint-down(sm){
-        //    a{
-        //     width: 100%;
-        //    }
-        // }
     }
 
     .bg-light-opacity{
@@ -228,6 +254,13 @@ body{
         .contain{
             max-width:calc(1366px - 6em);
             margin: 0 auto;
+            a:not(.underline-btn a, .btn, .news-page .conatined-content .contain a ){
+                transition:color .2s ease-in;
+                color:$cust-red;
+                &:hover{
+                    color:$primary
+                }
+            }
         }
 
         @include media-breakpoint-up(sm){
@@ -241,9 +274,6 @@ body{
             }
         }
     }
-
-
-
 
     .accordion{
         .accordion-item{
@@ -276,33 +306,41 @@ body{
         }
     }
 
-
-}
-
-
-.video{
-    aspect-ratio: 16 / 9;
-    width: 100%;
-}
-
-.bg-line{
-    img{
-        background-color: $light;
-        padding-bottom: 1em;
+    .ul-4-col{
+        column-count: 2;
+    
+        @include media-breakpoint-up(md){
+            column-count: 4;
+        }
     }
-    position: relative;
-    &:after{
-        content:'';
-        position: absolute;
-        width: 2px;
-        height: 100%;
-        background-color: $primary;
-        bottom:0;
-        left: calc(50% - 1px);
-        z-index: -1;
 
+    .video{
+        aspect-ratio: 16 / 9;
+        width: 100%;
+    }
+    
+    .bg-line{
+        img{
+            background-color: $light;
+            padding-bottom: 1em;
+        }
+        position: relative;
+        &:after{
+            content:'';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: $primary;
+            bottom:0;
+            left: calc(50% - 1px);
+            z-index: -1;
+    
+        }
     }
 }
+
+
+
 
 /////Padding combos
 @mixin container-pad($size-t, $size-r, $size-b, $size-l ) {
@@ -371,6 +409,24 @@ body{
             &:nth-of-type(6){
                 @include container-pad-sides(0,4em);
             }
+        }
+    }
+}
+
+.news-intro{
+    padding-bottom:2em;
+    &:last-of-type{
+        padding-bottom:0
+    }
+    @include media-breakpoint-up(sm){
+        @include container-pad-sides(2em,0);
+        &:nth-of-type(2n){
+            @include container-pad-sides(0, 2em);
+        }
+
+        &:nth-last-of-type(2),
+        &:last-of-type{
+            padding-bottom:0
         }
     }
 }
@@ -454,6 +510,7 @@ body{
         padding:0 1em;
         a{
             font-size: 14px;
+            color:#fff;
         }
     }
 }
@@ -474,11 +531,7 @@ body{
 }
   
 ////////////main nav
-.no-scroll {
-    touch-action: none;
-    overflow: hidden;
-    width: 100%;
-}
+
 
 .navbar{
     background-color:#fff;
@@ -486,22 +539,23 @@ body{
     .container-fluid{
         position:relative
     }
-    .navbar-brand{
-        margin-right:0;
-        position:relative;
+}
+.navbar-brand{
+    margin-right:0;
+    position:relative;
 
-        .main-logo{
-            width: 100%;
-            max-width: 280px;
-            .text-color{
-                transition: fill .2s ease-in;
-                fill:$cust-teal
-            }
-            .shape-color{
-                fill:$cust-red
-            }
+    .main-logo{
+        width: 100%;
+        max-width: 280px;
+        .text-color{
+            transition: fill .2s ease-in;
+            fill:$cust-teal
+        }
+        .shape-color{
+            fill:$cust-red
         }
     }
+}
 
     .navbar-toggler{
         border-width:0;
@@ -548,9 +602,22 @@ body{
     }
 
     .dropdown-menu{
-        background-color: transparent;
         border-width: 0;
+        border-radius:0;
+        .dropdown-item{
+            color:$primary;
+            &:focus-visible{
+                outline-offset:0;
+            }
+            &:hover,
+            &:focus,
+            &:active{
+                background-color:transparent;
+            }
+        }
     }
+
+
 
 
     @include media-breakpoint-down(md){
@@ -578,6 +645,42 @@ body{
         .nav-link{
             font-size:1.2em;
         }
+        .dropdown-menu{
+            background-color: transparent;
+            border-width: 0;
+        }
+
+        .no-scroll {
+            touch-action: none;
+            overflow: hidden;
+            width: 100%;
+        }
+        .home.nav-color,
+        .nav-color{
+            .black-group.store-nav,
+            .navbar,
+            .navbar.sticky-start{
+                background-color:$cust-tan;
+                .navbar-brand{
+                    .main-logo{
+                        opacity:0;
+                    }
+                }
+                .icon-cart,
+                #burger line{
+                    fill:$primary;
+                }
+                a{
+                    color:$primary
+                }
+            }
+    
+        }
+        .store-nav-hidden .navbar{
+            .navbar-collapse.show{
+                height:calc(100vh - 100px);
+            }
+        }
     }
 
     @include media-breakpoint-down(sm){
@@ -589,36 +692,12 @@ body{
     @include media-breakpoint-up(md){
         .navbar-brand{
             position: absolute;
-            width: 100%;
-            text-align: center;
+            width: 200px;
+            left:calc(50% - 100px)
+            
         }
     }
-}
 
-@include media-breakpoint-down(md){
-    .home.nav-color,
-    .nav-color{
-        .black-group.store-nav,
-        .navbar,
-        .navbar.sticky-start{
-            background-color:$cust-tan;
-            .navbar-brand{
-                .main-logo{
-                    .text-color{
-                        fill:$success
-                    }
-                }
-            }
-            .icon-cart,
-            #burger line{
-                fill:$primary;
-            }
-            a{
-                color:$primary
-            }
-        }
-    }
-}
 
 //////////////Footer///////////////
 
@@ -655,7 +734,7 @@ footer{
 .home{
     .navbar.sticky-start{
         background-color: #000;
-        a{
+        .nav-link{
             color:#fff;
         }
         .navbar-brand{
@@ -685,6 +764,19 @@ footer{
         background-size: 50%;
 
     }
+
+    @include media-breakpoint-up(lg){
+        h1{
+            font-size: 2.6em
+        }
+        h2{
+            font-size: 2.4em
+        }
+
+        h3{
+            font-size: 1.5em
+        }
+    }
     @include media-breakpoint-up(xl){
         .home-info{
             max-width: 60%;
@@ -692,4 +784,50 @@ footer{
         }
     }
 
+}
+
+.contact,
+.our-principles{
+    .contain{
+        h1, h2{
+            color:$cust-red;
+        }
+    }
+}
+
+
+.shipping-information {
+    .table, table{
+        width: 100%;
+    }
+    tbody{
+        width: 100%;
+        tr{
+            width: 100%;
+            background-color: $cust-lightGrey;
+            border-bottom-width:0;
+            &:nth-of-type(2n){
+                background-color: $light;
+            }
+            td{
+                padding:.5em;
+            }
+        }
+    }
+}
+
+
+.news-page{
+    .contain{
+        h2{
+            color:$cust-red;
+        }
+    }
+}
+.news-entry{
+    .contain{
+        h1{
+            color:$cust-red;
+        }
+    }
 }

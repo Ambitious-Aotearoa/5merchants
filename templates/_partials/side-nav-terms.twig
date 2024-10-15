@@ -1,0 +1,20 @@
+<h3 class="mb-2 mb-hR-hR2">In this section</h3>
+{% set relatedEntries = footer.pageList.all() %}
+    {% if relatedEntries|length %}
+    <ul class="list-unstyled side-nav">
+        {% for rel in relatedEntries %}
+        <li><a href="{{ rel.url }}">{{ rel.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+<h3 class="my-2 my-hR-hR2">Latest News</h3>
+{% set relatedEntries = footer.pageList.all() %}
+    {% if relatedEntries|length %}
+    <ul class="list-unstyled blog-list">
+        {% for rel in relatedEntries %}
+        <li><a href="{{ rel.url }}">{{ rel.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}

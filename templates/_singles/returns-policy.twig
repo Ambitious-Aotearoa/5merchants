@@ -1,0 +1,25 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "returns-policy basics-pages" } %} 
+{% set docTitle = entry.title %} 
+{# {% set metaDesc = entry.metaDescription %}  #}
+
+{% set page = craft.entries().section('returnsPolicy').all() %} 
+{% block content %} 
+    {% for entry in page %} 
+        <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs ">
+            <div class="contain d-flex flex-column flex-sm-row">
+                <div class="col col-12 col-sm-8">
+                    {% if entry.heading %} 
+                        <h1 class="mb-2 mb-hR-hR2">{{entry.heading}}</h1>
+                    {% endif %} 
+                    {% if entry.bodyText %} 
+                        <div>{{entry.bodyText}}</div>
+                    {% endif %} 
+                </div>
+                <div class="col col-12 col-sm-3 offset-sm-1 ps-md-1">
+                    {% include '_partials/side-nav-terms.twig' %}
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+{% endblock %}

@@ -403,13 +403,13 @@ fieldLayouts:
         uid: ee27f8c1-fbdb-4ae5-9984-9a77279e367a
         userCondition: null
 handle: blowerDoorTesting
-hasTitleField: true
+hasTitleField: false
 icon: ''
 name: 'Blower door testing'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: 'Blower Door Testing'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

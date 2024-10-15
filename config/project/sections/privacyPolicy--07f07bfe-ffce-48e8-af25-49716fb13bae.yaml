@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - d91c5e6a-22b4-4624-9042-0dd7947b6434 # Conditions Template
+handle: privacyPolicy
+maxAuthors: 1
+name: 'Privacy Policy'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/privacy-policy.twig
+    uriFormat: privacy-policy
+type: single

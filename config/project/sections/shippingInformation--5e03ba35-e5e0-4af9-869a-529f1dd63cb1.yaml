@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 386e30cf-7b5a-4536-aacc-b88d9a4a30f3 # Shipping Information
+handle: shippingInformation
+maxAuthors: 1
+name: 'Shipping Information'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/shipping-information.twig
+    uriFormat: shipping-information
+type: single

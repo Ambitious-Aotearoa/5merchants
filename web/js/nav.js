@@ -1,16 +1,22 @@
 $(document).ready(function() {
-    var $navbar = $('#storeNav');
-    var stickyOffset = $navbar.offset().bottom; 
-  
+
+    var navStore = $('#storeNav');
+    var $navbar = $('.sticky-top');
+
   
     function checkSticky() {
       var scrollPos = $(window).scrollTop(); 
+      var navStoreBottom = navStore.offset().top + navStore.outerHeight();
 
-      if (scrollPos >= stickyOffset) {
+
+      if (scrollPos >= navStoreBottom) {
         $navbar.removeClass('sticky-start'); 
+        $('body').addClass('store-nav-hidden'); 
         console.log('removed')
       } else {
         $navbar.addClass('sticky-start'); 
+        $('body').removeClass('store-nav-hidden'); 
+        console.log('added')
       }
     }
   
