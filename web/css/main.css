@@ -4527,7 +4527,7 @@ textarea.form-control-lg {
   --bs-dropdown-min-width: 10rem;
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 0.5rem;
-  --bs-dropdown-spacer: 0.125rem;
+  --bs-dropdown-spacer: 25px;
   --bs-dropdown-font-size: 1rem;
   --bs-dropdown-color: var(--bs-body-color);
   --bs-dropdown-bg: var(--bs-body-bg);
@@ -5070,7 +5070,7 @@ textarea.form-control-lg {
   --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
   --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
   --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-active-color: #4c7c7b;
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
@@ -18659,12 +18659,118 @@ body .bg-line:after {
   right: 0;
 }
 
+footer .main-logo {
+  width: 100%;
+  max-width: 280px;
+}
+footer .main-logo .text-color {
+  fill: #CEC09F;
+}
+footer .main-logo .shape-color {
+  fill: #ff503c;
+}
+footer hr {
+  border-color: #3c5a66;
+  opacity: 100%;
+}
+footer ul a {
+  transition: opacity 0.2s ease-in;
+}
+footer ul a:hover {
+  opacity: 0.7;
+}
+footer .socials {
+  margin-top: 1em;
+}
+footer .socials svg {
+  width: 2em;
+}
+
+.home .navbar.sticky-start {
+  background-color: #000;
+}
+.home .navbar.sticky-start .nav-link {
+  color: #fff;
+}
+.home .navbar.sticky-start .navbar-brand .main-logo .text-color {
+  fill: #E3C7A1;
+}
+.home .navbar.sticky-start #burger line {
+  stroke: #fff;
+}
+.home #intro-section {
+  background-size: 50%;
+}
+@media (min-width: 768px) {
+  .home .navbar.sticky-start .dropdown-menu.show {
+    background-color: #000;
+  }
+  .home .navbar.sticky-start .dropdown-menu.show li a {
+    color: #fff;
+  }
+}
+@media (min-width: 1366px) {
+  .home h1, .home .h1 {
+    font-size: 2.6em;
+  }
+  .home h2, .home .h2 {
+    font-size: 2.4em;
+  }
+  .home h3, .home .h3 {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1600px) {
+  .home .home-info {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+
+.contact .contain h1, .contact .contain .h1, .contact .contain h2, .contact .contain .h2,
+.our-principles .contain h1,
+.our-principles .contain .h1,
+.our-principles .contain h2,
+.our-principles .contain .h2 {
+  color: #ff503c;
+}
+
+.shipping-information .table, .shipping-information table {
+  width: 100%;
+}
+.shipping-information tbody {
+  width: 100%;
+}
+.shipping-information tbody tr {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-bottom-width: 0;
+}
+.shipping-information tbody tr:nth-of-type(2n) {
+  background-color: #fff;
+}
+.shipping-information tbody tr td {
+  padding: 0.5em;
+}
+
+.news-page .contain h2, .news-page .contain .h2 {
+  color: #ff503c;
+}
+
+.news-entry .contain h1, .news-entry .contain .h1 {
+  color: #ff503c;
+}
+
 .navbar {
   background-color: #fff;
   transition: background-color 0.2s ease-in;
 }
 .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl, .navbar .container-xxl {
   position: relative;
+}
+
+.nav-link {
+  color: #000;
 }
 
 .navbar-brand {
@@ -18741,11 +18847,9 @@ body .bg-line:after {
   .navbar-collapse {
     transition: all 0.1s ease;
     flex-direction: column;
-    justify-content: center;
   }
   .navbar-collapse ul {
     opacity: 0;
-    text-align: center;
   }
   .navbar-collapse.show {
     display: flex;
@@ -18755,7 +18859,7 @@ body .bg-line:after {
   }
   .navbar-collapse.show ul {
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   .nav-link {
     font-size: 1.2em;
@@ -18764,56 +18868,45 @@ body .bg-line:after {
     background-color: transparent;
     border-width: 0;
   }
+  .dropdown-menu[data-bs-popper] {
+    margin-top: 0px !important;
+  }
+  .store-nav-hidden .navbar .navbar-collapse.show {
+    height: calc(100vh - 100px);
+  }
   .no-scroll {
     touch-action: none;
     overflow: hidden;
     width: 100%;
   }
-  .home.nav-color .black-group.store-nav,
-  .home.nav-color .navbar,
-  .home.nav-color .navbar.sticky-start,
-  .nav-color .black-group.store-nav,
-  .nav-color .navbar,
-  .nav-color .navbar.sticky-start {
+  .no-scroll #storeNav {
     background-color: #CEC09F;
   }
-  .home.nav-color .black-group.store-nav .navbar-brand .main-logo,
-  .home.nav-color .navbar .navbar-brand .main-logo,
-  .home.nav-color .navbar.sticky-start .navbar-brand .main-logo,
-  .nav-color .black-group.store-nav .navbar-brand .main-logo,
-  .nav-color .navbar .navbar-brand .main-logo,
-  .nav-color .navbar.sticky-start .navbar-brand .main-logo {
-    opacity: 0;
-  }
-  .home.nav-color .black-group.store-nav .icon-cart,
-  .home.nav-color .black-group.store-nav #burger line,
-  .home.nav-color .navbar .icon-cart,
-  .home.nav-color .navbar #burger line,
-  .home.nav-color .navbar.sticky-start .icon-cart,
-  .home.nav-color .navbar.sticky-start #burger line,
-  .nav-color .black-group.store-nav .icon-cart,
-  .nav-color .black-group.store-nav #burger line,
-  .nav-color .navbar .icon-cart,
-  .nav-color .navbar #burger line,
-  .nav-color .navbar.sticky-start .icon-cart,
-  .nav-color .navbar.sticky-start #burger line {
+  .no-scroll #storeNav ul li a,
+  .no-scroll #storeNav .icon-cart {
     fill: #000;
-  }
-  .home.nav-color .black-group.store-nav a,
-  .home.nav-color .navbar a,
-  .home.nav-color .navbar.sticky-start a,
-  .nav-color .black-group.store-nav a,
-  .nav-color .navbar a,
-  .nav-color .navbar.sticky-start a {
     color: #000;
   }
-  .store-nav-hidden .navbar .navbar-collapse.show {
-    height: calc(100vh - 100px);
+  .no-scroll .navbar,
+  .no-scroll .navbar.sticky-start {
+    background-color: #CEC09F;
   }
-}
-@media (max-width: 767.98px) {
-  .navbar-collapse {
-    justify-content: flex-start;
+  .no-scroll .navbar .dropdown-toggle.show,
+  .no-scroll .navbar.sticky-start .dropdown-toggle.show {
+    color: #4c7c7b;
+    font-weight: 500;
+  }
+  .no-scroll .navbar .nav-link,
+  .no-scroll .navbar.sticky-start .nav-link {
+    color: #000;
+  }
+  .no-scroll .navbar .navbar-brand .main-logo .text-color,
+  .no-scroll .navbar.sticky-start .navbar-brand .main-logo .text-color {
+    fill: #4c7c7b;
+  }
+  .no-scroll .navbar #burger line,
+  .no-scroll .navbar.sticky-start #burger line {
+    stroke: #000;
   }
 }
 @media (min-width: 1024px) {
@@ -18822,105 +18915,15 @@ body .bg-line:after {
     width: 200px;
     left: calc(50% - 100px);
   }
-}
-footer .main-logo {
-  width: 100%;
-  max-width: 280px;
-}
-footer .main-logo .text-color {
-  fill: #CEC09F;
-}
-footer .main-logo .shape-color {
-  fill: #ff503c;
-}
-footer hr {
-  border-color: #3c5a66;
-  opacity: 100%;
-}
-footer ul a {
-  transition: opacity 0.2s ease-in;
-}
-footer ul a:hover {
-  opacity: 0.7;
-}
-footer .socials {
-  margin-top: 1em;
-}
-footer .socials svg {
-  width: 2em;
-}
-
-.home .navbar.sticky-start {
-  background-color: #000;
-}
-.home .navbar.sticky-start .nav-link {
-  color: #fff;
-}
-.home .navbar.sticky-start .navbar-brand .main-logo .text-color {
-  fill: #E3C7A1;
-}
-.home .navbar.sticky-start #burger line {
-  stroke: #fff;
-}
-.home.nav-color a {
-  color: #000;
-}
-.home.nav-color .navbar.sticky-start #burger line {
-  stroke: #000;
-}
-.home #intro-section {
-  background-size: 50%;
-}
-@media (min-width: 1366px) {
-  .home h1, .home .h1 {
-    font-size: 2.6em;
+  .dropdown-menu {
+    padding: 1em;
   }
-  .home h2, .home .h2 {
-    font-size: 2.4em;
+  .dropdown-menu .dropdown-item {
+    padding-bottom: 1em;
   }
-  .home h3, .home .h3 {
-    font-size: 1.5em;
+  .dropdown-toggle.show {
+    font-weight: 500;
   }
-}
-@media (min-width: 1600px) {
-  .home .home-info {
-    max-width: 60%;
-    margin: 0 auto;
-  }
-}
-
-.contact .contain h1, .contact .contain .h1, .contact .contain h2, .contact .contain .h2,
-.our-principles .contain h1,
-.our-principles .contain .h1,
-.our-principles .contain h2,
-.our-principles .contain .h2 {
-  color: #ff503c;
-}
-
-.shipping-information .table, .shipping-information table {
-  width: 100%;
-}
-.shipping-information tbody {
-  width: 100%;
-}
-.shipping-information tbody tr {
-  width: 100%;
-  background-color: #f2f2f2;
-  border-bottom-width: 0;
-}
-.shipping-information tbody tr:nth-of-type(2n) {
-  background-color: #fff;
-}
-.shipping-information tbody tr td {
-  padding: 0.5em;
-}
-
-.news-page .contain h2, .news-page .contain .h2 {
-  color: #ff503c;
-}
-
-.news-entry .contain h1, .news-entry .contain .h1 {
-  color: #ff503c;
 }
 
 /*# sourceMappingURL=main.css.map */

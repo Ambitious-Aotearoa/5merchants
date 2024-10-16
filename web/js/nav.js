@@ -25,18 +25,29 @@ $(document).ready(function() {
 
 
 
+
+
+    const body = $('body');
     const navbar = $('.navbar');
     const burger = $('#burger'); 
     const toggler = $('.navbar-toggler');
     const navCollapse = $('#navbarNavDropdown'); 
-  
-    $('.navbar-collapse').on('show.bs.collapse', () => navbar.addClass('nav-change'));
-    $('.navbar-collapse').on('hide.bs.collapse', () => navbar.removeClass('nav-change'));
-  
-
+    
+   
+    $('.navbar-collapse').on('show.bs.collapse', () => body.addClass('no-scroll'));
+    $('.navbar-collapse').on('hide.bs.collapse', () => body.removeClass('no-scroll'));
+    
+    
     toggler.on('click', () => burger.toggleClass('cross'));
-  
-    // // Prevent scrolling when the navbar is expanded
-    navCollapse.on('show.bs.collapse', () => $('body').addClass('nav-color no-scroll'));
-    navCollapse.on('hidden.bs.collapse', () => $('body').removeClass('nav-color no-scroll'));
+    
+    $(window).on('resize', () => {
+      if ($(window).width() >= 768) {
+        body.removeClass('no-scroll');
+        burger.removeClass('cross'); 
+        if (navCollapse.hasClass('show')) {
+          navCollapse.collapse('hide');
+        }
+      }
+    });
+    
   });
