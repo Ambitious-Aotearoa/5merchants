@@ -409,6 +409,44 @@ fieldLayouts:
         name: Content
         uid: 4096d7cc-4e8f-458e-b247-c28a1bc4d9c1
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-10-29T22:13:49+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: image9
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d0264768-88ff-495c-9e2c-764b524a482e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-29T22:17:45+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: heading5
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d7874621-958b-45c7-a212-25bf7d4a1d1b
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Homepage - Explore Our Services Section'
+        uid: 9aae3b9b-ccc3-410b-b08f-66e87aa7814e
+        userCondition: null
 handle: windows
 hasTitleField: false
 icon: ''

@@ -1,8 +1,8 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - c2aab953-b05e-4e4a-b684-26f43bc55c9e # News
-handle: News
+  - 6931674c-a2a8-4db1-8762-2c5d2d78aad3 # News page
+handle: news
 maxAuthors: 1
 name: News
 previewTargets:

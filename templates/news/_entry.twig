@@ -5,7 +5,7 @@
 
 
 {% block content %} 
-        <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs ">
+        <div class="contained-content py-4  py-sm-vw-sm py-md-vw-xs ">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-12 col-sm-4">
                 {% if entry.title %} 
@@ -15,8 +15,12 @@
 
             </div>
              <div class="col col-12 col-sm-8 ps-sm-2 ps-hR-hR2">
+             {% set img = entry.image.one() %}
+                {% if img %}
+                    <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
+                {% endif %}
                 {% if entry.bodyText %} 
-                    <div>{{entry.bodyText}}</div>
+                    <div class="mt-2">{{entry.bodyText}}</div>
                 {% endif %}
              </div>
         </div>

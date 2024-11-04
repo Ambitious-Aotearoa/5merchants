@@ -6,7 +6,7 @@
 {% set page = craft.entries().section('windows').all() %} 
 {% block content %} 
     {% for entry in page %}     
-    <div class="conatined-content py-2 py-sm-vw-sm  teal-group" id="mouse-nav">
+    <div class="contained-content py-2 py-sm-vw-sm  teal-group" id="mouse-nav">
         <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
 
             <div class="col col-12 col-sm-3 col-lg-4 d-flex flex-row justify-content-center align-items-center">
@@ -30,7 +30,7 @@
         </div>
     </div>
     
-    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content py-4  py-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-12 col-sm-5 col-md-6 col-lg-7 py-sm-vw-xs">
                 {% if entry.bodyText2 %}
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    {# <div class="conatined-content sm-cc  pb-4 pb-sm-0 pt-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content sm-cc  pb-4 pb-sm-0 pt-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row flex-sm-wrap four-col-padding">
             <div class="col-12">
                 {% if entry.heading3 %}
@@ -77,9 +77,9 @@
                 </div>
             {% endfor %}
         </div> 
-    </div>  #}
+    </div> 
 
-    <div class="conatined-content py-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content py-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column">
             {% if entry.heading %}
                 <h2 class="mb-vw-xs">{{entry.heading}}</h2>
@@ -139,7 +139,7 @@
     </div>
 
 
-    <div class="conatined-content  py-2  py-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content  py-2  py-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
 
             <div class="col col-12 col-sm-6 col-md-5 col-lg-4  img-fit-wrapper mb-2 mb-sm-0">
@@ -151,13 +151,13 @@
 
             <div class="col col-12 col-sm-6  offset-md-1 px-sm-2 px-md-0  py-sm-vw-xs">
                 <div class="d-flex flex-column flex-md-row">
-                    <div class="mb-1 mb-md-0 pe-md-1">
+                    <div class="mb-1 mb-md-0 pe-md-1 col-sm-6">
                         {% set img = entry.image7.one() %}
                         {% if img %}
                             <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
                         {% endif %}
                     </div>
-                    <div class="mb-1 mb-sm-0 ps-md-1">
+                    <div class="mb-1 mb-sm-0 ps-md-1 col-sm-6">
                         {% set img = entry.image8.one() %}
                         {% if img %}
                             <img src="{{img.getUrl}}" alt="{{img.alt}}" class="img-fluid">
@@ -179,7 +179,7 @@
         </div>
     </div>
 
-    <div class="conatined-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
+    <div class="contained-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
         <div class="contain d-flex flex-column flex-md-row">
 
             <div class="col col-12 col-md-6 col-lg-5  mb-2 mb-sm-0 pe-sm-2  pe-md-3">

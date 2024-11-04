@@ -1,0 +1,11 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "shop product" } %} 
+{% set docTitle = product.title %} 
+
+{% block content %} 
+
+             {# <li><a href="{{ siteUrl("shop/#{product.type.handle}") }}">{{ product.type.name }}</a></li> #}
+<h1>{{ product.title}}</h1>
+
+
+{% endblock %}

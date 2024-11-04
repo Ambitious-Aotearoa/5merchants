@@ -1,0 +1,103 @@
+
+{# Fetch products for the current page #}
+{% set productsQuery = craft.products().limit(1) %}
+{% paginate productsQuery as pageInfo, products %}
+    
+<div class="contained-content  pb-2 pb-md-vw-xs">
+    <div class="contain d-flex flex-column flex-md-row">
+        <div class="col-12 col-md-4">
+            <ul class="list-unstyled">
+            {% nav category in categories %}
+                <li>
+                <a href="{{ category.url }}">{{ category.title }}</a>
+                {% ifchildren %}
+                    <ul>
+                    {% children %}
+                    </ul>
+                {% endifchildren %}
+                </li>
+            {% endnav %}
+            </ul>
+        </div>
+
+        <div class="col-12 col-md-8 ">
+            <div class="d-flex flex-column flex-md-row">
+                {% for product in products %}
+                <a class="col-12 col-sm-2 col-md-4 mb-2 p-sm-1" href="{{ product.url }}">
+                    {% set enabledVariants = product.variants %}
+                    {% set defaultVariant = enabledVariants | filter(v => v.enabled and v.isDefault) | first %}
+                    {% if defaultVariant %}
+                        {% set img = defaultVariant.image.one() %}
+                        {% if img %}
+                            <img src="{{ img.getUrl }}" alt="{{ img.alt }}" class="img-fluid mb-1">
+                        {% endif %}
+                    {% endif %}
+
+                    <h2 class="text-primary">{{ product.title }}</h2>
+                    {% if product.bodyText2 %}
+                        <div class="brand">{{ product.bodyText2 }}</div>
+                    {% endif %}
+
+                    <div class="price d-flex flex-row">
+                        {% set prices = enabledVariants | map(v => v.price) | sort %}
+
+                        {% if prices|length == 1 %}
+                            <p>${{ prices[0] | number_format(2, '.', ',') }} exc NZ GST</p>
+                        {% else %}
+                            <p>${{ prices[prices|length - 1] | number_format(2, '.', ',') }} - ${{ prices[0] | number_format(2, '.', ',') }} <span class="text-primary">exc NZ GST</span></p>
+                        {% endif %}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+            {# Pagination controls #}
+            <div class="pagination d-flex  flex-md-row">
+                {# <nav role="navigation" aria-label="Search result pagination">
+                    {% if pageInfo.getPrevUrl() %}
+                        <a href="{{ pageInfo.getPrevUrl() }}">Previous Page</a>
+                    {% endif %}
+
+                    {{pageInfo.totalPages}}
+
+
+                    {% if pageInfo.getNextUrl() %}
+                        <a href="{{ pageInfo.getNextUrl() }}">Next Page</a>
+                    {% endif %}
+                </nav> #}
+
+                <nav role="navigation" aria-label="Search result pagination">
+
+
+                    <ul class="pagination d-flex flex-row">
+
+                        <li>
+                            {% if pageInfo.getPrevUrl() %}
+                                <a href="{{ pageInfo.getPrevUrl() }}">Previous Page</a>
+                            {% endif %} 
+                        </li>
+
+                        {% for page in 1..pageInfo.totalPages %}
+                            <li>
+                                {% if pageInfo.currentPage == page %}
+                                    <strong>{{ page }}</strong> {# Highlight current page #}
+                                {% else %}
+                                    <a href="{{ pageInfo.getPageUrl(page) }}">{{ page }}</a> {# Link to the page #}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+
+                        <li>
+                            {% if pageInfo.getNextUrl() %}
+                                <a href="{{ pageInfo.getNextUrl() }}">Next Page</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>        

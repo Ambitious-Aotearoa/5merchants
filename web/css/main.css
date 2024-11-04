@@ -18274,16 +18274,24 @@ body p strong {
 body .sm-p p {
   font-size: 0.8em;
 }
-body h1, body .h1 {
+body .h1-style,
+body h1,
+body .h1 {
   font-size: 2em;
 }
-body h2, body .h2 {
+body .h2-style,
+body h2,
+body .h2 {
   font-size: 1.6em;
 }
-body h3, body .h3 {
+body .h3-style,
+body h3,
+body .h3 {
   font-size: 1.3em;
 }
-body h3.body-font, body .body-font.h3 {
+body .h3-style.body-font,
+body h3.body-font,
+body .body-font.h3 {
   font-size: 1.3em;
 }
 body h1, body .h1, body h2, body .h2, body h3, body .h3 {
@@ -18309,13 +18317,19 @@ body.news-page ul.blog-list li, body.news-entry ul.blog-list li, body.basics-pag
   border-bottom: 1px solid #c7c8ca;
 }
 @media (min-width: 1366px) {
-  body h1, body .h1 {
+  body .h1-style,
+  body h1,
+  body .h1 {
     font-size: 2.5em;
   }
-  body h2, body .h2 {
+  body .h2-style,
+  body h2,
+  body .h2 {
     font-size: 2em;
   }
-  body h3, body .h3 {
+  body .h3-style,
+  body h3,
+  body .h3 {
     font-size: 1.3em;
   }
 }
@@ -18370,29 +18384,32 @@ body .underline-btn a {
 body .bg-light-opacity {
   background-color: rgba(255, 255, 255, 0.3);
 }
-body .conatined-content {
+body .contained-content {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
-body .conatined-content .contain {
+body .contained-content .contain {
   max-width: calc(1366px - 6em);
   margin: 0 auto;
 }
-body .conatined-content .contain a:not(.underline-btn a, .btn, .news-page .conatined-content .contain a) {
+body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a) {
   transition: color 0.2s ease-in;
   color: #ff503c;
 }
-body .conatined-content .contain a:not(.underline-btn a, .btn, .news-page .conatined-content .contain a):hover {
+body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a):hover {
   color: #000;
 }
+body .contained-content .contain .underline-btn a:hover, body .contained-content .contain .btn:hover, body .contained-content .contain .news-page .contained-content .contain a:hover, body .contained-content .contain ul li a:hover {
+  color: #ff503c;
+}
 @media (min-width: 768px) {
-  body .conatined-content {
+  body .contained-content {
     padding-left: 3em;
     padding-right: 3em;
   }
 }
 @media (min-width: 3480px) {
-  body .conatined-content .contain {
+  body .contained-content .contain {
     max-width: 2400px;
   }
 }
@@ -18657,6 +18674,16 @@ body .bg-line:after {
   transition: transform 0.5s ease-out;
   max-width: 50%;
   right: 0;
+}
+
+.shop-products h1, .shop-products .h1 {
+  color: #ff503c;
+}
+.shop-products a h2, .shop-products a .h2 {
+  font-size: 1.1em;
+}
+.shop-products a .brand p {
+  color: #000;
 }
 
 footer .main-logo {
@@ -18924,6 +18951,82 @@ footer .socials svg {
   .dropdown-toggle.show {
     font-weight: 500;
   }
+}
+.swiper .swiper-slide {
+  height: unset;
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  top: calc(100% - 8px);
+}
+.swiper .swiper-button-prev:after,
+.swiper .swiper-button-next:after {
+  display: none;
+}
+.swiper .swiper-button-prev .arrow,
+.swiper .swiper-button-next .arrow {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
+.swiper .swiper-button-prev {
+  left: 0;
+}
+.swiper .swiper-button-next {
+  right: 0;
+}
+@media (min-width: 3480px) {
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    width: 60px;
+    height: 60px;
+    top: calc(100% - 40px);
+  }
+  .swiper .swiper-button-prev .arrow,
+  .swiper .swiper-button-next .arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.home-info {
+  position: relative;
+}
+.home-info .Graphic_x0020_Style {
+  fill: none;
+}
+.home-info .st0 {
+  fill: #f0f0f0;
+}
+.home-info .st1 {
+  fill: #E3C7A1;
+}
+.home-info .st2 {
+  fill: #D6D6D6;
+}
+.home-info .st3 {
+  fill: #A7A9AC;
+}
+.home-info .st4 {
+  fill: #4C7C7B;
+}
+.home-info .st5 {
+  fill: #F26848;
+}
+.home-info .st6 {
+  fill: #999999;
+}
+.home-info #diagram {
+  position: relative;
+}
+.home-info .main {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -142,12 +142,17 @@ body{
         font-size:.8em
     }
 
+    .h1-style,
     h1{
         font-size: 2em
     }
+
+    .h2-style,
     h2{
         font-size: 1.6em
     }
+
+    .h3-style,
     h3{
         font-size: 1.3em;
         &.body-font{
@@ -158,6 +163,8 @@ body{
     h1,h2,h3{
         text-wrap:balance
     }
+
+
 
     &.news-page,
     &.news-entry,
@@ -184,12 +191,15 @@ body{
     }
 
     @include media-breakpoint-up(lg){
+        .h1-style,
         h1{
             font-size: 2.5em
         }
+        .h2-style,
         h2{
             font-size: 2em
         }
+        .h3-style,
         h3{
             font-size: 1.3em
         }
@@ -250,17 +260,22 @@ body{
         background-color:rgba(255,255,255,.3)
     }
 
-    .conatined-content{
+    .contained-content{
         padding-left:1.5em;
         padding-right:1.5em;
         .contain{
             max-width:calc(1366px - 6em);
             margin: 0 auto;
-            a:not(.underline-btn a, .btn, .news-page .conatined-content .contain a ){
+            a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a ){
                 transition:color .2s ease-in;
                 color:$cust-red;
                 &:hover{
                     color:$primary
+                }
+            }
+            .underline-btn a, .btn, .news-page .contained-content .contain a, ul li a{
+                &:hover{
+                    color:$cust-red
                 }
             }
         }
@@ -340,6 +355,13 @@ body{
         }
     }
 }
+
+
+
+
+
+
+
 
 
 
@@ -531,6 +553,23 @@ body{
         right:0;
     }
 }
+
+
+.shop-products{
+    h1{
+        color:$cust-red;
+    }
+
+        a{
+            h2{
+                font-size: 1.1em;
+            }
+            .brand p{
+                color:$primary; 
+            }
+        }
+
+    }
   
 
 
@@ -865,5 +904,71 @@ footer{
 
     .dropdown-toggle.show{
         font-weight:500;
+    }
+}
+
+.swiper{
+    .swiper-slide{
+        height:unset;
+    }
+    
+    .swiper-button-prev,
+    .swiper-button-next{
+        width:30px;
+        height: 30px;
+        background-color: $primary;
+        top:calc(100% - 8px);
+        &:after{
+            display: none;
+        }
+        .arrow{
+            fill:$light;
+            width: 20px;
+            height:20px
+        }
+    }
+    .swiper-button-prev{
+        left:0
+    }
+    .swiper-button-next{
+        right:0;
+    }
+
+    @include media-breakpoint-up(hR){
+        .swiper-button-prev,
+        .swiper-button-next{
+            width:60px;
+            height: 60px;
+            top:calc(100% - 40px);
+            .arrow{
+                width: 40px;
+                height:40px
+            }
+        }
+    }
+}
+
+
+
+
+.home-info{
+    position: relative;
+    .Graphic_x0020_Style{fill:none;}
+    .st0{fill:#f0f0f0;}
+    .st1{fill:#E3C7A1;}
+    .st2{fill:#D6D6D6;}
+    .st3{fill:#A7A9AC;}
+    .st4{fill:#4C7C7B;}
+    .st5{fill:#F26848;}
+    .st6{fill:#999999;}
+
+    #diagram{
+        position: relative;
+    }
+    .main{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0
     }
 }

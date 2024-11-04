@@ -3,10 +3,12 @@
 {% set docTitle = entry.title %} 
 {# {% set metaDesc = entry.metaDescription %}  #}
 
+
+
 {% set page = craft.entries().section('airWeatherTightness').all() %} 
 {% block content %} 
     {% for entry in page %}     
-    <div class="conatined-content py-2 py-sm-vw-sm  black-group">
+    <div class="contained-content py-2 py-sm-vw-sm  black-group">
         <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
 
             <div class="col col-12 col-sm-3 col-lg-4 d-flex flex-row justify-content-center align-items-center">
@@ -31,7 +33,7 @@
         </div>
     </div>
 
-    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content py-4  py-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-12 5 col-md-7 py-sm-vw-xs">
                 {% if entry.heading %}
@@ -49,9 +51,13 @@
         </div>
     </div>
 
-
+    <div class="contained-content">
+        <div class="col col-12  bg-primary">
+            <h2> Shop placeholder</h2>
+        </div>
+    </div>
     
-    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs">
+    <div class="contained-content py-4  py-sm-vw-sm py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-12 col-sm-5 col-md-6 col-lg-7 py-sm-vw-xs">
                 <div class="d-flex flex-column flex-md-row">
@@ -80,14 +86,13 @@
         </div>
     </div>
 
-    <div class="conatined-content py-4  py-sm-vw-sm py-md-vw-xs black-group ">
+    <div class="contained-content py-4  py-sm-vw-sm py-md-vw-xs black-group ">
         <div class="contain d-flex flex-column flex-sm-row">
-                {% if entry.heading2 %}
-                    <h2>{{entry.heading2}}</h2>
+                {% if entry.heading2  %}
+                    <h2 class="text-white">{{entry.heading2}}</h2>
                 {% endif %}
         </div>
     </div>
-
 
     {% endfor %} 
 {% endblock %}

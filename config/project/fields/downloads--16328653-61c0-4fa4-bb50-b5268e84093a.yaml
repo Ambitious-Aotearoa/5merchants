@@ -1,20 +1,20 @@
 columnSuffix: null
-handle: image
+handle: downloads
 instructions: null
-name: Image
+name: Downloads
 searchable: false
 settings:
   allowSelfRelations: false
   allowSubfolders: false
   allowUploads: true
   allowedKinds:
-    - image
+    - pdf
   branchLimit: null
   defaultUploadLocationSource: 'volume:84dbd643-7fd1-4ede-96df-f0c31af9865c' # images
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
-  maxRelations: 1
-  minRelations: 1
+  maxRelations: null
+  minRelations: null
   previewMode: full
   restrictFiles: true
   restrictLocation: false
@@ -23,13 +23,13 @@ settings:
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false
-  showSiteMenu: true
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: large
+  viewMode: list
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Assets

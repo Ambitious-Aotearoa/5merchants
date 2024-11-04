@@ -7,7 +7,7 @@
 {% block content %} 
     {% for entry in page %} 
 
-    <div class="conatined-content  py-2 py-md-vw-xs">
+    <div class="contained-content  py-2 py-md-vw-xs">
         <div class="contain d-flex flex-column flex-sm-row">
 
             <div class="col col-12 col-sm-6 col-lg-6 mb-2 mb-sm-0 p-sm-2 ps-sm-0 p-md-3 ps-md-0 p-hR-hR3 d-flex flex-column justify-content-between">
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="conatined-content  py-2  py-md-vw-xs  bg-cust-lightGrey">
+    <div class="contained-content  py-2  py-md-vw-xs  bg-cust-lightGrey">
         <div class="contain d-flex flex-column flex-sm-row">
             <div class="col col-12 col-sm-6 col-md-5 img-fit-wrapper mb-2 mb-sm-0">
                 {% set img = entry.image2.one() %}
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div class="conatined-content  pt-2 pt-md-vw-xs">
+    <div class="contained-content  pt-2 pt-md-vw-xs">
         <div class="contain d-flex flex-column">
             {% if entry.heading2 %}
                 <h2 class="mb-vw-xs">{{entry.heading2}}</h2>
@@ -118,7 +118,7 @@
     </div>
 
 
-    <div class="conatined-content  py-2 py-md-vw-xs blue-group">
+    <div class="contained-content  py-2 py-md-vw-xs blue-group">
         <div class="contain d-flex mb-2 mb-hR-hR2">
             {% if entry.heading4 %}
                 <h2 class="mb-vw-xs">{{entry.heading4}}</h2>
@@ -156,7 +156,7 @@
     </div>
 
 
-    <div class="conatined-content  py-md-vw-xs">
+    <div class="contained-content  py-md-vw-xs">
         <div class="contain accordion open d-flex flex-column pb-2 pb-hR-hR2">
             {% for matrix in entry.faqAccordion.all() %}
                 {% if matrix.bodyText %}
@@ -179,7 +179,7 @@
     <div class="p-vw-md bg-primary"></div>
 
 
-    <div class="conatined-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
+    <div class="contained-content py-2 py-sm-vw-sm py-md-vw-xs" id="booking-form">
         <div class="contain d-flex flex-column flex-md-row">
 
             <div class="col col-12 col-md-6 col-lg-5  mb-2 mb-sm-0 pe-sm-2  pe-md-3">

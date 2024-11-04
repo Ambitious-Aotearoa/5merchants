@@ -1,11 +1,31 @@
 {% extends "_layout.twig" %} 
-{% set bodyAttributes ={ class: "products" } %} 
+{% set bodyAttributes ={ class: "products shop-products" } %} 
 {% set docTitle = entry.title %} 
 {# {% set metaDesc = entry.metaDescription %}  #}
 
 {% set page = craft.entries().section('products').all() %} 
+{% set categories = craft.categories.group('shopCategories').all() %}
+{% set products = craft.products().all() %}
+
+
 {% block content %} 
-    {% for entry in page %} 
-            <h1>{{entry.title}}</h1>
-    {% endfor %} 
+<div class="contained-content  py-2 py-md-vw-xs">
+    <div class="contain d-flex flex-column flex-md-row">
+     {% for entry in page %}  
+            <div class="col-12 col-md-4">
+            <h1>{{ entry.title}}</h1>
+            </div>
+            <div class="col-12 col-md-8 ">
+             {% if entry.bodyText %} 
+                {{entry.bodyText}}
+             {% endif %}
+            </div>
+         {% endfor %}
+    </div>
+</div>
+
+
+{% include '_partials/product-grid.twig' %}
+
+
 {% endblock %}

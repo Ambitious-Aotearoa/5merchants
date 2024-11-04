@@ -1,6 +1,6 @@
-color: null
+defaultPlacement: end
 fieldLayouts:
-  49bdab08-b4bc-4c46-81bd-8961dc6cf3fa:
+  f30306ba-c4bb-4eb0-894f-e6e9f71e9dd5:
     tabs:
       -
         elementCondition: null
@@ -10,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-09-30T20:58:21+00:00'
+            dateAdded: '2024-11-03T20:01:27+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -30,38 +30,37 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: bfd1fd6e-a31e-4ebf-8dfc-152856c50f63
+            type: craft\fieldlayoutelements\TitleField
+            uid: 80da12b9-618b-4965-96c6-566a8d26e77f
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-04T01:33:41+00:00'
+            dateAdded: '2024-11-03T22:45:46+00:00'
             elementCondition: null
             fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
             handle: null
             includeInCards: false
             instructions: null
-            label: null
+            label: Description
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 4f0d250c-5262-42fe-98cc-998b4d41fc27
+            uid: 83295026-b482-4da0-86e9-c558967fdb69
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: ca980d1e-b425-4979-b517-b70704a8a5d4
+        uid: b019a4d9-fd6d-45c7-aed2-ca5e2b9c8571
         userCondition: null
-handle: products
-hasTitleField: true
-icon: ''
-name: Products
-showSlugField: true
-showStatusField: true
-slugTranslationKeyFormat: null
-slugTranslationMethod: site
-titleFormat: ''
-titleTranslationKeyFormat: null
-titleTranslationMethod: site
+handle: shopCategories
+name: 'Shop Categories'
+siteSettings:
+  24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
+    hasUrls: true
+    template: shop/category.twig
+    uriFormat: 'shop/{slug}'
+structure:
+  maxLevels: null
+  uid: 8703e6a2-daa5-4d88-b43f-853c49e22b05

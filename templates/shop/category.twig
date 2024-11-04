@@ -1,0 +1,26 @@
+{% extends "_layout.twig" %} 
+{% set bodyAttributes ={ class: "products shop-products" } %} 
+{% set docTitle = category.title %} 
+
+{% set categories = craft.categories.group('shopCategories').all() %}
+{% set products = craft.products().relatedTo(category).all() %}
+
+
+{% block content %}
+<div class="contained-content  py-2 py-md-vw-xs">
+    <div class="contain d-flex flex-column flex-md-row">
+        <div class="col-12 col-md-4">
+            <h1 class="h2-style">{{category.title}}</h1>
+        </div>
+
+        <div class="col-12 col-md-4">
+            {% if category.bodyText %}
+                {{category.bodyText}}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% include '_partials/product-grid.twig' %}
+
+{% endblock %}

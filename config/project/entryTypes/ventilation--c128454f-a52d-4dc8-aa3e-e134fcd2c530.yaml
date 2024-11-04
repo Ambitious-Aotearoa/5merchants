@@ -274,6 +274,61 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-10-29T22:30:26+00:00'
+            elementCondition: null
+            heading: 'Large Image Section'
+            type: craft\fieldlayoutelements\Heading
+            uid: 6e5f8f52-95dc-4b15-8776-297242626773
+            userCondition: null
+          -
+            dateAdded: '2024-10-29T22:30:26+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: image9
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 02c1f90f-c9d1-437e-92de-d28150539aaa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-29T22:30:26+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: bodyText8
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b0c3efb-3aef-4a9b-908b-cc92cc57c3f7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-29T22:30:26+00:00'
+            elementCondition: null
+            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
+            handle: image10
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d04d0b5-9e2c-475a-87c9-490cd9b2d074
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-10-10T02:50:49+00:00'
             elementCondition: null
             heading: 'Logo section'
@@ -309,22 +364,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ce6bd205-2ee9-40d5-8e42-09bd22a43414
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-10-10T03:49:17+00:00'
-            elementCondition: null
-            fieldUid: e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da # Image
-            handle: image8
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a47990fe-93f0-4386-9cac-cae5cefd7f4d
             userCondition: null
             warning: null
             width: 100
