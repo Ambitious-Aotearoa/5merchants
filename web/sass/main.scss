@@ -118,6 +118,7 @@ $theme-colors:map-merge($theme-colors, $new-colors);
 @import "../../node_modules/bootstrap/scss/accordion";
 $navbar-light-active-color:$cust-teal;
 $dropdown-spacer:25px;
+
 // Import Bootstrap components
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -234,8 +235,14 @@ body{
         border-width: 0;
         font-size: 1em;
         @include media-breakpoint-down(sm){
-        display: flex;
-        justify-content: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        &.btn-primary{
+            &:hover{
+                background-color: $cust-red;
+            }
         }
         
     }
@@ -266,18 +273,25 @@ body{
         .contain{
             max-width:calc(1366px - 6em);
             margin: 0 auto;
-            a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a ){
-                transition:color .2s ease-in;
+
+            p a{
                 color:$cust-red;
                 &:hover{
                     color:$primary
                 }
             }
-            .underline-btn a, .btn, .news-page .contained-content .contain a, .list-unstyled a {
-                &:hover{
-                    color:$cust-red
-                }
-            }
+            // a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a ){
+            //     transition:color .2s ease-in;
+            //     color:$cust-red;
+            //     &:hover{
+            //         color:$primary
+            //     }
+            // }
+            // .underline-btn a, .btn, .news-page .contained-content .contain a, .list-unstyled a {
+            //     &:hover{
+            //         color:$cust-red
+            //     }
+            // }
         }
 
         @include media-breakpoint-up(sm){
@@ -353,6 +367,12 @@ body{
             z-index: -1;
     
         }
+    }
+
+    input:focus,
+    input:focus-visible{
+        outline-color:$cust-red;
+        border-radius: 0;
     }
 }
 
@@ -610,8 +630,13 @@ body{
         height: 20px;
         fill: $white;
     }
-}
 
+
+
+}
+.out-of-stock{
+    color:$cust-darkGrey;
+}
 
 
 

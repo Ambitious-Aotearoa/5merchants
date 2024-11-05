@@ -1,139 +1,118 @@
-{% extends "_layout.twig" %} 
-{% set bodyAttributes ={ class: "shop product" } %} 
-{% set docTitle = product.title %} 
+{% extends "_layout.twig" %}
+{% set bodyAttributes = { class: "shop product" } %}
+{% set docTitle = product.title %}
 
 {% set products = craft.products().all() %}
 {% set prodVariants = product.variants %}
 {% set defaultVariant = prodVariants | filter(v => v.enabled and v.isDefault) | first %}
+{% set prices = prodVariants | map(v => v.price) | sort %}
 
-
-{% block content %} 
-
-<div class="contained-content  pb-2 pb-md-vw-xs">
+{% block content %}
+<div class="contained-content pb-2 pb-md-vw-xs">
     <div class="contain d-flex flex-column flex-md-row">
-     <div class="col-12 col-sm-6" id="displayImage">
-
-        
-     </div>
-
-
-      <div class="col-12 col-sm-6">
-         <div class="constant-product">
-            <h1>{{ product.title}}</h1>
-            <div class="price d-flex flex-row">
-                {% set prices = prodVariants | map(v => v.price) | sort %}
-
-                {% if prices|length == 1 %}
-                    <p>${{ prices[0] | number_format(2, '.', ',') }} exc NZ GST</p>
-                {% else %}
-                    <p>${{ prices[prices|length - 1] | number_format(2, '.', ',') }} - ${{ prices[0] | number_format(2, '.', ',') }} <span class="text-primary">exc NZ GST</span></p>
-                {% endif %}
+        <div class="col-12 col-sm-6" id="displayImage"></div>
+        <div class="col-12 col-sm-6 d-flex flex-column justify-content-center py-1 py-hR-hR1">
+            <div class="constant-product">
+                <h1>{{ product.title }}</h1>
+                <div class="price d-flex flex-row">
+                    <p>
+                        {% if prices|length == 1 %}
+                            ${{ prices[0] | number_format(2, '.', ',') }} exc NZ GST
+                        {% else %}
+                            ${{ prices[prices|length - 1] | number_format(2, '.', ',') }} - ${{ prices[0] | number_format(2, '.', ',') }} <span class="text-primary">exc NZ GST</span>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="mb-2">
+                    {{ product.bodyText }}
+                </div>
             </div>
-            <div class="mb-2">
-                {% if product.bodyText %}
-                    {{product.bodyText}}
-                {% endif %}
+            <div class="changing-details">
+                <form method="post" class="mt-6">
+                    {{ csrfInput() }}
+                    {{ actionInput('commerce/cart/update-cart') }}
+                    {{ successMessageInput('{product} added to cart.'|t({ product: product.title })) }}
+
+                    <div class="d-flex flex-column">
+                        {% for variant in product.getVariants() %}
+                            <label class="flex w-full items-center">
+                                {{ tag('input', {
+                                    name: 'purchasableId',
+                                    type: 'radio',
+                                    value: variant.id,
+                                    checked: variant.id == defaultVariant.id,
+                                    disabled: not variant.availableForPurchase,
+                                    'data-body-text': variant.bodyText,
+                                    'data-image': variant.image.one() ? variant.image.one().getUrl() : '',
+                                    'data-alt': variant.image.one().alt
+
+                                }) }}
+                                <span class="{{ not variant.getIsAvailable() ? 'out-of-stock' : '' }}">
+                                    {{ variant.sku }}
+                                    {% if variant.inventoryTracked %}
+                                        ({{ variant.stock ? variant.stock ~ ' available' : 'out of stock' }})
+                                    {% endif %}
+                                    {{ variant.price | commerceCurrency }}
+                                </span>
+                            </label>
+                        {% endfor %}
+                    </div>
+
+                    <div id="variantBodyText" class="my-2 text-gray-700"></div>
+
+                    <div class="d-flex flex-row">
+                        {{ input('number', 'qty', 1, {
+                            class: 'border border-cust-darkGrey border-2 px-1',
+                            step: 1,
+                            min: 1,
+                            placeholder: 'Quantity'|t
+                        }) }}
+                        {{ tag('button', {
+                            type: 'submit',
+                            class: ['m-0', 'text-center', 'cursor-pointer', 'btn', 'btn-primary'],
+                            text: 'Add to cart'|t
+                        }) }}
+                    </div>
+                </form>
             </div>
-         </div>
-
-
-         <div class="changing-details">
-
-
-            <form method="post" class="mt-6">
-            {{ csrfInput() }}
-            {{ actionInput('commerce/cart/update-cart') }}
-            {{ successMessageInput('{product} added to cart.'|t({ product: product.title })) }}
-
-            <div class="d-flex flex-column">
-                {% for variant in product.getVariants() %}
-                <label class="flex w-full items-center">
-                    {{ tag('input', {
-                    name: 'purchasableId',
-                    type: 'radio',
-                    value: variant.id,
-                    checked: variant.id == defaultVariant.id,
-                    class: not variant.getIsAvailable() ? 'opacity-10' : '',
-                    disabled: not variant.availableForPurchase,
-
-
-                    'data-body-text': variant.bodyText,
-                    'data-image': variant.image.one() ? variant.image.one().getUrl() : ''
-
-
-                    }) }}
-                    <span class="pl-1">
-                    {{ variant.sku }}
-                    {% if variant.inventoryTracked %}
-                        ({{ variant.stock ? variant.stock ~ ' available' : 'out of stock' }})
-                    {% endif %}
-                    {{variant.price|commerceCurrency}}
-                    </span>
-                </label>
-                {% endfor %}
-            </div>
-
-
-            <div id="variantBodyText" class="my-2 text-gray-700">
-
-            </div>
-
-            <div class="mt-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-                {{ input('number', 'qty', 1, {
-                class: 'mr-0 mb-1 md:mr-1 md:mb-0 sm:mb-1 border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:ring',
-                step: 1,
-                min: 1,
-                placeholder: 'Quantity'|t
-                }) }}
-                {{ tag('button', {
-                type: 'submit',
-                class: ['m-0', 'text-center', 'cursor-pointer rounded px-4 py-2 inline-block bg-blue-500 hover:bg-blue-600 text-white hover:text-white'],
-                text: 'Add to cart'|t
-                }) }}
-            </div>
-            </form>
-         </div>
-      </div>
+        </div>
     </div>
-</div> 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const radios = document.querySelectorAll('input[name="purchasableId"]');
-  const bodyTextContainer = document.getElementById('variantBodyText');
-  const imageContainer = document.getElementById('displayImage');
+</div>
 
-  function updateBodyText() {
-    const selected = document.querySelector('input[name="purchasableId"]:checked');
-    if (selected) {
-      // Update body text
-      bodyTextContainer.innerHTML = selected.getAttribute('data-body-text') || 'No details available for this variant.';
-      
-      // Update image
-      const imageUrl = selected.getAttribute('data-image') || '';
-      if (imageUrl) {
-        // Create img element
-        imageContainer.innerHTML = ''; // Clear previous image
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.alt = 'Variant Image'; // Optionally set alt text
-        img.classList.add('img-fluid', 'mb-1'); // Add your desired classes
-        imageContainer.appendChild(img);
-      } else {
-        imageContainer.innerHTML = 'No image available for this variant.';
-      }
+{% endblock %}
+
+{% block scripts %}
+  {{ parent() }}
+  <script>
+$(document).ready(function() {
+    const $bodyTextContainer = $('#variantBodyText');
+    const $imageContainer = $('#displayImage');
+
+    function updateBodyText() {
+        const $selected = $('input[name="purchasableId"]:checked');
+        
+        // Update body text
+        const bodyText = $selected.data('body-text') || 'No details available for this variant.';
+        $bodyTextContainer.fadeOut(200, function() {
+            $(this).html(bodyText).fadeIn(200);
+        });
+
+        // Update image
+        const imageUrl = $selected.data('image') || '';
+        const imageAlt = $selected.data('alt') || '';
+
+        if (imageUrl) {
+            $imageContainer.html(`<img src="${imageUrl}" alt="${imageAlt}" class="img-fluid mb-1">`);
+        } else {
+            $imageContainer.html('No image available for this variant.');
+        }
     }
-  }
 
-  // Initialize the display with the default selected variant's body text and image
-  updateBodyText();
+    // Initialize the display with the default selected variant's body text and image
+    updateBodyText();
 
-  // Update display whenever a radio button is selected
-  radios.forEach(radio => {
-    radio.addEventListener('change', updateBodyText);
-  });
+    // Update display whenever a radio button is selected
+    $('input[name="purchasableId"]').on('change', updateBodyText);
 });
-
 </script>
-
-
 {% endblock %}

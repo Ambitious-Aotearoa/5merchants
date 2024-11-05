@@ -18368,6 +18368,9 @@ body .btn {
     justify-content: center;
   }
 }
+body .btn.btn-primary:hover {
+  background-color: #ff503c;
+}
 body .underline-btn {
   display: flex;
   padding-bottom: 0.3em;
@@ -18392,15 +18395,11 @@ body .contained-content .contain {
   max-width: calc(1366px - 6em);
   margin: 0 auto;
 }
-body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a) {
-  transition: color 0.2s ease-in;
+body .contained-content .contain p a {
   color: #ff503c;
 }
-body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a):hover {
+body .contained-content .contain p a:hover {
   color: #000;
-}
-body .contained-content .contain .underline-btn a:hover, body .contained-content .contain .btn:hover, body .contained-content .contain .news-page .contained-content .contain a:hover, body .contained-content .contain .list-unstyled a:hover {
-  color: #ff503c;
 }
 @media (min-width: 768px) {
   body .contained-content {
@@ -18470,6 +18469,11 @@ body .bg-line:after {
   bottom: 0;
   left: calc(50% - 1px);
   z-index: -1;
+}
+body input:focus,
+body input:focus-visible {
+  outline-color: #ff503c;
+  border-radius: 0;
 }
 
 .container-one {
@@ -18710,6 +18714,10 @@ body .bg-line:after {
   width: 20px;
   height: 20px;
   fill: #fff;
+}
+
+.out-of-stock {
+  color: #c7c8ca;
 }
 
 footer .main-logo {
