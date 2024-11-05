@@ -1,4 +1,4 @@
-dateModified: 1730684021
+dateModified: 1730761054
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -82,6 +82,7 @@ plugins:
   commerce:
     edition: pro
     enabled: true
+    licenseKey: U9N05RNN5FCUZJMZNZYKU32R
     schemaVersion: 5.2.0.4
     settings:
       activeCartDuration: 3600

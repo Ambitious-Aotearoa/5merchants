@@ -18399,7 +18399,7 @@ body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .conta
 body .contained-content .contain a:not(.underline-btn a, .btn, .news-page .contained-content .contain a, ul li a):hover {
   color: #000;
 }
-body .contained-content .contain .underline-btn a:hover, body .contained-content .contain .btn:hover, body .contained-content .contain .news-page .contained-content .contain a:hover, body .contained-content .contain ul li a:hover {
+body .contained-content .contain .underline-btn a:hover, body .contained-content .contain .btn:hover, body .contained-content .contain .news-page .contained-content .contain a:hover, body .contained-content .contain .list-unstyled a:hover {
   color: #ff503c;
 }
 @media (min-width: 768px) {
@@ -18684,6 +18684,32 @@ body .bg-line:after {
 }
 .shop-products a .brand p {
   color: #000;
+}
+.shop-products ul.pagination li strong,
+.shop-products ul.pagination li a {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+.shop-products ul.pagination li strong:hover,
+.shop-products ul.pagination li a:hover {
+  color: #fff;
+  background-color: #ff503c;
+}
+.shop-products ul.pagination li strong {
+  background-color: #ff503c;
+}
+.shop-products .bi-arrow-left,
+.shop-products .bi-arrow-right {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
 }
 
 footer .main-logo {

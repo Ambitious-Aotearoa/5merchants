@@ -16,7 +16,7 @@
                             {% set product = item.purchasable %}
                             <li class="cart-item">
                                 <div class="cart-item-info">
-                                    <h4 class="cart-item-title">{{ product.product.title }}</h4>
+                                    <h4 class="cart-item-title">{{ product.product.title }} - {{ item.qty }} </h4>
                                     <p class="cart-item-price">{{ item.salePrice|currency(cart.paymentCurrency) }}</p>
 
                                     {# <form method="post" action="" id="cartForm">

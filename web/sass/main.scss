@@ -273,7 +273,7 @@ body{
                     color:$primary
                 }
             }
-            .underline-btn a, .btn, .news-page .contained-content .contain a, ul li a{
+            .underline-btn a, .btn, .news-page .contained-content .contain a, .list-unstyled a {
                 &:hover{
                     color:$cust-red
                 }
@@ -560,17 +560,58 @@ body{
         color:$cust-red;
     }
 
-        a{
-            h2{
-                font-size: 1.1em;
-            }
-            .brand p{
-                color:$primary; 
+    a{
+        h2{
+            font-size: 1.1em;
+        }
+        .brand p{
+            color:$primary; 
+        }
+    }
+
+    ul.pagination{
+        li strong,
+        li a{
+            width: 30px;
+            height: 30px;
+            background-color: $primary;
+            color: $white;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            &:hover{
+                color: $white; 
+                background-color: $cust-red;
             }
         }
 
+        li strong{
+            background-color: $cust-red;
+        }
     }
-  
+
+// .list-unstyled{
+//     li{
+//         ul{
+//             display: none;
+//             &.active{
+//                 display: block;
+//             }
+//         }
+//     }
+// }
+
+
+    .bi-arrow-left,
+    .bi-arrow-right{
+        width: 20px;
+        height: 20px;
+        fill: $white;
+    }
+}
+
 
 
 

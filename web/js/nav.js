@@ -1,9 +1,8 @@
 $(document).ready(function() {
-
+///////// main navigation
     var navStore = $('#storeNav');
     var $navbar = $('.sticky-top');
 
-  
     function checkSticky() {
       var scrollPos = $(window).scrollTop(); 
       var navStoreBottom = navStore.offset().top + navStore.outerHeight();
@@ -22,10 +21,6 @@ $(document).ready(function() {
   
     checkSticky()
     $(window).on('scroll', checkSticky);
-
-
-
-
 
     const body = $('body');
     const navbar = $('.navbar');
@@ -49,6 +44,13 @@ $(document).ready(function() {
         }
       }
     });
-    
+
+
+
   });
 
+  $(document).ready(function() {
+    var path = window.location.pathname;
+    var lastSegment = path.split('/').pop();
+    console.log(lastSegment);
+});
