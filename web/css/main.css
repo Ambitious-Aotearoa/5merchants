@@ -19180,6 +19180,15 @@ body input:focus-visible {
   color: #c7c8ca;
 }
 
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+}
+
+.no-show {
+  display: none;
+}
+
 footer .main-logo {
   width: 100%;
   max-width: 280px;

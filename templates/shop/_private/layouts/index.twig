@@ -7,174 +7,177 @@ Common, top-level layout template.
 @var flashError  string
 #}
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ siteName ~ ' Shop' }}</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ '5Merchants | ' ~ (docTitle | default('Shop')) }}</title>
+
         <link rel="icon" href="../uploads/images/favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
         {% do craft.app.view.registerCssFile('@web/css/main.css') %}
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        {% if extraHead is defined %}
+            {{ extraHead }}
+        {% endif %}
+    </head>
 
-  {% if extraHead is defined %}
-    {{ extraHead }}
-  {% endif %}
-</head>
-<body class="relative text-gray-800 flex flex-col min-h-screen leading-relaxed">
-<div id="body">
-{% if cart is not defined %}
-  {% set cart = craft.commerce.carts.cart %}
-{% endif %}
+    <body class="relative text-gray-800 flex flex-col min-h-screen leading-relaxed shop products">
+        <div id="body">
+            {% if cart is not defined %}
+            {% set cart = craft.commerce.carts.cart %}
+            {% endif %}
 
-{% set flashNotice = craft.app.session.getFlash('notice') %}
-{% set flashError = craft.app.session.getFlash('error') %}
+            {% set flashNotice = craft.app.session.getFlash('notice') %}
+            {% set flashError = craft.app.session.getFlash('error') %}
 
-{% macro docs(text, link) %}
-    <small class="">
-        {{ tag('a', {
-            text: 'ℹ︎ ' ~ text,
-            href: link,
-            class: 'text-gray-400 hover:text-gray-600 hover:underline',
-            target: '_blank',
-        }) }}
-    </small>
-{% endmacro %}
+            {% macro docs(text, link) %}
+                <small class="">
+                    {{ tag('a', {
+                        text: 'ℹ︎ ' ~ text,
+                        href: link,
+                        class: 'text-gray-400 hover:text-gray-600 hover:underline',
+                        target: '_blank',
+                    }) }}
+                </small>
+            {% endmacro %}
 
-
-    {{ include('_partials/store_nav.twig') }}
-     {{ include('_partials/nav.twig') }}
-      {{ include('_partials/store_cart_summary.twig') }}
-  {# {{ include('shop/_private/layouts/includes/header') }} #}
-  {# {{ include('shop/_private/layouts/includes/nav-main') }} #}
-  {{ include('shop/_private/layouts/includes/nav-checkout') }}
-  {{ include('shop/_private/layouts/includes/nav-customer') }}
+            {{ include('_partials/store_nav.twig') }}
+            {{ include('_partials/nav.twig') }}
+            {{ include('_partials/store_cart_summary.twig') }}
+            {# {{ include('shop/_private/layouts/includes/header') }} #}
+            {# {{ include('shop/_private/layouts/includes/nav-main') }} #}
+            {{ include('shop/_private/layouts/includes/nav-checkout') }}
+            {{ include('shop/_private/layouts/includes/nav-customer') }}
 
 
-<div id="main">
-  {% if flashNotice %}
-    <div class="bg-blue-500 text-white">
-      <div class="container mx-auto px-6 py-4">
-        {{ flashNotice ?? 'Test flash notice' }}
-      </div>
-    </div>
-  {% endif %}
+            <div id="main">
+            {% if flashNotice %}
+                <div class="bg-blue-500 text-white">
+                <div class="container mx-auto p-1">
+                    {{ flashNotice ?? 'Test flash notice' }}
+                </div>
+                </div>
+            {% endif %}
 
-  {% if flashError %}
-    <div class="bg-red-500 text-white">
-      <div class="container mx-auto px-6 py-4">
-        {{ flashError ?? 'Test flash error' }}
-      </div>
-    </div>
-  {% endif %}
+            {% if flashError %}
+                <div class="bg-red-500 text-white">
+                <div class="container mx-auto p-1">
+                    {{ flashError ?? 'Test flash error' }}
+                </div>
+                </div>
+            {% endif %}
 
-  {% if cart and cart.hasNotices() %}
-    <div class="bg-blue-400 text-white">
-      <div class="container mx-auto px-6 py-4 relative">
-        <span>{{ 'Cart Notices'|t }}</span>
-        {% set entriesByType = cart.getNotices()|group('type') %}
-        {% for type, notices in entriesByType %}
-          {% for notice in notices %}
-            <li class="list-disc"
-                data-type="{{ notice.type }}"
-                data-attribute="{{ notice.attribute }}"
-                data-message="{{ notice.message }}"
-            >
-              {{- notice -}}
-            </li>
-          {% endfor %}
-        {% endfor %}
-        <form method="post">
-          {{ actionInput('commerce/cart/update-cart') }}
-          {{ successMessageInput('Notices dismissed') }}
-          {{ hiddenInput('clearNotices') }}
-          {{ csrfInput() }}
-          {{ tag('button', {
-            type: 'submit',
-            class: ['absolute', 'mt-4', 'mr-4', 'top-0', 'right-0', 'cursor-pointer rounded px-2 py-1 text-sm inline-block', '[[classes.btn.blue]]'],
-            text: 'Dismiss'|t
-          }) }}
-        </form>
-      </div>
-    </div>
-  {% endif %}
+            {% if cart and cart.hasNotices() %}
+                <div class="bg-blue-400 text-white">
+                <div class="container mx-auto p-1 relative">
+                    <span>{{ 'Cart Notices'|t }}</span>
+                    {% set entriesByType = cart.getNotices()|group('type') %}
+                    {% for type, notices in entriesByType %}
+                    {% for notice in notices %}
+                        <li class="list-disc"
+                            data-type="{{ notice.type }}"
+                            data-attribute="{{ notice.attribute }}"
+                            data-message="{{ notice.message }}"
+                        >
+                        {{- notice -}}
+                        </li>
+                    {% endfor %}
+                    {% endfor %}
+                    <form method="post">
+                    {{ actionInput('commerce/cart/update-cart') }}
+                    {{ successMessageInput('Notices dismissed') }}
+                    {{ hiddenInput('clearNotices') }}
+                    {{ csrfInput() }}
+                    {{ tag('button', {
+                        type: 'submit',
+                        class: ['absolute', 'mt-4', 'mr-4', 'top-0', 'right-0', 'cursor-pointer rounded px-2 py-1 text-sm inline-block', '[[classes.btn.blue]]'],
+                        text: 'Dismiss'|t
+                    }) }}
+                    </form>
+                </div>
+                </div>
+            {% endif %}
 
-  {% if cart and cart.errors|length %}
-    <div class="bg-red-500 text-white">
-      <div class="container mx-auto px-6 py-4">
-        {% for attribute, errors in cart.errors %}
-          {% if loop.first %}<ul>{% endif %}
-          {% for key, error in errors %}
-            <li>{{ attribute }}: {{ error }}</li>
-          {% endfor %}
-          {% if loop.last %}</ul>{% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+            {% if cart and cart.errors|length %}
+                <div class="bg-cust-teal text-white">
+                <div class="container mx-auto p-1">
+                    {% for attribute, errors in cart.errors %}
+                    {% if loop.first %}<ul>{% endif %}
+                    {% for key, error in errors %}
+                        <li>{{ attribute }}: {{ error }}</li>
+                    {% endfor %}
+                    {% if loop.last %}</ul>{% endif %}
+                    {% endfor %}
+                </div>
+                </div>
+            {% endif %}
 
-  {% block body %}
-    <div class="container mx-auto p-6 flex-grow">
-      {% block main %}{% endblock %}
-    </div>
-  {% endblock %}
-</div>
+            {% block body %}
+                <div class="container mx-auto p-6 flex-grow">
+                {% block main %}{% endblock %}
+                </div>
+            {% endblock %}
+            </div>
 
-{# <footer>
-  {{ include('shop/_private/layouts/includes/footer') }}
-</footer> #}
+            {# <footer>
+            {{ include('shop/_private/layouts/includes/footer') }}
+            </footer> #}
 
-     {{ include('_partials/footer.twig') }}
-</div>
+            {{ include('_partials/footer.twig') }}
+        </div>
 
+    {% block scripts %}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script type="module" src="/js/nav.js"></script>
-</body>
+    {% endblock %}
+    </body>
 </html>
+
 {% js at head %}
-let states = {{ craft.commerce.getStores().getCurrentStore().settings.getAdministrativeAreasListByCountryCode()|json_encode|raw }};
-{% set usedFields = {} %}
-{% for countryCode in craft.app.addresses.getCountryRepository().getAll()|keys %}
-	{% set usedFields = usedFields|merge({ (countryCode): craft.app.addresses.getUsedFields(countryCode)|merge([
-      'fullName',
-      'latLong',
-      'organizationTaxId',
-      'organization',
-      'countryCode',
-    ]) }) %}
-{% endfor %}
-let usedAddressFieldsByCountryCode = {{ usedFields|json_encode|raw }};
-function hideAddressFields(selectorTemplate) {
-  const fields = document.querySelectorAll('.' + selectorTemplate.replace('placeHolder', 'js-address-field'));
-  if (!fields.length) {
-    return;
-  }
+    let states = {{ craft.commerce.getStores().getCurrentStore().settings.getAdministrativeAreasListByCountryCode()|json_encode|raw }};
+    {% set usedFields = {} %}
+    {% for countryCode in craft.app.addresses.getCountryRepository().getAll()|keys %}
+        {% set usedFields = usedFields|merge({ (countryCode): craft.app.addresses.getUsedFields(countryCode)|merge([
+        'fullName',
+        'latLong',
+        'organizationTaxId',
+        'organization',
+        'countryCode',
+        ]) }) %}
+    {% endfor %}
+    let usedAddressFieldsByCountryCode = {{ usedFields|json_encode|raw }};
+    function hideAddressFields(selectorTemplate) {
+    const fields = document.querySelectorAll('.' + selectorTemplate.replace('placeHolder', 'js-address-field'));
+    if (!fields.length) {
+        return;
+    }
 
-  for (let i = 0; i < fields.length; i++) {
-    fields[i].classList.add('hidden');
-  }
-}
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].classList.add('hidden');
+    }
+    }
 
-function showAddressField(fieldName, selectorTemplate) {
-  const closestSelector = selectorTemplate;
-  const field = document.querySelector('#' + selectorTemplate.replace('placeHolder', fieldName));
-  if (!field) {
-    return;
-  }
+    function showAddressField(fieldName, selectorTemplate) {
+    const closestSelector = selectorTemplate;
+    const field = document.querySelector('#' + selectorTemplate.replace('placeHolder', fieldName));
+    if (!field) {
+        return;
+    }
 
-  const fieldWrapper = field.closest('.' + closestSelector.replace('placeHolder', 'js-address-field'));
-  if (!fieldWrapper) {
-    return;
-  }
+    const fieldWrapper = field.closest('.' + closestSelector.replace('placeHolder', 'js-address-field'));
+    if (!fieldWrapper) {
+        return;
+    }
 
-  fieldWrapper.classList.remove('hidden');
-}
+    fieldWrapper.classList.remove('hidden');
+    }
 {% endjs %}
 
 {% js at endBody %}
-let $siteSelector = document.querySelector('#js-site-selector');
-if ($siteSelector) {
-  $siteSelector.addEventListener('change', (ev) => window.location = ev.target.value);
-}
+    let $siteSelector = document.querySelector('#js-site-selector');
+    if ($siteSelector) {
+    $siteSelector.addEventListener('change', (ev) => window.location = ev.target.value);
+    }
 {% endjs %}

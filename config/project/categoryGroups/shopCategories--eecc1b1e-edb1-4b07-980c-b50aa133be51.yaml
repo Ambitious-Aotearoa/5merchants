@@ -59,7 +59,7 @@ name: 'Shop Categories'
 siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     hasUrls: true
-    template: shop/category.twig
+    template: _singles/category.twig
     uriFormat: 'shop/{slug}'
 structure:
   maxLevels: null

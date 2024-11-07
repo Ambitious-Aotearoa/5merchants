@@ -1,26 +1,18 @@
 
-{% extends 'shop/_private/layouts' %}
-{% set docTitle = 'Shop | ' ~ product.title %}
+
+{% extends "_layout.twig" %}
+{% set bodyAttributes = { class: "shop product" } %}
+{% set docTitle = product.title %}
 
 {% set products = craft.products().all() %}
 {% set prodVariants = product.variants %}
 {% set defaultVariant = prodVariants | filter(v => v.enabled and v.isDefault) | first %}
 {% set prices = prodVariants | map(v => v.price) | sort %}
 
-{% block body %}
+{% block content %}
 <div class="contained-content pb-2 pb-md-vw-xs">
     <div class="contain d-flex flex-column flex-md-row">
-    
-        <div class="col-12 col-sm-6" id="displayImage">
-            {% for variant in product.getVariants() %}
-                {% set img = variant.image.one() %}
-                {% if img %}
-                    <img src="{{ img.getUrl }}" alt="{{ img.alt }}" class="img-fluid variant-image" id="image-{{ variant.id }}" style="display: none;">
-                {% endif %}
-            {% endfor %}
-        </div>
-
-
+        <div class="col-12 col-sm-6" id="displayImage"></div>
         <div class="col-12 col-sm-6 d-flex flex-column justify-content-center py-1 py-hR-hR1">
             <div class="constant-product">
                 <h1>{{ product.title }}</h1>
@@ -52,7 +44,9 @@
                                     value: variant.id,
                                     checked: variant.id == defaultVariant.id,
                                     disabled: not variant.availableForPurchase,
-                                    class:'me-10px'
+                                    'data-body-text': variant.bodyText,
+                                    'data-image': variant.image.one() ? variant.image.one().getUrl() : '',
+                                    'data-alt': variant.image.one().alt
 
                                 }) }}
                                 <span class="{{ not variant.getIsAvailable() ? 'out-of-stock' : '' }}">
@@ -60,7 +54,7 @@
                                     {% if variant.inventoryTracked %}
                                         ({{ variant.stock ? variant.stock ~ ' available' : 'out of stock' }})
                                     {% endif %}
-                                    {{ variant.price | commerceCurrency ~ ' exc. NZ GST' }}
+                                    {{ variant.price | commerceCurrency }}
                                 </span>
 
                                 
@@ -69,14 +63,9 @@
                     </div>
 
                     <div id="variantBodyText" class="my-2 text-gray-700">
-                        {% for variant in product.getVariants() %}
-                            <div class="variant-body-text" id="bodyText-{{ variant.id }}" style="display: none;">
-                                {{ variant.bodyText }}
-                            </div>
-                        {% endfor %}
                     </div>
 
-                    <div class="add-to-cart ">
+                    <div class="d-flex flex-row">
                         {{ input('number', 'qty', 1, {
                             class: 'border border-cust-darkGrey border-2 px-1',
                             step: 1,
@@ -100,46 +89,35 @@
 {% block scripts %}
   {{ parent() }}
   <script>
-    $(document).ready(function() {
-        // Function to show selected variant details
-        function showVariantDetails(variantId) {
-            // Hide all images and body texts
-            $('.variant-image').hide();
-            $('.variant-body-text').hide();
+$(document).ready(function() {
+    const $bodyTextContainer = $('#variantBodyText');
+    const $imageContainer = $('#displayImage');
 
-            // Show only the selected variant's image and body text
-            $('#image-' + variantId).show();
-            $('#bodyText-' + variantId).show();
-        }
-
-        // Function to check stock and hide the "Add to Cart" button if out of stock
-        function checkStockAndHideAddToCart(variantId) {
-            var variantStock = $('input[name="purchasableId"][value="' + variantId + '"]').closest('label').find('span').text().toLowerCase();
-            
-            const addToCartDiv = $('.add-to-cart');
-            
-            // Check if the variant stock text contains "out of stock"
-            if (variantStock.includes('out of stock') || !variantStock) {
-                addToCartDiv.addClass('no-show');
-            } else {
-                addToCartDiv.removeClass('no-show');
-            }
-        }
-
-        // Set up event listener for radio button change
-        $('input[name="purchasableId"]').change(function() {
-            const selectedVariantId = $(this).val();
-            showVariantDetails(selectedVariantId);
-            checkStockAndHideAddToCart(selectedVariantId);
+    function updateBodyText() {
+        const $selected = $('input[name="purchasableId"]:checked');
+        
+        // Update body text
+        const bodyText = $selected.data('body-text') || 'No details available for this variant.';
+        $bodyTextContainer.fadeOut(200, function() {
+            $(this).html(bodyText).fadeIn(200);
         });
 
-        // Trigger the display for the default selected variant on page load
-        const defaultVariantId = $('input[name="purchasableId"]:checked').val();
-        if (defaultVariantId) {
-            showVariantDetails(defaultVariantId);
-            checkStockAndHideAddToCart(defaultVariantId);
-        }
-    });
-  </script>
-{% endblock %}
+        // Update image
+        const imageUrl = $selected.data('image') || '';
+        const imageAlt = $selected.data('alt') || '';
 
+        if (imageUrl) {
+            $imageContainer.html(`<img src="${imageUrl}" alt="${imageAlt}" class="img-fluid mb-1">`);
+        } else {
+            $imageContainer.html('No image available for this variant.');
+        }
+    }
+
+    // Initialize the display with the default selected variant's body text and image
+    updateBodyText();
+
+    // Update display whenever a radio button is selected
+    $('input[name="purchasableId"]').on('change', updateBodyText);
+});
+</script>
+{% endblock %}

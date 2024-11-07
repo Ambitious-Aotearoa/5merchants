@@ -639,6 +639,14 @@ body{
     color:$cust-darkGrey;
 }
 
+.add-to-cart{
+    display: flex;
+    flex-direction: row;
+}
+.no-show{
+    display:none;
+}
+
 
 
 //////////////Footer///////////////
