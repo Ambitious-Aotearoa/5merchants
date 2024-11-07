@@ -5,7 +5,7 @@ Outputs the site’s global main navigation based on path and included `pages` a
 @var cart        \craft\commerce\elements\Order
 @var currentUser \craft\elements\User
 #}
-{% set pages = [
+{# {% set pages = [
       {
     label: 'Home',
     url: siteUrl('')
@@ -25,7 +25,7 @@ Outputs the site’s global main navigation based on path and included `pages` a
 ] %}
 {% set currentPath = craft.app.request.pathInfo %}
 {% set activeClasses = 'bg-white' %}
-{# Show the nav if we are not in a checkout page #}
+
 {% if 'checkout' not in currentPath %}
   <div class="bg-gray-100">
     <div class="container mx-auto justify-between items-center p-6 relative">
@@ -66,4 +66,4 @@ Outputs the site’s global main navigation based on path and included `pages` a
       </nav>
     </div>
   </div>
-{% endif %}
+{% endif %} #}

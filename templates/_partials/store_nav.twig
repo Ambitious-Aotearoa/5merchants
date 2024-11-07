@@ -1,18 +1,23 @@
 {% set cart = craft.commerce.carts.cart %}
 <div class="black-group p-1 store-nav border-bottom border-primary" id="storeNav">
-    <ul class="d-flex flex-row justify-content-center justify-content-md-end list-unstyled m-0">
+    <ul class="d-flex flex-row justify-content-center justify-content-md-end list-unstyled m-0 align-items-center">
         <li>
-        <a role="button" data-bs-toggle="modal" data-bs-target="#cartSummary" aria-label="Shopping Basket">
-                <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <a role="button" data-bs-toggle="modal" data-bs-target="#cartSummary" aria-label="Shopping Basket" class="d-flex flex-row">
+                <svg class="icon-cart " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" >
                     <path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path>
                     <circle cx="10.5" cy="19.5" r="1.5"></circle>
                     <circle cx="17.5" cy="19.5" r="1.5"></circle>
                 </svg>
-                {{ cart.totalQty }}
+                {# {{ cart.totalQty }} #}
+                {% if cart.totalQty %}
+                    <p class=" m-0 ps-10px">{{ cart.totalQty }}</p>
+                {% else %}
+                  <p class="m-0 ps-10px">0</p>
+                {% endif %}
             </a>
         </li>
         <li class="">
-            <a class="" href="/shop">Shop</a>
+            <a class="" href="/shop/cart">Checkout</a>
         </li>
         <li>
             {% if currentUser %}

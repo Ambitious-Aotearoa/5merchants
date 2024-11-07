@@ -41,6 +41,7 @@ $container-max-widths: (
 $spacer: 16px;
 $spacers: (
   0: 0,
+  10px:10px,
   1: $spacer * 1,
   2: $spacer * 2,
   3: $spacer * 3,

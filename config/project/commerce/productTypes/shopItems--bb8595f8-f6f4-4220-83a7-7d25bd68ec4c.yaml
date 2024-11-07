@@ -139,7 +139,7 @@ siteSettings:
   24b1554e-bb4c-4639-aaa1-13d20c08f54c: # Five Merchants
     enabledByDefault: true
     hasUrls: true
-    template: shop/product-template.twig
+    template: shop/individual-product-template.twig
     uriFormat: 'shop/{slug}'
 skuFormat: ''
 structure:
