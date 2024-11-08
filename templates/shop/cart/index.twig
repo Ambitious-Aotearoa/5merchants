@@ -75,11 +75,12 @@ Outputs cart.
                       {{ input(hasDonationAmount ? 'hidden' : 'number', 'lineItems[' ~ item.id ~ '][qty]', item.qty, {
                         min: 0,
                         class: [
-                          'w-32',
                           item.getFirstError('qty') ? 'border-red-500 border',
                           'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded'
                         ]
                       }) }}
+
+                      
                     </div>
                     <div class="lg:w-1/2">
                       <label for="lineitem-note-{{ item.id }}">
