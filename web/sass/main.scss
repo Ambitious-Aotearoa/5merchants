@@ -660,12 +660,17 @@ body{
         display: flex;
         flex-direction: column;
         a{
-            padding-bottom:.5em;
+            padding-bottom:.7em;
             &.active{
                 color:$cust-red;
             }
         }
     }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 

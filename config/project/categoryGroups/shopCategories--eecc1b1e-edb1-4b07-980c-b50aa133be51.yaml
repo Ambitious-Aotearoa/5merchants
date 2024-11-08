@@ -62,5 +62,5 @@ siteSettings:
     template: _singles/category.twig
     uriFormat: 'shop/{slug}'
 structure:
-  maxLevels: null
+  maxLevels: 3
   uid: 8703e6a2-daa5-4d88-b43f-853c49e22b05

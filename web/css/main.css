@@ -19202,10 +19202,15 @@ body input:focus-visible {
   flex-direction: column;
 }
 .products-nav li a {
-  padding-bottom: 0.5em;
+  padding-bottom: 0.7em;
 }
 .products-nav li a.active {
   color: #ff503c;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 footer .main-logo {

@@ -29,6 +29,8 @@
 {% block scripts %}
   {{ parent() }}
     <script>
+    // This code applies to the product-grid.twig code.
+    //.active indicates current page
     $(document).ready(function() {
         var thisMaker = "{{ thisMarker }}";
         $('ul.category-groups').each(function() {
@@ -38,4 +40,6 @@
         });
     });
     </script>
+
+    
 {% endblock %}
