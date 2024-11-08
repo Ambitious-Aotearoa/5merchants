@@ -5,6 +5,8 @@
 {% set categories = craft.categories.group('shopCategories').all() %}
 {% set products = craft.products().relatedTo(category).all() %}
 
+{% set thisMarker = category.slug %}
+
 
 {% block content %}
 <div class="contained-content  py-2 py-md-vw-xs">
@@ -23,4 +25,17 @@
 
 {% include '_partials/product-grid.twig' %}
 
+{% endblock %}
+{% block scripts %}
+  {{ parent() }}
+    <script>
+    $(document).ready(function() {
+        var thisMaker = "{{ thisMarker }}";
+        $('ul.category-groups').each(function() {
+            if ($(this).hasClass(thisMaker)) {
+                $(this).addClass('active');
+            }
+        });
+    });
+    </script>
 {% endblock %}

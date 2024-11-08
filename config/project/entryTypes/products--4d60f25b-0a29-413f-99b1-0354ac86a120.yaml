@@ -36,6 +36,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-11-08T01:56:58+00:00'
+            elementCondition: null
+            fieldUid: 046855ef-71bb-4c67-a58a-356e4bd73c27 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2679630e-f9a7-4346-8a58-b9f216a6827e
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-11-04T01:33:41+00:00'
             elementCondition: null
             fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
@@ -55,13 +71,13 @@ fieldLayouts:
         uid: ca980d1e-b425-4979-b517-b70704a8a5d4
         userCondition: null
 handle: products
-hasTitleField: true
+hasTitleField: false
 icon: ''
 name: Products
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: Products
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

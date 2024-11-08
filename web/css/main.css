@@ -19189,6 +19189,25 @@ body input:focus-visible {
   display: none;
 }
 
+.category-groups {
+  list-style: none;
+  display: none;
+}
+.category-groups.active {
+  display: block;
+}
+
+.products-nav li {
+  display: flex;
+  flex-direction: column;
+}
+.products-nav li a {
+  padding-bottom: 0.5em;
+}
+.products-nav li a.active {
+  color: #ff503c;
+}
+
 footer .main-logo {
   width: 100%;
   max-width: 280px;

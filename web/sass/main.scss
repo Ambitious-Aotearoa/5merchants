@@ -545,7 +545,7 @@ body{
 
 
 
-/////////////Store navigation
+/////////////Store navigation//// shop////
 .icon-cart{
     fill:#fff;
 }
@@ -647,6 +647,26 @@ body{
     display:none;
 }
 
+.category-groups{
+    list-style:none;
+    display:none;
+    &.active{
+        display:block
+    }
+}
+
+.products-nav{
+    li {
+        display: flex;
+        flex-direction: column;
+        a{
+            padding-bottom:.5em;
+            &.active{
+                color:$cust-red;
+            }
+        }
+    }
+}
 
 
 //////////////Footer///////////////
