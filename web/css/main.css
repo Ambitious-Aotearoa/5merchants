@@ -18935,6 +18935,9 @@ body input:focus-visible {
   outline-color: #ff503c;
   border-radius: 0;
 }
+body ul:not(.list-unstyled) {
+  list-style: disc;
+}
 
 .container-one {
   padding-top: 2em;
@@ -19211,6 +19214,10 @@ body input:focus-visible {
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+.accordion-body ul {
+  margin-top: 2em;
 }
 
 footer .main-logo {

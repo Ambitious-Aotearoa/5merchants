@@ -375,6 +375,10 @@ body{
         outline-color:$cust-red;
         border-radius: 0;
     }
+
+    ul:not(.list-unstyled){
+        list-style:disc;
+    }
 }
 
 
@@ -671,6 +675,12 @@ body{
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+.accordion-body{
+    ul{
+        margin-top:2em
+    }
 }
 
 
