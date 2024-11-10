@@ -376,9 +376,7 @@ body{
         border-radius: 0;
     }
 
-    ul:not(.list-unstyled){
-        list-style:disc;
-    }
+
 }
 
 
@@ -678,6 +676,9 @@ body{
 }
 
 .accordion-body{
+        ul:not(.list-unstyled){
+        list-style:disc;
+    }
     ul{
         margin-top:2em
     }

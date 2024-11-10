@@ -18935,9 +18935,6 @@ body input:focus-visible {
   outline-color: #ff503c;
   border-radius: 0;
 }
-body ul:not(.list-unstyled) {
-  list-style: disc;
-}
 
 .container-one {
   padding-top: 2em;
@@ -19216,6 +19213,9 @@ body ul:not(.list-unstyled) {
   transition: opacity 0.5s ease;
 }
 
+.accordion-body ul:not(.list-unstyled) {
+  list-style: disc;
+}
 .accordion-body ul {
   margin-top: 2em;
 }
