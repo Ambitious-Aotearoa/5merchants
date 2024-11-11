@@ -19131,16 +19131,30 @@ body input:focus-visible {
 }
 
 #cartSummary.fade .modal-dialog {
-  transform: translateX(200%);
+  transform: translateX(100%);
   transition: transform 0.5s ease-out;
 }
 #cartSummary.fade.show .modal-dialog {
-  transform: translateX(100%);
+  transform: translateX(0%);
 }
 #cartSummary .modal-dialog {
   transition: transform 0.5s ease-out;
-  max-width: 50%;
+  max-width: 100%;
   right: 0;
+}
+@media (min-width: 1024px) {
+  #cartSummary.fade .modal-dialog {
+    transform: translateX(200%);
+    transition: transform 0.5s ease-out;
+  }
+  #cartSummary.fade.show .modal-dialog {
+    transform: translateX(100%);
+  }
+  #cartSummary .modal-dialog {
+    transition: transform 0.5s ease-out;
+    max-width: 50%;
+    right: 0;
+  }
 }
 
 .shop-products h1, .shop-products .h1 {

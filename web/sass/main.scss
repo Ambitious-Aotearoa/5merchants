@@ -567,18 +567,35 @@ body{
 }
 
 #cartSummary{
-    &.fade .modal-dialog {
-        transform: translateX(200%);
-        transition: transform 0.5s ease-out;
-    }
-    &.fade.show .modal-dialog {
-        transform: translateX(100%);
-    }
-    .modal-dialog {
-        transition: transform 0.5s ease-out; 
-        max-width: 50%;
-        right:0;
-    }
+        &.fade .modal-dialog {
+            transform: translateX(100%);
+            transition: transform 0.5s ease-out;
+        }
+        &.fade.show .modal-dialog {
+            transform: translateX(0%);
+        }
+        .modal-dialog {
+            transition: transform 0.5s ease-out; 
+            max-width: 100%;
+            right:0;
+        }
+
+        @media(min-width:1024px){
+            &.fade .modal-dialog {
+                transform: translateX(200%);
+                transition: transform 0.5s ease-out;
+            }
+            &.fade.show .modal-dialog {
+                transform: translateX(100%);
+            }
+            .modal-dialog {
+                transition: transform 0.5s ease-out; 
+                max-width: 50%;
+                right:0;
+            }
+        }
+    
+
 }
 
 
