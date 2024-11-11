@@ -311,6 +311,7 @@ body{
         .accordion-item{
             border-bottom-width:2px;
         }
+        .accordion-body h3,
         .accordion-header{
             font-size:1.2em;
             font-family: $body-font;
@@ -318,6 +319,8 @@ body{
         }
         .accordion-button{
             font-size: 1.2em;
+            font-weight: 500;
+            font-family: $body-font;
             &:focus{
                 box-shadow: none;
             }
@@ -330,6 +333,7 @@ body{
             }
         }
     }
+
 
     .sm-img{
         max-width: 200px;
@@ -637,17 +641,30 @@ body{
 
 
 }
+
+.in-stock span,
+.out-of-stock span{
+    text-wrap: nowrap;
+}
+
+.in-stock span{
+    color: $cust-red;
+
+}
 .out-of-stock{
-    color:$cust-darkGrey;
+    color:$cust-darkGrey !important;
 }
 
 .add-to-cart{
     display: flex;
-    flex-direction: row;
 }
+
 .no-show{
     display:none;
 }
+
+
+
 
 .category-groups{
     list-style:none;
@@ -681,6 +698,12 @@ body{
     }
     ul{
         margin-top:2em
+    }
+    ol{
+        list-style:number;
+        li a{
+            color: $cust-red;
+        }
     }
 }
 

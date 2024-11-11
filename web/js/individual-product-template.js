@@ -4,17 +4,19 @@ $(document).ready(function() {
         // Hide all images and body texts
         $('.variant-image').hide();
         $('.variant-body-text').hide();
+        $('.variant-additional-info').hide();
 
         // Show only the selected variant's image and body text
         $('#image-' + variantId).show();
         $('#bodyText-' + variantId).show();
+        $('#additionalInfo-' + variantId).show();
     }
 
     // Function to check stock and hide the "Add to Cart" button if out of stock
     function checkStockAndHideAddToCart(variantId) {
         var variantStock = $('input[name="purchasableId"][value="' + variantId + '"]').closest('label').find('span').text().toLowerCase();
         
-        const addToCartDiv = $('.add-to-cart');
+        const addToCartDiv = $('#add-to-cart');
         
         // Check if the variant stock text contains "out of stock"
         if (variantStock.includes('out of stock') || !variantStock) {
@@ -38,3 +40,5 @@ $(document).ready(function() {
         checkStockAndHideAddToCart(defaultVariantId);
     }
 });
+
+

@@ -9,7 +9,7 @@
 
 {% block body %}
 <div class="contained-content pb-2 pb-md-vw-xs">
-    <div class="contain d-flex flex-column flex-md-row">
+    <div class="contain d-flex flex-column flex-md-row py-1">
         <div class="col-12 col-sm-6" id="displayImage">
             {% for variant in product.getVariants() %}
                 {% set img = variant.image.one() %}
@@ -22,7 +22,7 @@
         <div class="col-12 col-sm-6 d-flex flex-column justify-content-center py-1 py-hR-hR1">
             <div class="constant-product">
                 <h1>{{ product.title }}</h1>
-                <div class="price d-flex flex-row">
+                <div class="price d-flex flex-row my-1">
                     <p>
                         {% if prices|length == 1 %}
                             ${{ prices[0] | number_format(2, '.', ',') }} exc NZ GST
@@ -53,12 +53,12 @@
                                     class:'me-10px'
 
                                 }) }}
-                                <span class="{{ not variant.getIsAvailable() ? 'out-of-stock' : '' }}">
-                                    {{ variant.sku }}
+                                <span class="{{ not variant.getIsAvailable() ? 'out-of-stock' : 'in-stock' }}">
+                                    {{ variant.title }}
                                     {% if variant.inventoryTracked %}
                                         ({{ variant.stock ? variant.stock ~ ' available' : 'out of stock' }})
                                     {% endif %}
-                                    {{ variant.price | commerceCurrency ~ ' exc. NZ GST' }}
+                                   <span> {{ variant.price | commerceCurrency ~ ' exc. NZ GST' }}</span>
                                 </span>
 
                                 
@@ -70,11 +70,19 @@
                         {% for variant in product.getVariants() %}
                             <div class="variant-body-text" id="bodyText-{{ variant.id }}" style="display: none;">
                                 {{ variant.bodyText }}
+                               <p>SKU: {{ variant.sku }}</p>
                             </div>
                         {% endfor %}
+
+                        {% set relatedAssets = product.shopCategory.all() %}
+                        {% if relatedAssets|length %}
+                            {% for rel in relatedAssets %}
+                            <p>Category: <a href="{{ rel.url }}">{{rel.title}}</a></p>
+                            {% endfor %}
+                        {% endif %}
                     </div>
 
-                    <div class="add-to-cart ">
+                    <div class="add-to-cart flex-column flex-sm-row" id="add-to-cart">
                         {{ input('number', 'qty', 1, {
                             class: 'border border-cust-darkGrey border-2 px-1',
                             step: 1,
@@ -92,42 +100,72 @@
         </div>
     </div>
 
-     {# <div class="contain d-flex flex-column flex-md-row">
+    <div class="contain d-flex flex-column flex-md-row">
         <div class="col-12"> 
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                {% for variant in product.getVariants() %}
-                 {% if variant.bodyText2 %}
+            <hr class="m-0 border-primary border-2 opacity-100">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                {% if product.bodyText3 %}
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button py-1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        <h2 class="accordion-header " id="panelsStayOpen-headingOne">
+                        <button class="accordion-button p-1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                             Description
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingOne">
                             <div class="accordion-body py-1">
-                                {{variant.bodyText2}}
+                                {{product.bodyText3}}
                             </div>
                         </div>
                     </div>
-                    {% endif %}
-                {% endfor %}
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button py-1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-                            Additional Information
-                        </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingTwo">
-                            <div class="accordion-body py-1">
-
-                            
+                {% endif %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button p-1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                        Additional Information
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body p-1">
+                        {% for variant in product.getVariants() %}
+                            <div class="variant-additional-info" id="additionalInfo-{{ variant.id }}" style="display: none;">
+                                <div class="col-12 border-top  border-cust-light-grey py-1 d-flex flex-row">
+                                    <h3 class="m-0 col-5">Weight:</h3> <p class="m-0">{{ variant.weight }}kgs</p>
+                                </div>
+                                <div class="col-12 border-top border-bottom border-cust-light-grey py-1 d-flex flex-row">
+                                    <h3 class="m-0 col-5">Dimentions:</h3> <div><p class="m-0">{{ variant.length }} x {{variant.width}} x {{variant.height}} cm</p></div>
+                                </div>
+                                <div class="col-12 py-1 d-flex flex-row">
+                                    <h3 class="m-0 col-5">Model:</h3> <p class="m-0">{{ variant.title }}</p>
+                                </div>
                             </div>
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
+                {% if product.downloads %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header " id="panelsStayOpen-headingThree">
+                        <button class="accordion-button p-1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                            Downloads
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body py-1">
+                                {% set relatedAssets = product.downloads.all() %}
+                                {% if relatedAssets|length %}
+                                <ol>
+                                    {% for rel in relatedAssets %}
+                                        <li><a href="{{ rel.url }}">{{ rel.filename }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
         </div>
-     </div> #}
+    </div>
 </div>
 
 {% endblock %}

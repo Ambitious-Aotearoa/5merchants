@@ -113,6 +113,22 @@ productFieldLayouts:
             userCondition: null
             warning: null
           -
+            dateAdded: '2024-11-10T20:10:19+00:00'
+            elementCondition: null
+            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
+            handle: bodyText3
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 241c6c24-ea9c-4069-84cc-9d89ad93a605
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-11-03T21:45:25+00:00'
             elementCondition: null
             fieldUid: 16328653-61c0-4fa4-bb50-b5268e84093a # Downloads
@@ -229,22 +245,6 @@ variantFieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c2a93eb1-ad6c-4207-a7d7-b713781c3a47
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-11-03T21:45:25+00:00'
-            elementCondition: null
-            fieldUid: c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62 # Body text
-            handle: bodyText2
-            includeInCards: false
-            instructions: null
-            label: 'Model Description'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4a958c48-0121-4820-b7eb-d8ceb6a7c6e8
             userCondition: null
             warning: null
             width: 100

@@ -18875,6 +18875,7 @@ body .contained-content .contain p a:hover {
 body .accordion .accordion-item {
   border-bottom-width: 2px;
 }
+body .accordion .accordion-body h3, body .accordion .accordion-body .h3,
 body .accordion .accordion-header {
   font-size: 1.2em;
   font-family: "neue-haas-grotesk-text", sans-serif;
@@ -18882,6 +18883,8 @@ body .accordion .accordion-header {
 }
 body .accordion .accordion-button {
   font-size: 1.2em;
+  font-weight: 500;
+  font-family: "neue-haas-grotesk-text", sans-serif;
 }
 body .accordion .accordion-button:focus {
   box-shadow: none;
@@ -19176,13 +19179,21 @@ body input:focus-visible {
   fill: #fff;
 }
 
+.in-stock span,
+.out-of-stock span {
+  text-wrap: nowrap;
+}
+
+.in-stock span {
+  color: #ff503c;
+}
+
 .out-of-stock {
-  color: #c7c8ca;
+  color: #c7c8ca !important;
 }
 
 .add-to-cart {
   display: flex;
-  flex-direction: row;
 }
 
 .no-show {
@@ -19218,6 +19229,12 @@ body input:focus-visible {
 }
 .accordion-body ul {
   margin-top: 2em;
+}
+.accordion-body ol {
+  list-style: number;
+}
+.accordion-body ol li a {
+  color: #ff503c;
 }
 
 footer .main-logo {
