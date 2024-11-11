@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: enupalMultiplePlans
+instructions: 'Customize the plans that the customer should select'
+name: 'Add Plan'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - e6a36920-cede-4034-853a-1c59f47a7a9f # Subscription Plan
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

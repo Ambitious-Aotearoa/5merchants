@@ -1,0 +1,7 @@
+color: yellow
+default: false
+description: null
+handle: partiallyShipped
+name: 'Partially Shipped'
+sortOrder: 99
+store: d53686a0-f458-4175-83d2-a5ecbb746969 # Primary

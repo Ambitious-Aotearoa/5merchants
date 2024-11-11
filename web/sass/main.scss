@@ -162,6 +162,15 @@ body{
         }
     }
 
+    .small-heading{
+        font-size: 1.1em;
+        font-weight:500;
+        font-family: $heading-font;
+        &.bold{
+            font-weight: 700;
+        }
+    }
+
     h1,h2,h3{
         text-wrap:balance
     }
@@ -594,8 +603,12 @@ body{
                 right:0;
             }
         }
-    
-
+        .cart-item:hover{
+            transition: color .2s ease-in;
+            p{
+                color:$cust-red;
+            }
+        }
 }
 
 
@@ -723,6 +736,12 @@ body{
         }
     }
 }
+
+
+
+
+
+
 
 
 //////////////Footer///////////////

@@ -1,4 +1,4 @@
-dateModified: 1731269419
+dateModified: 1731362028
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -13,21 +13,30 @@ fs:
     url: '@web/uploads/images'
 meta:
   __names__:
+    0d22bdd8-b942-4f4c-bb26-4b0ea711c5ee: Shipped # Shipped
+    1b150796-e029-4dc8-aa81-6a6fe06c79d1: 'Radio Buttons' # Radio Buttons
+    1f54bb51-09a8-4f65-a722-9c6d98a5567e: 'Single Line' # Single Line
+    2a7e7d72-332b-412f-ac2c-0b33cf163694: Hidden # Hidden
     2d0ecce8-4e66-4b8f-a802-0b525c192e90: News # News
+    3b59286d-5714-43dc-8187-61f063f41e45: Number # Number
     3f163a6d-baac-4678-b90a-eed6e1dd9196: 'Application for Credit' # Application for Credit
     4d60f25b-0a29-413f-99b1-0354ac86a120: Products # Products
+    4eb5df12-e755-4b54-9cd6-a4d70dcc80bd: 'Partially Shipped' # Partially Shipped
     5a6f471d-5675-470e-b4c4-8c9ae3bccd79: 'Video Id' # Video Id
     5e03ba35-e5e0-4af9-869a-529f1dd63cb1: 'Shipping Information' # Shipping Information
     7a7c573a-b52f-4ed2-85bd-b325a11d47e1: 'Terms and Conditions' # Terms and Conditions
     07f07bfe-ffce-48e8-af25-49716fb13bae: 'Privacy Policy' # Privacy Policy
     8ac5a722-9d84-4062-bf17-f6a9d545fae4: Windows # Windows
     8eb06e79-6854-43c5-b1cc-c57a7f265e37: 'Blower Door Testing' # Blower Door Testing
+    09a39708-0723-4560-a2cd-5a0c984a8550: Dropdown # Dropdown
     9c5edb31-d275-4b0d-88b7-a8f1395e194c: 'Button Text' # Button Text
     9c548c8f-e9aa-44f5-80a5-a647a634d797: Dummy # Dummy
+    11a862f8-eea5-4c22-9864-4395a8258ea4: CheckBoxes # CheckBoxes
     17fb6c25-a3f3-4550-8b67-398469d79e9a: 'Product Matrix' # Product Matrix
     24b1554e-bb4c-4639-aaa1-13d20c08f54c: 'Five Merchants' # Five Merchants
     24eb1896-db2f-464e-856b-a505a6f4629f: 'Product Group' # Product Group
     33d45021-2baf-4a22-89d9-422c1df8417f: 'Item Price' # Item Price
+    38bf18e8-9b52-4785-b990-d5260b757856: 'Add Plan' # Add Plan
     76b02431-821c-4e5a-8feb-24a34ccf143d: 'Air Weather Tightness' # Air Weather Tightness
     84dbd643-7fd1-4ede-96df-f0c31af9865c: images # images
     99fdf10d-97f6-495f-98fc-7cfb03613085: Products # Products
@@ -51,6 +60,7 @@ meta:
     6931674c-a2a8-4db1-8762-2c5d2d78aad3: 'News page' # News page
     16328653-61c0-4fa4-bb50-b5268e84093a: Downloads # Downloads
     a04b1e42-d074-4541-911e-7a8e8d764cbd: 'Air Weather Tightness' # Air Weather Tightness
+    a5ba06d6-508b-4ba6-bea3-807b25c45fd1: 'Basic Form Fields' # Basic Form Fields
     a983987f-3900-4cd1-a0af-c28243d17326: Contact # Contact
     aad57e69-bf90-44e2-8b57-e467ecbe68b6: 'Home performance audits' # Home performance audits
     ac579ea2-87ac-4736-92ca-cdd00be1027e: 'Five Merchants' # Five Merchants
@@ -59,11 +69,13 @@ meta:
     c2aab953-b05e-4e4a-b684-26f43bc55c9e: News # News
     c2f33fbf-f2dd-4e2c-a73d-8fdb0b2a8e62: 'Body text' # Body text
     c128454f-a52d-4dc8-aa3e-e134fcd2c530: Ventilation # Ventilation
+    c1687903-2db5-46df-ac30-04e9efdefbd7: Paragraph # Paragraph
     d91c5e6a-22b4-4624-9042-0dd7947b6434: 'Conditions Template' # Conditions Template
     d53686a0-f458-4175-83d2-a5ecbb746969: Primary # Primary
     df64e06f-db04-444c-80a3-516feb4328a6: 'Accordion Content' # Accordion Content
     dfc0fc09-36d4-4961-b69d-e21ddde95aaa: Media # Media
     e4bcf9a3-fd68-455d-aa8c-b60cc9a5d8da: Image # Image
+    e6a36920-cede-4034-853a-1c59f47a7a9f: 'Subscription Plan' # Subscription Plan
     e14df842-2c5b-4b75-9787-9fd3fc363a95: 'Our Principles' # Our Principles
     e28bc234-8a06-42bf-aed4-a5466d27951a: 'News Entry' # News Entry
     ebbe4823-4ffa-458d-bcda-360cd8d679b5: Product # Product
@@ -83,7 +95,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: U9N05RNN5FCUZJMZNZYKU32R
-    schemaVersion: 5.2.0.4
+    schemaVersion: 5.2.0.5
     settings:
       activeCartDuration: 3600
       cartVariable: cart
@@ -103,6 +115,26 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  enupal-stripe:
+    edition: pro
+    enabled: true
+    licenseKey: R953JDLFW54VI7AC9AEAHD86
+    schemaVersion: 6.0.0
+  postie:
+    edition: standard
+    enabled: true
+    licenseKey: EF3B05ZXD6Q2CP4VR54J8GQZ
+    schemaVersion: 3.0.0
+    settings:
+      enableCaching: true
+      enableRouteCheck: true
+      partiallyShippedOrderStatus: partiallyShipped
+      pluginName: Postie
+      routesChecks:
+        - '/{cpTrigger}/commerce/orders/\d+'
+        - /shop/shipping
+        - /shop/checkout/shipping
+      shippedOrderStatus: shipped
 system:
   edition: solo
   live: true
@@ -110,10 +142,3 @@ system:
   retryDuration: null
   schemaVersion: 5.3.0.2
   timeZone: Pacific/Auckland
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  require2fa: false
-  requireEmailVerification: true

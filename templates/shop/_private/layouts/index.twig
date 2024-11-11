@@ -103,11 +103,15 @@ Common, top-level layout template.
                 <div class="bg-cust-teal text-white">
                 <div class="container mx-auto p-1">
                     {% for attribute, errors in cart.errors %}
-                    {% if loop.first %}<ul>{% endif %}
+                    {% if loop.first %}
+                    <ul class="list-unstyled">{% endif %}
                     {% for key, error in errors %}
-                        <li>{{ attribute }}: {{ error }}</li>
+                        <li> {{ error }} </li>
                     {% endfor %}
-                    {% if loop.last %}</ul>{% endif %}
+                    <li><span class="small-heading">Please update your product Qty, then update cart to continue</span></li>
+                    {% if loop.last %}
+                    </ul>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 </div>

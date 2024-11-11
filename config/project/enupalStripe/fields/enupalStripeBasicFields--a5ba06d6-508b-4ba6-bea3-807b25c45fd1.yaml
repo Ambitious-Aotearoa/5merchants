@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: enupalStripeBasicFields
+instructions: 'All data saved are stored as “metadata” with each Stripe payment record within your Stripe dashboard.'
+name: 'Basic Form Fields'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 1f54bb51-09a8-4f65-a722-9c6d98a5567e # Single Line
+    - c1687903-2db5-46df-ac30-04e9efdefbd7 # Paragraph
+    - 09a39708-0723-4560-a2cd-5a0c984a8550 # Dropdown
+    - 1b150796-e029-4dc8-aa81-6a6fe06c79d1 # Radio Buttons
+    - 3b59286d-5714-43dc-8187-61f063f41e45 # Number
+    - 11a862f8-eea5-4c22-9864-4395a8258ea4 # CheckBoxes
+    - 2a7e7d72-332b-412f-ac2c-0b33cf163694 # Hidden
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

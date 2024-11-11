@@ -1,0 +1,85 @@
+color: null
+fieldLayouts:
+  669793c5-2198-4b36-9844-23478a1e805f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-11-12T10:49:57+13:00'
+            elementCondition: null
+            fieldUid: 54a48c47-312e-41a4-898f-6d641e4c65a1
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54a48c47-312e-41a4-898f-6d641e4c65a1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-12T10:49:57+13:00'
+            elementCondition: null
+            fieldUid: 7f22cf69-1d5c-4d2b-8742-24a32183faca
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7f22cf69-1d5c-4d2b-8742-24a32183faca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-12T10:49:57+13:00'
+            elementCondition: null
+            fieldUid: 05948014-da9e-4a4b-9864-e9fe5388938d
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05948014-da9e-4a4b-9864-e9fe5388938d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-12T10:49:57+13:00'
+            elementCondition: null
+            fieldUid: 81b5f451-6074-42db-b16a-b6d16afe91ca
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 81b5f451-6074-42db-b16a-b6d16afe91ca
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2cd475ca-ea5f-4ab4-a5d1-526ae942ca9d
+        userCondition: null
+handle: radioButtons
+hasTitleField: false
+icon: null
+name: 'Radio Buttons'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
