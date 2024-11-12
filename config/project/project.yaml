@@ -1,4 +1,4 @@
-dateModified: 1731362028
+dateModified: 1731378841
 email:
   fromEmail: jennifer@ambitious.co.nz
   fromName: 'Five Merchants'
@@ -117,24 +117,14 @@ plugins:
     schemaVersion: 1.0.0
   enupal-stripe:
     edition: pro
-    enabled: true
+    enabled: false
     licenseKey: R953JDLFW54VI7AC9AEAHD86
     schemaVersion: 6.0.0
   postie:
     edition: standard
     enabled: true
-    licenseKey: EF3B05ZXD6Q2CP4VR54J8GQZ
+    licenseKey: AL29WXBW44JPK08SC01I0RC4
     schemaVersion: 3.0.0
-    settings:
-      enableCaching: true
-      enableRouteCheck: true
-      partiallyShippedOrderStatus: partiallyShipped
-      pluginName: Postie
-      routesChecks:
-        - '/{cpTrigger}/commerce/orders/\d+'
-        - /shop/shipping
-        - /shop/checkout/shipping
-      shippedOrderStatus: shipped
 system:
   edition: solo
   live: true

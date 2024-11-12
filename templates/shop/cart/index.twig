@@ -6,117 +6,112 @@ Outputs cart.
 #}
 
 {% block main %}
-  <!-- Template: {{ _self }}.twig -->
-  <h1 class="text-3xl block sm:inline">
-    {{- 'Cart'|t -}}
-  </h1>
 
-  {% if cart.lineItems|length %}
-    <form method="post" action="">
-      {{ csrfInput() }}
-      {{ actionInput('commerce/cart/update-cart') }}
-      {{ successMessageInput('Cart updated.'|t) }}
+<div class="contained-content py-2 py-sm-vw-sm">
+    <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
+        <h1>{{- 'Cart'|t -}}</h1>
+    </div>
+    <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
+        {% if cart.lineItems|length %}
+            <div class="col-12 col-md-8">
+                <form method="post" action="">
+                    {{ csrfInput() }}
+                    {{ actionInput('commerce/cart/update-cart') }}
+                    {{ successMessageInput('Cart updated.'|t) }}
 
-        <div class="cart-wrapper">
-            {% for item in cart.lineItems %}
-                <div class="each-item d-flex flex-row my-3 pb-2 border-bottom border-cust-lightGrey">
-                    <div class="col-12 col-md-4">
-                        <h2 class="small-heading bold mb-0{% if item.hasErrors() %} text-cust-red{% endif %}">
-                            {{- item.description -}}
-                        </h2>
-                        <p>{{ item.sku }}</p>
-                        <div class="mt-6">
-                            <label>
-                                {{ input('checkbox', 'lineItems[' ~ item.id ~ '][remove]', 1) }}
-                                <span>{{ 'Remove'|t }}</span>
-                            </label>
-                        </div>
-                    </div>
+                    <div class="cart-wrapper">
+                        {% for item in cart.lineItems %}
+                            <div class="each-item d-flex flex-column flex-sm-row flex-sm-wrap my-3 pb-2 border-bottom border-cust-lightGrey w-100">
+                                <div class="col-12 col-sm-6 col-md-4 pe-md-1">
+                                    <h2 class="small-heading bold mb-0{% if item.hasErrors() %} text-cust-red{% endif %}">
+                                        {{- item.description -}}
+                                    </h2>
+                                    <p>{{ item.sku }}</p>
+                                    <div class="mt-1  my-sm-1 mb-md-0 mt-md-2">
+                                        <label>
+                                            {{ input('checkbox', 'lineItems[' ~ item.id ~ '][remove]', 1) }} <span>{{ 'Remove'|t }}</span>
+                                        </label>
+                                    </div>
+                                </div>
 
-                    <div class="col-12 col-md-4">
-                        {% set hasDonationAmount = item.options.donationAmount is defined %}
-                        <div class="lg:mr-3{{ hasDonationAmount ? ' hidden' : '' }}">
-                            <span class="text-gray-500 text-xs block">
-                                {{- 'Qty'|t -}}
-                            </span>
-                            {{ input(hasDonationAmount ? 'hidden' : 'number', 'lineItems[' ~ item.id ~ '][qty]', item.qty, {
-                                min: 0,
-                                class: [
-                                item.getFirstError('qty') ? 'border-red-500 border',
-                                'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded'
-                                ]
-                            }) }}      
-                        </div>
-                    </div>
+                                <div class="col-12 col-sm-6 col-md-2 my-1 my-sm-0 pe-md-1 ">
+                                    {% set hasDonationAmount = item.options.donationAmount is defined %}
+                                    <div class="{{ hasDonationAmount ? ' hidden' : '' }}">
+                                        <span class="text-gray-500 text-xs block">
+                                            {{- 'Qty'|t -}}
+                                        </span>
+                                        {{ input(hasDonationAmount ? 'hidden' : 'number', 'lineItems[' ~ item.id ~ '][qty]', item.qty, {
+                                            min: 0,
+                                            class: [
+                                            item.getFirstError('qty') ? 'border-red-500 border',
+                                            'border border-gray-300 hover:border-gray-500 ps-1 w-100'
+                                            ]
+                                        }) }}      
+                                    </div>
+                                </div>
 
+                                <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+                                    <div>
+                                        {% if not cart.hasErrors() %}
+                                            <p class="d-flex flex-row justify-content-between text-sm mb-0" title="{{ item.price }}">
+                                                Price exc. GST: <span class="">{{ item.priceAsCurrency }}</span>
+                                            </p>
 
-                    <div>
-                    {% if not cart.hasErrors() %}
-                        <div class="flex items-center w-full justify-end" title="{{ item.price }}">
-                            <div class="text-xs pr-2">{{ 'Price exc. GST'|t }}:</div>
-                                <div class="text-sm tabular-nums">
-                                    {{- item.priceAsCurrency -}}
+                                            <p class="d-flex flex-row justify-content-between text-sm mb-0" title="{{ item.subtotal }}">
+                                                Subtotal exc. GST: <span class="">{{ item.subtotalAsCurrency }}</span>
+                                            </p>
+                                        {% endif %}
+
+                                        {% if not cart.hasErrors() and item.adjustments|length %}
+                                            {% for adjustment in item.adjustments %}
+                                                <p class="d-flex flex-row justify-content-between text-sm " title="{{ adjustment.amount }}">
+                                                    NZ GST {{ adjustment.description }}: <span class="">{{ ' ' ~ adjustment.amountAsCurrency }}</span>
+                                                </p>
+                                            {% endfor %}
+                                        {% endif %} 
+                                    </div>
+
+                                    {% if not cart.hasErrors() %}
+                                        <p class="d-flex flex-row justify-content-between" title="{{ item.total }}">
+                                            Total incl. GST: <span class="">{{ item.totalAsCurrency }}</span>
+                                        </p>
+                                    {% endif %}                                                                      
                                 </div>
                             </div>
-
-                            <div class="flex items-center w-full justify-end" title="{{ item.subtotal }}">
-                                <div class="text-xs pr-2">{{ 'Subtotal exc. GST'|t }}:</div>
-                                <div class="text-sm tabular-nums">{{ item.subtotalAsCurrency }}</div>
-                            </div>
-                    {% endif %}
-                    {% if not cart.hasErrors() and item.adjustments|length %}
-                        {% for adjustment in item.adjustments %}
-                        <div class="flex items-center w-full justify-end">
-                            <div class="text-gray-600 text-xs">NZ GST {{ adjustment.description }}: </div>
-                            <div class="text-gray-500 tabular-nums" title="{{ adjustment.amount }}">
-                                {{ ' ' ~ adjustment.amountAsCurrency }}
-                            </div>
-                            </div>
                         {% endfor %}
-                    {% endif %}
-
-                    {% if not cart.hasErrors() %}
-                        <div class="flex items-center w-full justify-end mt-1" title="{{ item.total }}">
-                            <div class="text-sm text-gray-600 pr-2">{{ 'Total incl. GST '|t }}:</div>
-                            <div class="font-bold tabular-nums">{{ item.totalAsCurrency }}</div>
-                        </div>
-                    {% endif %}
                     </div>
-                </div>
-            {% endfor %}
-            {% if not cart.hasErrors() %}
-                <h2>total total</h2>
-                <p>Total excl. GST {{ cart.itemSubtotalAsCurrency }}</p>
-                <p>Total GST @ 15% {{ cart.getTotalTax()|commerceCurrency(cart.currency) }}
-                <p>Total incl. GST  {{ cart.itemTotalAsCurrency }}</p>
-            {% endif %}
 
-        <div>
-        <div class="pr-2">
-                {{ redirectInput('shop/cart') }}
-                <button type="submit" class="cursor-pointer rounded px-4 py-2 inline-block bg-gray-500 hover:bg-gray-600 text-white hover:text-white">
-                {{- 'Update Cart'|t -}}
-                </button>
-        </div>
-        </div>
+                    <div class="cart-totals d-flex flex-column flex-sm-row">
+                        <div class="col-12 col-sm-5 col-md-4 order-2 order-sm-1">
+                            {{ redirectInput('shop/cart') }}
+                            <button type="submit" class="btn btn-cust-teal w-100 mb-10px">
+                            {{- 'Update Cart'|t -}}
+                            </button>
 
-        {% if not cart.hasErrors() %}
-        <a href="{{ url('shop/checkout') }}"
-            class="cursor-pointer rounded px-4 py-2 inline-block bg-blue-500 hover:bg-blue-600 text-white hover:text-white"
-        >
-            {{- 'Checkout'|t -}}
-        </a>
-    {% endif %}
+                            {% if not cart.hasErrors() %}
+                            <a href="{{ url('shop/checkout') }}" class="btn btn-cust-red text-light w-100">{{- 'Checkout'|t -}}</a>
+                            {% endif %}
+                        </div>
 
-     {{ include('shop/cart/_includes/shipping-estimator') }}
-        </div>
-
-
- 
-    </form>
-  {% else %}
-    <p>{{ 'Empty cart. Add items on the {link} page.'|t({
-      link: tag('a', { href: url('/products'), text: 'products', class: 'underline' })
-    })|raw }}</p>
-  {% endif %}
+                        <div class="col-12 col-sm-6 offset-sm-1 col-md-7 order-1 order-md-2 mb-1 mb-md-0 ">
+                            {% if not cart.hasErrors() %}
+                                <p class="mb-0 d-flex flex-row flex-wrap justify-content-between">Shipping estimate <span>{{ cart.getTotalShippingCost()|commerceCurrency(cart.currency) }}</span></p>
+                                <p class="mb-0 d-flex flex-row flex-wrap justify-content-between">Total excl. GST <span>{{ cart.itemSubtotalAsCurrency }}</span></p>
+                                <p class="d-flex flex-row flex-wrap justify-content-between">Total GST <span>{{ cart.getTotalTax()|commerceCurrency(cart.currency) }}</span></p>
+                                <h3 class="d-flex flex-row flex-wrap justify-content-between mt-1">Total incl. GST  <span>{{ cart.itemTotalAsCurrency }}</span></h3>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </div>
+            <div class="col-12 col-md-3 offset-md-1">
+                {{ include('shop/cart/_includes/shipping-estimator') }}
+            </div>
+        {% else %}
+            <p>{{ 'Empty cart. Add items on the {link} page.'|t({link: tag('a', { href: url('/products'), text: 'products', class: 'underline' })})|raw }}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

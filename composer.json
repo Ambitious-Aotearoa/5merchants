@@ -12,6 +12,7 @@
   },
   "require-dev": {
     "craftcms/generator": "^2.0.0",
+    "deployer/deployer": "^7",
     "yiisoft/yii2-shell": "^2.0.3"
   },
   "config": {
