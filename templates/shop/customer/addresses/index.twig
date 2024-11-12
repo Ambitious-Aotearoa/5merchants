@@ -12,10 +12,8 @@
 {% block main %}
   <!-- Template: {{ _self }}.twig -->
 
-  <div class="lg:flex lg:justify-between">
-    <h1 class="text-3xl block sm:inline">
-      {{- 'My Addresses'|t -}}
-    </h1>
+  <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
+    <h1>My Addresses</h1>
   </div>
 
   {% if currentUser.addresses|length %}
@@ -24,7 +22,6 @@
       selectable: false,
       primaryBillingAddressId: currentUser.primaryBillingAddressId,
       primaryShippingAddressId: currentUser.primaryShippingAddressId,
-      cardWidth: 'md:w-1/3',
       showDelete: true,
       showAdd: true
     }) }}

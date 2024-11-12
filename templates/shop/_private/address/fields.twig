@@ -24,7 +24,7 @@ Outputs address form fields for editing an address.
     </label>
     {{ input('text', 'title', address ? address.title : '', {
       id: 'title',
-      class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+      class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
     }) }}
     {{ _self.displayErrors(address, 'title') }}
   </div>
@@ -38,7 +38,7 @@ Outputs address form fields for editing an address.
     {% tag 'select' with {
       id: 'countryCode',
       name: 'countryCode',
-      class: ['w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded', countries|length == 0 ? 'hidden' : ''],
+      class: ['w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500 p-0 leading-tight rounded', countries|length == 0 ? 'hidden' : ''],
     } %}
       {{ tag('option', {
         value: '',
@@ -64,18 +64,18 @@ Outputs address form fields for editing an address.
     </label>
     {{ input('text', 'fullName', address.fullName ?? '', {
       id: 'fullName',
-      class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+      class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
     }) }}
     {{ _self.displayErrors(address, 'fullName') }}
   </div>
 
   <div class="my-2 {{ 'js-address-field'|namespaceInputId(addressName) }}">
     <label for="addressLine1">
-      {{- 'Address 1'|t -}}
+      {{- 'Address 1 *'|t -}}
     </label>
     {{ input('text', 'addressLine1', address.addressLine1 ?? '', {
       id: 'addressLine1',
-      class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+      class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
     }) }}
     {{ _self.displayErrors(address, 'addressLine1') }}
   </div>
@@ -86,7 +86,7 @@ Outputs address form fields for editing an address.
     </label>
     {{ input('text', 'addressLine2', address ? address.addressLine2 : '', {
       id: 'addressLine2',
-      class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+      class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
     }) }}
     {{ _self.displayErrors(address, 'addressLine2') }}
   </div>
@@ -95,11 +95,11 @@ Outputs address form fields for editing an address.
   <div class="md:flex md:-mx-4">
     <div class="md:w-1/3 md:mx-4 my-2 {{ 'js-address-field'|namespaceInputId(addressName) }}">
       <label for="locality">
-        {{- 'City'|t -}}
+        {{- 'City *'|t -}}
       </label>
       {{ input('text', 'locality', address.locality ?? '', {
         id: 'locality',
-        class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+        class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
       }) }}
       {{ _self.displayErrors(address, 'locality') }}
     </div>
@@ -113,7 +113,7 @@ Outputs address form fields for editing an address.
       {% tag 'select' with {
         id: 'administrativeArea',
         name: 'administrativeArea',
-        class: ['w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded'],
+        class: ['w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded'],
         data: {
           'selected': address.administrativeArea ?? null
         }
@@ -128,7 +128,7 @@ Outputs address form fields for editing an address.
 
       {{ input('text', 'administrativeArea', address.administrativeArea ?? '', {
         id: 'administrativeArea',
-        class: ['w-full hidden', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+        class: ['w-full hidden', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
       }) }}
       {{ _self.displayErrors(address, 'administrativeArea') }}
     </div>
@@ -136,11 +136,11 @@ Outputs address form fields for editing an address.
     <div class="md:w-1/3 md:mx-4 my-2 {{ 'js-address-field'|namespaceInputId(addressName) }}">
       {% set zipCode = address.postalCode ?? '' %}
       <label for="zipCode">
-        {{- 'Postal Code'|t -}}
+        {{- 'Postal Code *'|t -}}
       </label>
       {{ input('text', 'postalCode', address.postalCode ?? '', {
         id: 'postalCode',
-        class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+        class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
       }) }}
       {{ _self.displayErrors(address, 'postalCode') }}
     </div>
@@ -152,7 +152,7 @@ Outputs address form fields for editing an address.
     </label>
     {{ input('text', 'organization', address ? address.organization : '', {
       id: 'organization',
-      class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+      class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
     }) }}
     {{ _self.displayErrors(address, 'organization') }}
   </div>
@@ -165,7 +165,7 @@ Outputs address form fields for editing an address.
         </label>
         {{ input('text', 'organizationTaxId', address ? address.organizationTaxId : '', {
           id: 'organizationTaxId',
-          class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+          class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
         }) }}
         {{ _self.displayErrors(address, 'organizationTaxId') }}
       </div>
@@ -187,7 +187,7 @@ Outputs address form fields for editing an address.
           </label>
           {{ input('text', 'fields[' ~ customField.handle ~ ']', address ? address[customField.handle] : '', {
             id: 'custom-field-' ~ customField.handle,
-            class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+            class: ['w-full', 'border border-gray-300 hover:border-gray-500 p-1 leading-tight rounded']
           }) }}
           {{ _self.displayErrors(address, customField.handle) }}
         </div>

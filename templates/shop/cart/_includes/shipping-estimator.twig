@@ -4,15 +4,15 @@ Outputs a form for collecting shipping estimate address details if an address do
 
 @var cart \craft\commerce\elements\Cart
 #}
-{% if not cart.getShippingAddress() %}
+{% if cart.getShippingAddress() %}
   {% set countries = craft.app.addresses.getCountryRepository().getList() %}
   {% set states = [] %}
 {#  {% set states = craft.commerce.states.allEnabledStatesAsListGroupedByCountryId %}#}
 
-  <div class="bg-gray-100 border-blue-300 border-b-2 p-6">
-    <h5 class="mt-0 font-bold">
+  <div class="bg-gray-100  p-6">
+    <h4 class="mt-0 font-bold">
       {{- 'Shipping Estimate'|t -}}
-    </h5>
+    </h4>
 
     <div class="js-estimate-fields">
       <label class="m-0 mt-2 block" for="estimatedShippingAddress-countryCode">
@@ -21,7 +21,7 @@ Outputs a form for collecting shipping estimate address details if an address do
       {% tag 'select' with {
         name: 'estimatedShippingAddress[countryCode]',
         'data-modelname': 'estimatedShippingAddress',
-        class: ['js-address-country', 'js-estimate-country', 'w-full', 'h-9', 'max-w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+        class: ['js-address-country', 'js-estimate-country', 'w-full', 'h-9', 'max-w-full', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
       } %}
         {{ tag('option', {
           value: '',
@@ -39,7 +39,7 @@ Outputs a form for collecting shipping estimate address details if an address do
         {% endfor %}
       {% endtag %}
 
-      <div class="lg:flex lg:-mx-2">
+      {# <div class="lg:flex lg:-mx-2">
         <div class="lg:w-1/2 lg:mx-2 my-2">
           <div class="js-estimate-state-box" data-modelname="estimatedShippingAddress">
             <label class="mb-0 mt-2 block" for="estimatedShippingAddress-state">
@@ -52,7 +52,7 @@ Outputs a form for collecting shipping estimate address details if an address do
               name: 'estimatedShippingAddress[stateValue]',
               id: 'estimatedShippingAddress-stateId',
               'data-modelname': 'estimatedShippingAddress',
-              class: ['js-address-stateId', 'max-w-full', 'h-9', options|length == 0 ? 'hidden' : '', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+              class: ['js-address-stateId', 'max-w-full', 'h-9', options|length == 0 ? 'hidden' : '', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
             } %}
               {{ tag('option', {
                 value: '',
@@ -73,7 +73,7 @@ Outputs a form for collecting shipping estimate address details if an address do
             {{ input('text', options|length == 0 ? 'estimatedShippingAddress[stateValue]', cart.estimatedShippingAddress ? cart.estimatedShippingAddress.administrativeArea : '', {
               id: 'estimatedShippingAddress-administrativeArea',
               'data-modelname': 'estimatedShippingAddress',
-              class: ['js-address-administrativeArea', 'w-full', options|length > 0 ? 'hidden' : '', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+              class: ['js-address-administrativeArea', 'w-full', options|length > 0 ? 'hidden' : '', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
             }) }}
           </div>
         </div>
@@ -84,10 +84,10 @@ Outputs a form for collecting shipping estimate address details if an address do
           {{ input('text', 'estimatedShippingAddress[postalCode]', cart.estimatedShippingAddress ? cart.estimatedShippingAddress.postalCode : '', {
             id: 'estimatedShippingAddress-postalCode',
             'data-modelname': 'estimatedShippingAddress',
-            class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+            class: ['w-full', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
           }) }}
         </div>
-      </div>
+      </div> #}
 
       <div class="mt-4">
         <label class="m-0">
@@ -109,7 +109,7 @@ Outputs a form for collecting shipping estimate address details if an address do
         {% tag 'select' with {
           name: 'estimatedBillingAddress[countryCode]',
           'data-modelname': 'estimatedBillingAddress',
-          class: ['js-address-country', 'js-estimate-country', 'w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+          class: ['js-address-country', 'js-estimate-country', 'w-full', 'max-w-full', 'h-9', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
         } %}
           {{ tag('option', {
             value: '',
@@ -127,7 +127,7 @@ Outputs a form for collecting shipping estimate address details if an address do
           {% endfor %}
         {% endtag %}
 
-        <div class="lg:flex lg:-mx-2">
+        {# <div class="lg:flex lg:-mx-2">
           <div class="lg:w-1/2 lg:mx-2 my-2">
             <div class="js-estimate-state-box" data-modelname="estimatedBillingAddress">
               <label class="mb-0 block" for="estimatedBillingAddress-state">
@@ -140,7 +140,7 @@ Outputs a form for collecting shipping estimate address details if an address do
                 name: 'estimatedBillingAddress[stateValue]',
                 id: 'estimatedBillingAddress-stateId',
                 'data-modelname': 'estimatedBillingAddress',
-                class: ['js-address-stateId', 'w-full', 'max-w-full', 'h-9', options|length == 0 ? 'hidden', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+                class: ['js-address-stateId', 'w-full', 'max-w-full', 'h-9', options|length == 0 ? 'hidden', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
               } %}
                 {{ tag('option', {
                   value: '',
@@ -160,7 +160,7 @@ Outputs a form for collecting shipping estimate address details if an address do
               {{ input('text', options|length == 0 ? 'estimatedBillingAddress[stateValue]', cart.estimatedBillingAddress ? cart.estimatedBillingAddress.administrativeArea : '', {
                 id: 'estimatedBillingAddress-administrativeArea',
                 'data-modelname': 'estimatedBillingAddress',
-                class: ['js-address-administrativeArea', options|length > 0 ? 'hidden', 'w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+                class: ['js-address-administrativeArea', options|length > 0 ? 'hidden', 'w-full', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
               }) }}
             </div>
           </div>
@@ -170,10 +170,10 @@ Outputs a form for collecting shipping estimate address details if an address do
             </label>
             {{ input('text', options|length == 0 ? 'estimatedBillingAddress[postalCode]', cart.estimatedBillingAddress ? cart.estimatedBillingAddress.postalCode : '', {
               id: 'estimatedBillingAddress-postalCode',
-              class: ['w-full', 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded']
+              class: ['w-full', 'border border-gray-300 hover:border-gray-500  leading-tight rounded']
             }) }}
           </div>
-        </div>
+        </div> #}
       </div>
     </div>
 

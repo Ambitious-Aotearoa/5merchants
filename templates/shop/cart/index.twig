@@ -7,9 +7,9 @@ Outputs cart.
 
 {% block main %}
 
-<div class="contained-content py-2 py-sm-vw-sm">
+
     <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
-        <h1>{{- 'Cart'|t -}}</h1>
+        <h1>Cart</h1>
     </div>
     <div class="contain d-flex flex-column flex-sm-row flex-wrap ">
         {% if cart.lineItems|length %}
@@ -24,7 +24,7 @@ Outputs cart.
                             <div class="each-item d-flex flex-column flex-sm-row flex-sm-wrap my-3 pb-2 border-bottom border-cust-lightGrey w-100">
                                 <div class="col-12 col-sm-6 col-md-4 pe-md-1">
                                     <h2 class="small-heading bold mb-0{% if item.hasErrors() %} text-cust-red{% endif %}">
-                                        {{- item.description -}}
+                                       <a href="{{ item.purchasable.product.getUrl() }}"> {{- item.description -}} </a>
                                     </h2>
                                     <p>{{ item.sku }}</p>
                                     <div class="mt-1  my-sm-1 mb-md-0 mt-md-2">
@@ -106,12 +106,12 @@ Outputs cart.
                 </form>
                 
             </div>
-            <div class="col-12 col-md-3 offset-md-1">
+            <div class="col-12 col-md-3 offset-md-1 bg-cust-lightGrey">
                 {{ include('shop/cart/_includes/shipping-estimator') }}
             </div>
         {% else %}
             <p>{{ 'Empty cart. Add items on the {link} page.'|t({link: tag('a', { href: url('/products'), text: 'products', class: 'underline' })})|raw }}</p>
         {% endif %}
     </div>
-</div>
+
 {% endblock %}
